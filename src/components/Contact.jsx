@@ -1,6 +1,7 @@
 import { useState } from "react";
 import emailjs from "emailjs-com";
 import { FaEnvelope, FaPhoneAlt } from "react-icons/fa";
+import ScrollReveal from "./ScrollReveal";
 
 const Contact = () => {
   const [loading, setLoading] = useState(false);
@@ -33,6 +34,7 @@ const Contact = () => {
   };
 
   return (
+    <ScrollReveal>
     <section id="contact" className="contact-section text-white">
       <div className="container">
         <div className="row align-items-start">
@@ -110,6 +112,7 @@ const Contact = () => {
         </div>
       </div>
     </section>
+  </ScrollReveal>
   );
 };
 

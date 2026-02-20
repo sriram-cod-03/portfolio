@@ -3,7 +3,7 @@ const Navbar = () => {
   const [active, setActive] = useState("home");
 
   useEffect(() => {
-    const sections = ["home", "about", "skills", "projects", "contact"];
+    const sections = ["home", "skills", "projects", "contact"];
 
     const handleScroll = () => {
       const scrollPos = window.scrollY + 140;
@@ -48,7 +48,7 @@ const Navbar = () => {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav ms-auto align-items-lg-center gap-lg-3">
 
-            {["about", "skills", "projects", "contact"].map((item) => (
+            {["skills", "projects", "contact"].map((item) => (
               <li className="nav-item" key={item}>
                 <a
                   href={`#${item}`}

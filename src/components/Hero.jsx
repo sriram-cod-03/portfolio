@@ -2,15 +2,17 @@ import { motion } from "framer-motion";
 import { Typewriter } from "react-simple-typewriter";
 import { FaArrowDown, FaGithub, FaLinkedin } from "react-icons/fa";
 import profile from "../assets/profile.jpg";
+import ScrollReveal from "./ScrollReveal";
 
 const Hero = () => {
   return (
+    <ScrollReveal>
     <section id="home" className="hero-section d-flex align-items-center">
       <div className="container">
         <div className="row align-items-center">
 
           {/* LEFT CONTENT */}
-          <div className="col-lg-6 text-white">
+          <div className="col-lg-6">
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -25,7 +27,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="hero-title neon-gradient-text"
+              className="text-white"
             >
               Sriram R
             </motion.h1>
@@ -34,7 +36,7 @@ const Hero = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.8 }}
-              className="hero-typing"
+              className="hero-typing violet-glow"
             >
               <Typewriter
                 words={[
@@ -126,9 +128,9 @@ const Hero = () => {
         >
           <FaArrowDown />
         </motion.div>
-
       </div>
     </section>
+  </ScrollReveal>
   );
 };
 

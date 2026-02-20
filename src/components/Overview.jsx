@@ -1,11 +1,17 @@
 import { motion } from "framer-motion";
+import ScrollReveal from "./ScrollReveal";
+import SlideReveal from "./SlideReveal";
 
 const Overview = () => {
   return (
+    <ScrollReveal>
     <section>
+      <SlideReveal direction="left">
       <h2 className="section-title">What I Do</h2>
+      </SlideReveal>
+      <SlideReveal direction="right">
       <p className="section-subtitle">Frontend • Backend • Full Stack</p>
-
+      </SlideReveal>
       <div className="text-white" style={{ display: "flex", gap: "30px", flexWrap: "wrap" }}>
         {["Frontend Development", "Backend APIs", "Full Stack Apps"].map((item, index) => (
           <motion.div
@@ -21,6 +27,7 @@ const Overview = () => {
         ))}
       </div>
     </section>
+  </ScrollReveal>  
   );
 };
 

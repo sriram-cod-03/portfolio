@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import ScrollReveal from "./ScrollReveal";
 
 const certificates = [
   {
@@ -17,6 +18,7 @@ const certificates = [
 
 const Certificates = () => {
   return (
+    <ScrollReveal>
     <section>
       <h2 className="section-title service-card">Certificates</h2>
 
@@ -43,6 +45,7 @@ const Certificates = () => {
         ))}
       </div>
     </section>
+  </ScrollReveal>
   );
 };
 
