@@ -603,55 +603,266 @@
 }
 
 /* ========================================= */
-/* CONTACT */
+/* ACETERNITY UI GLASS CONTACT SECTION       */
 /* ========================================= */
 
-.contact-container {
+.contact-section {
+  position: relative;
+  width: 100%;
+  color: #ffffff;
+  background: transparent;
+}
+
+.custom-contact-container {
   display: flex;
   justify-content: space-between;
-  gap: 40px;
+  align-items: flex-start;
+  gap: 60px;
   flex-wrap: wrap;
+  margin-top: 40px;
 }
 
-.contact-info,
-.contact-form {
+.contact-details-side,
+.contact-form-side {
   flex: 1;
-  min-width: 280px;
+  min-width: 320px;
 }
 
-.contact-form {
+/* Header Floating Icon */
+.contact-icon-wrapper {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  background: rgba(31, 0, 51, 0.45);
+  border: 1px solid rgba(168, 85, 247, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(168, 85, 247, 0.2);
+}
+
+.violet-glow-icon {
+  font-size: 20px;
+  color: #c084fc;
+}
+
+.contact-main-title {
+  font-size: 3.2rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.contact-subtitle-desc {
+  color: #94a3b8;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  max-width: 480px;
+}
+
+/* Meta Spacing Row */
+.contact-meta-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  color: #cbd5e1;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.meta-divider {
+  color: rgba(168, 85, 247, 0.5);
+}
+
+/* ========================================= */
+/* MAP VISUAL & PULSING TARGET BEACON        */
+/* ========================================= */
+
+.world-map-wrapper {
+  position: relative;
+  width: 100%;
+  height: 240px;
+  margin-top: 30px;
+}
+
+/* Simulated dark minimalist dot grid matrix background mapping */
+  /* ========================================= */
+  /* ULTRA-CLEAN SVG SPACE MAP GRAPHIC ENGINE  */
+  /* ========================================= */
+
+/* ========================================= */
+/* PREMIUM WORLD MAP CONTAINER INTERFACE     */
+/* ========================================= */
+
+.map-base-graphic {
+  width: 100%;
+  height: 280px; /* FIXED: Explicit height gives your map asset room to display */
+  border-radius: 16px;
+  position: relative;
+  border: 1px solid rgba(168, 85, 247, 0.15);
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.6);
+  overflow: hidden;
+  background-color: #0d0614; /* Deep space matte base backdrop */
+
+  /* CLEANED UP: Only keeping your futuristic digital dot matrix overlay pattern */
+  background-image: radial-gradient(rgba(168, 85, 247, 0.12) 1.2px, transparent 1.2px);
+  background-size: 24px 24px;
+  background-position: 0 0;
+  background-repeat: repeat;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* THE RADAR BEACON LOCATOR DOT SPATIAL POSITIONING */
+.map-pin-pulse {
+  position: absolute;
+  /* FORCED: Shifted right (from 71.2% to 75.5%) and down (from 55.5% to 59.5%) */
+  top: 59.5% !important; 
+  left: 67.5% !important;
+  bottom: 9.5%;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transform: translate(-50%, -50%);
+}
+
+/* The Glowing Locator Beacon Ring Mechanics */
+.map-pin-pulse {
+  position: absolute;
+  top: 55%; /* Centered around India coordinates roughly on grid alignment */
+  left: 62%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pulse-core-dot {
+  width: 8px;
+  height: 8px;
+  background: #3b82f6; /* Cyan tracking core */
+  border-radius: 50%;
+  z-index: 2;
+  box-shadow: 0 0 10px #3b82f6;
+}
+
+.pulse-ring {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  border: 2px solid #a855f7;
+  border-radius: 50%;
+  background: rgba(168, 85, 247, 0.2);
+  animation: map-radar-ping 2s infinite ease-out;
+  z-index: 1;
+}
+
+/* Tooltip Badge above the Radar Dot */
+.pin-tooltip-badge {
+  position: absolute;
+  bottom: 18px;
+  white-space: nowrap;
+  background: rgba(15, 5, 26, 0.85);
+  border: 1px solid rgba(168, 85, 247, 0.4);
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #e9d5ff;
+  letter-spacing: 0.5px;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* ========================================= */
+/* GLASS CONTACT FORM ELEMENTS                */
+/* ========================================= */
+
+.glass-contact-card {
+  background: rgba(15, 6, 25, 0.4); /* Deep space translucent purple mesh backing */
+  border: 1px solid rgba(168, 85, 247, 0.15);
+  border-radius: 20px;
+  padding: 40px;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+  
+  /* Adds that premium glowing technical grid matrix in the top right corner */
+  background-image: linear-gradient(rgba(168, 85, 247, 0.03) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(168, 85, 247, 0.03) 1px, transparent 1px);
+  background-size: 25px 25px;
+  background-position: right top;
+}
+
+.aceternity-form-engine {
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 22px;
 }
 
-.input-row {
+.form-group-block {
   display: flex;
-  gap: 18px;
+  flex-direction: column;
+  gap: 8px;
+  text-align: left;
 }
 
-@media (max-width: 768px) {
-  .input-row {
-    flex-direction: column;
-  }
+.form-group-block label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #cbd5e1;
+  letter-spacing: 0.5px;
 }
 
-.contact-form input,
-.contact-form textarea {
+.form-group-block input,
+.form-group-block textarea {
   width: 100%;
-  padding: 14px 18px;
+  padding: 14px 16px;
   border-radius: 12px;
-  border: 1px solid rgba(168, 85, 247, 0.3);
-  background: rgba(255, 255, 255, 0.05);
-  color: white;
+  border: 1px solid rgba(168, 85, 247, 0.2);
+  background: rgba(31, 16, 56, 0.25); /* Muted slate glass fields */
+  color: #ffffff;
+  font-size: 0.95rem;
   outline: none;
-  transition: 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-.contact-form input:focus,
-.contact-form textarea:focus {
-  border: 1px solid var(--purple-main);
-  box-shadow: 0 0 20px rgba(168, 85, 247, 0.6);
+/* High contrast neon reactive glow on field focus selection matrix */
+.form-group-block input:focus,
+.form-group-block textarea:focus {
+  border-color: rgba(192, 132, 252, 0.8);
+  background: rgba(31, 16, 56, 0.4);
+  box-shadow: 0 0 15px rgba(168, 85, 247, 0.25), inset 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Placeholder adjustments styling tokens */
+.form-group-block input::placeholder,
+.form-group-block textarea::placeholder {
+  color: #475569;
+}
+
+/* Form button stretch configuration rules helper overrides */
+.form-submit-wrapper .btn {
+  cursor: pointer;
+  width: 100% !important;
+}
+
+/* ========================================= */
+/* ANIMATION EFFECTS ENGINE FUNCTIONS        */
+/* ========================================= */
+
+@keyframes map-radar-ping {
+  0% { transform: scale(0.5); opacity: 1; }
+  100% { transform: scale(2.5); opacity: 0; }
+}
+
+@media (max-width: 991px) {
+  .contact-main-title { font-size: 2.6rem; }
+  .custom-contact-container { gap: 40px; }
+  .glass-contact-card { padding: 30px; }
 }
 
 /* ========================================= */
