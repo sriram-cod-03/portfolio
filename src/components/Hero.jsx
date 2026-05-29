@@ -1,48 +1,71 @@
+import React from "react";
 import { motion } from "framer-motion";
 import { Typewriter } from "react-simple-typewriter";
 import { FaArrowDown, FaGithub, FaLinkedin } from "react-icons/fa";
-import profile from "../assets/profile.jpg";
 import ScrollReveal from "./ScrollReveal";
+import { BlurText } from "./reactbits/BlurText";
 
 const Hero = () => {
   return (
     <ScrollReveal>
-    <section id="home" className="hero-section d-flex align-items-center">
-      <div className="container">
-        <div className="row align-items-center">
+      <section
+        id="home"
+        className="hero-section d-flex align-items-center justify-content-center"
+        style={{ minHeight: "100vh", background: "transparent" }}
+      >
+        <div className="container text-center d-flex flex-column align-items-center">
+          {/* TOP STATUS BADGE (Screenshot 1 Model) */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
+            className="status-badge mb-4"
+          >
+            <span className="badge-text">Code it. Automate it.</span>
+          </motion.div>
 
-          {/* LEFT CONTENT */}
-          <div className="col-lg-6">
+          {/* GREETING */}
+          <motion.p
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="hero-subtitle text-uppercase tracking-widest"
+            style={{
+              fontSize: "1.1rem",
+              letterSpacing: "4px",
+              color: "#94a3b8",
+            }}
+          >
+            Hello, I’m
+          </motion.p>
 
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="hero-subtitle"
-            >
-              Hello, I’m
-            </motion.p>
+          {/* MAIN NAME WITH REACTBITS BLURTEXT */}
+          {/* Look for this line in Hero.jsx and make sure className is added */}
+          {/* Ensure it looks simple and clean like this */}
+          <h1 className="text-white w-100 d-flex justify-content-center">
+            <BlurText
+              text="Sriram R"
+              delay={120}
+              animateBy="words"
+              direction="top"
+            />
+          </h1>
 
-            <motion.h1
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-white"
-            >
-              Sriram R
-            </motion.h1>
-
-            <motion.h4
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.8 }}
-              className="hero-typing violet-glow"
-            >
+          {/* DYNAMIC TYPING SECTION */}
+          <motion.h4
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.6 }}
+            className="hero-typing my-3 text-white"
+            style={{ fontSize: "1.8rem", fontWeight: "500" }}
+          >
+            I'm a{" "}
+            <span className="violet-glow">
               <Typewriter
                 words={[
+                  "MERN Stack Developer",
                   "Frontend Developer",
                   "Backend Developer",
-                  "MERN Stack Developer",
                   "Web Designer",
                 ]}
                 loop
@@ -52,85 +75,99 @@ const Hero = () => {
                 deleteSpeed={50}
                 delaySpeed={1500}
               />
-            </motion.h4>
+            </span>
+          </motion.h4>
 
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 1.2 }}
-              className="hero-desc"
-            >
-              I craft scalable full-stack web applications with clean UI,
-              secure backend logic, and real-world functionality.
-            </motion.p>
+          {/* CENTERED DESCRIPTION */}
+          <motion.p
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.9 }}
+            className="hero-desc-centered mx-auto mt-2 mb-4"
+          >
+            Passionate about transforming data into intelligent solutions.
+            Building AI-powered applications and crafting secure digital
+            experiences that make a difference.
+          </motion.p>
 
-            {/* BUTTON */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 1.4 }}
-              className="hero-buttons"
+          {/* BUTTONS WITH GRADIENT & GLOW */}
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1.2 }}
+            className="hero-buttons-group d-flex justify-content-center align-items-center gap-3 flex-wrap"
+          >
+            <a
+              href="/Sriram_R_Resume.pdf"
+              className="btn btn-premium-gradient d-flex align-items-center gap-2"
             >
-              <a
-                href="/Sriram_R_Resume.pdf"
-                className="btn btn-outline-light hero-btn"
+              <svg
+                stroke="currentColor"
+                fill="currentColor"
+                strokeWidth="0"
+                viewBox="0 0 24 24"
+                height="18"
+                width="18"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                Download CV
-              </a>
-            </motion.div>
+                <path d="M5 20h14v-2H5v2zM19 9h-4V3H9v6H5l7 7 7-7z"></path>
+              </svg>
+              Download Resume
+            </a>
+            <a href="#projects" className="btn btn-outline-premium">
+              View Projects &rarr;
+            </a>
+          </motion.div>
 
-            {/* SOCIAL ICONS */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 1.6 }}
-              className="hero-socials"
+          {/* SOCIAL LINKS ROW */}
+          {/* CONNECT ROW WITH SQUIRCLE SOCIAL BOXES */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.5 }}
+            className="hero-socials"
+          >
+            <span
+              className="connect-text"
+              style={{ color: "#64748b", fontWeight: "500" }}
             >
-              <a
-                href="https://github.com/sriram-cod-03"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <FaGithub />
-              </a>
-
-              <a
-                href="https://www.linkedin.com/in/sriram-r-6383ba2a9"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <FaLinkedin />
-              </a>
-            </motion.div>
-
-          </div>
-
-          {/* RIGHT IMAGE */}
-          <div className="col-lg-6 d-flex justify-content-center mt-5 mt-lg-0">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8 }}
-              className="hero-image-wrapper"
+              Collab with me
+            </span>
+            <div
+              style={{
+                width: "40px",
+                height: "1px",
+                backgroundColor: "rgba(255, 255, 255, 0.15)",
+              }}
+            ></div>
+            <a
+              href="https://github.com/sriram-cod-03"
+              target="_blank"
+              rel="noreferrer"
             >
-              <img src={profile} alt="Sriram R" />
-            </motion.div>
-          </div>
+              <FaGithub />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/sriram-r-6383ba2a9"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <FaLinkedin />
+            </a>
+          </motion.div>
 
+          {/* BOUNCING DOWN ARROW */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.8 }}
+            className="scroll-indicator-centered mt-5"
+          >
+            <FaArrowDown />
+          </motion.div>
         </div>
-
-        {/* SCROLL INDICATOR */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 2 }}
-          className="scroll-indicator text-center mt-4"
-        >
-          <FaArrowDown />
-        </motion.div>
-      </div>
-    </section>
-  </ScrollReveal>
+      </section>
+    </ScrollReveal>
   );
 };
 

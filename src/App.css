@@ -26,85 +26,360 @@
 }
 
 /* ========================================= */
-/* HERO IMAGE */
+/* HERO TEXT & HEADERS (FIXED CENTERING)     */
 /* ========================================= */
 
-.hero-image-wrapper {
+/* ========================================= */
+/* HERO MAIN TITLE (STRICT NO-WRAP CENTERING)*/
+/* ========================================= */
+
+.hero-centered-title {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 20px auto !important;
+  font-size: 5rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  background: linear-gradient(180deg, #ffffff 40%, #cbd5e1 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1.2;
+  
+  /* CRITICAL FORCES THE PHRASE TO STAY ON A SINGLE LINE WITHOUT SPLITTING THE 'r' */
+  white-space: nowrap !important; 
+}
+
+/* Hardlines the custom ReactBits array layout tracking blocks */
+.hero-centered-title .blur-text,
+.hero-centered-title p {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  flex-wrap: nowrap !important; /* Blocks letters from breaking onto a new row */
+  text-align: center !important;
+  margin: 0 auto !important;
+  width: 100% !important;
+}
+
+.hero-centered-title span {
+  display: inline-block !important;
+  text-align: center !important;
+}
+
+@media (max-width: 768px) {
+  .hero-centered-title {
+    font-size: 3rem;
+    white-space: normal !important; /* Allows native responsive handling for tiny mobile grids */
+  }
+}
+@media (max-width: 768px) {
+  .hero-centered-title {
+    font-size: 3rem;
+  }
+}
+
+/* ========================================= */
+/* STATUS BADGE (NEW SCREENSHOT 1 EFFECT)    */
+/* ========================================= */
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(168, 85, 247, 0.06);
+  border: 1px solid rgba(168, 85, 247, 0.25);
+  padding: 6px 16px;
+  border-radius: 30px;
+  backdrop-filter: blur(8px);
+}
+
+.pulse-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #22c55e;
+  border-radius: 50%;
+  box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+  animation: dot-pulse 1.6s infinite;
+}
+
+.badge-text {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--purple-light);
+  font-weight: 600;
+}
+
+/* ========================================= */
+/* ACETERNITY UI BORDER MAGIC (BOX FORMAT FIX) */
+/* ========================================= */
+
+.btn-premium-gradient,
+.btn-outline-premium {
+  position: relative;
+  padding: 14px 32px;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  font-size: 15px;
+  
+  /* FORCES PERFECT SMOOTH CORNERS ON ALL LAYERS */
+  border-radius: 16px !important; 
+  
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  text-decoration: none;
+  background: #090314; 
+  color: #ffffff !important;
+  overflow: hidden !important; 
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
+  mask-image: radial-gradient(white, black);
+  background-clip: padding-box;
+  z-index: 1;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  border: 1px solid transparent; 
+}
+
+/* THE INFINITELY ROTATING LASER STRIP */
+.btn-premium-gradient::before,
+.btn-outline-premium::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%; 
+  height: 300%;
+  z-index: -2;
+  transform: translate(-50%, -50%) rotate(0deg);
+  animation: border-magic-spin 4s linear infinite;
+}
+
+/* Color Setup 1: Download Resume */
+.btn-premium-gradient::before {
+  background: conic-gradient(
+    from 90deg at 50% 50%,
+    transparent 0%,
+    transparent 70%,
+    #a855f7 85%,  
+    #3b82f6 95%,  
+    transparent 100%
+  );
+}
+
+/* Color Setup 2: View Projects */
+.btn-outline-premium::before {
+  background: conic-gradient(
+    from 90deg at 50% 50%,
+    transparent 0%,
+    transparent 75%,
+    rgba(168, 85, 247, 0.4) 88%, 
+    #c084fc 96%,   
+    transparent 100%
+  );
+}
+
+/* THE MATTE INTERNAL SHIELD (DARK INNER MASK) */
+.btn-premium-gradient::after,
+.btn-outline-premium::after {
+  content: '';
+  position: absolute;
+  
+  /* FIXED: Adjusted to 0px with a background border simulation to hide leaks */
+  inset: 1px; 
+  background: #0d0614; 
+  
+  /* Match the outer squircle curvature smoothly */
+  border-radius: 15px !important; 
+  z-index: -1;
+  transition: background 0.3s ease;
+}
+
+/* INTERACTIVE MOUSEOVER STATES */
+.btn-premium-gradient:hover,
+.btn-outline-premium:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 0 25px rgba(168, 85, 247, 0.4);
+}
+
+.btn-premium-gradient:hover::after {
+  background: rgba(22, 10, 36, 0.95);
+}
+
+.btn-outline-premium:hover::after {
+  background: rgba(31, 12, 51, 0.9);
+}
+
+@keyframes border-magic-spin {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+/* ========================================= */
+/* DYNAMIC SQUIRCLE HOVER GLOW ACTIONS       */
+/* ========================================= */
+
+.btn-premium-gradient:hover {
+  transform: translateY(-4px) scale(1.02);
+  background: rgba(168, 85, 247, 0.15); /* Fills beautifully with space purple aura on hover */
+  border-color: rgba(192, 132, 252, 0.9); /* Stroke wakes up to maximum brightness */
+  color: #ffffff !important;
+  box-shadow: 
+    0 12px 28px rgba(168, 85, 247, 0.45), /* Strong ambient backglow spread */
+    0 0 15px rgba(168, 85, 247, 0.25);
+}
+
+.btn-outline-premium:hover {
+  transform: translateY(-4px) scale(1.02);
+  background: rgba(168, 85, 247, 0.1);
+  border-color: rgba(168, 85, 247, 0.6);
+  color: #ffffff !important; /* Text switches to bright white on interactive focus */
+  box-shadow: 
+    0 12px 25px rgba(168, 85, 247, 0.35),
+    0 0 12px rgba(168, 85, 247, 0.15);
+}
+
+.btn-premium-gradient:active,
+.btn-outline-premium:active {
+  transform: translateY(-1px) scale(0.99);
+}
+
+/* Perfect balanced button row container framework */
+.hero-buttons-group {
+  margin-top: 25px;
+  margin-bottom: 25px;
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 18px;
   width: 100%;
 }
 
-.hero-image-wrapper img {
-  width: 350px;
-  height: 350px;
-  border-radius: 50%;
-  object-fit: cover;
-  box-shadow: 0 0 40px rgba(168, 85, 247, 0.5);
-  transition: 0.4s ease;
-}
-
-.hero-image-wrapper img:hover {
-  transform: scale(1.05);
-}
-
 /* ========================================= */
-/* HERO SOCIAL ICONS */
+/* HERO SOCIAL ICONS (FIXED CENTERING)      */
 /* ========================================= */
 
 .hero-socials {
   margin-top: 25px;
   display: flex;
-  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
 }
 
 .hero-socials a {
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.05);
+  width: 40px;
+  height: 40px;
+  border-radius: 10px; /* Made slightly boxed matching screenshot 1 */
+  background: rgba(255, 255, 255, 0.03);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 20px;
-  color: white;
-  border: 1px solid rgba(168, 85, 247, 0.4);
-  transition: 0.4s ease;
+  font-size: 18px;
+  color: #94a3b8 !important;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.3s ease;
   backdrop-filter: blur(10px);
 }
 
 .hero-socials a:hover {
-  background: linear-gradient(135deg, var(--purple-main), var(--purple-light));
-  transform: translateY(-5px);
-  box-shadow: 0 0 20px rgba(168, 85, 247, 0.8);
+  background: rgba(168, 85, 247, 0.1);
+  border-color: rgba(168, 85, 247, 0.4);
+  color: white !important;
+  transform: translateY(-2px);
+}
+
+/* ========================================= */
+/* ANIMATIONS DEFINITIONS                    */
+/* ========================================= */
+
+.scroll-indicator-centered {
+  color: var(--purple-main);
+  font-size: 1.5rem;
+  animation: bounce-slow 2s infinite;
+}
+
+@keyframes dot-pulse {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
+  70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(34, 197, 94, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+}
+
+@keyframes bounce-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(8px); }
 }
 
 /* ========================================= */
 /* BUTTONS */
 /* ========================================= */
 
-.btn-live,
-.btn-premium,
-.btn-outline-premium,
-.btn-glow {
-  padding: 12px 20px;
-  border-radius: 12px;
-  border: none;
-  background: linear-gradient(135deg, var(--purple-main), var(--purple-light));
-  color: white;
+/* Primary Button: Download Resume */
+.btn-premium-gradient {
+  background: transparent;
+  color: #c084fc !important; /* Soft violet text color */
+  padding: 12px 32px;
+  border-radius: 12px; /* Matching unga screenshot border radius */
   font-weight: 600;
-  cursor: pointer;
-  transition: 0.3s ease;
+  letter-spacing: 0.5px;
+  border: 1px solid rgba(168, 85, 247, 0.6); /* Solid violet thin border */
+  box-shadow: 0 0 15px rgba(168, 85, 247, 0.15); /* Subtly cosmic ambient glow */
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
 }
 
-.btn-live:hover,
-.btn-premium:hover,
-.btn-outline-premium:hover,
-.btn-glow:hover {
+.btn-premium-gradient:hover {
   transform: translateY(-3px);
-  box-shadow: 0 0 25px rgba(168, 85, 247, 0.7);
+  background: rgba(168, 85, 247, 0.1); /* Soft violet background reveal on hover */
+  color: #ffffff !important; /* Text switches to pure crisp white */
+  border-color: #a855f7;
+  box-shadow: 0 0 25px rgba(168, 85, 247, 0.5), 0 4px 15px rgba(168, 85, 247, 0.3);
+}
+
+/* Secondary Button: View Projects */
+.btn-outline-premium {
+  background: transparent;
+  color: #d8b4fe !important; /* Muted violet text matching the lineup */
+  padding: 12px 32px;
+  border-radius: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  border: 1px solid rgba(192, 132, 252, 0.35); /* Lighter translucent purple outline */
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-outline-premium:hover {
+  transform: translateY(-3px);
+  background: rgba(192, 132, 252, 0.08);
+  border-color: #c084fc;
+  color: #ffffff !important;
+  box-shadow: 0 0 20px rgba(192, 132, 252, 0.3);
+}
+
+/* Container Spacing Elements */
+.hero-buttons-group {
+  margin-top: 20px;
+  margin-bottom: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
 }
 
 /* ========================================= */
@@ -239,28 +514,92 @@
 }
 
 /* ========================================= */
-/* SKILLS */
+/* CATEGORIZED SKILLS SECTIONS GRID (FIXED)  */
 /* ========================================= */
+
+.category-title {
+  position: relative;
+  padding-left: 14px;
+  margin-top: 35px;
+}
+
+/* Stylish vertical neon line indicators next to section category headings */
+.category-title::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 15%;
+  height: 70%;
+  width: 3px;
+  background-color: var(--purple-main);
+  border-radius: 4px;
+  box-shadow: 0 0 12px var(--purple-main);
+}
 
 .skills-grid {
   display: grid;
+  /* MERGED: Keeping your auto-fit grid structure logic with absolute sizing parameters */
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 30px;
-  margin-top: 40px;
+  gap: 30px; /* Your exact structural gap setup */
+  margin-top: 25px;
+  margin-bottom: 40px;
 }
 
-.skill-card {
-  padding: 25px;
-  text-align: center;
+/* Enhanced Squircle Grid Cards matching your core glassmorphic parameters */
+.glass-card.skill-card {
+  background: rgba(31, 0, 51, 0.25);
+  border: 1px solid rgba(168, 85, 247, 0.15);
+  border-radius: 16px; /* High-fidelity 16px Squircle shape alignment */
+  padding: 25px; /* Your explicit padding parameter rule */
+  text-align: center; /* Your clean text alignment layout */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.glass-card.skill-card:hover {
+  transform: translateY(-5px) scale(1.03);
+  border-color: rgba(168, 85, 247, 0.5);
+  box-shadow: 0 12px 25px rgba(168, 85, 247, 0.3);
 }
 
 .skill-icon {
-  font-size: 45px;
-  margin-bottom: 15px;
+  font-size: 45px; /* Your exact micro-font scale rule */
+  margin-bottom: 15px; /* Your bottom line space offset constraints */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
 }
 
-.skill-card p {
-  font-weight: 500;
+.glass-card.skill-card:hover .skill-icon {
+  transform: scale(1.1) rotate(2deg); /* Added a slight kinetic tilt when mouse hovers over it */
+}
+
+/* Skill title text parameters formatting rules mapping */
+.skill-card p, 
+.skill-name {
+  font-weight: 500; /* Your exact text weight token */
+  color: #ffffff;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+
+/* Smooth responsive container scaling tweaks for micro viewport frameworks */
+@media (max-width: 576px) {
+  .skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 15px;
+  }
+  .skill-icon {
+    font-size: 38px;
+  }
 }
 
 /* ========================================= */
@@ -368,3 +707,5 @@ footer {
     0 0 40px #9333ea,
     0 0 60px #7e22ce;
 }
+
+
