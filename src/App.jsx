@@ -12,6 +12,7 @@ import Certificates from "./components/Certificates";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import { SpaceBackground } from "./components/SpaceBackground"; // Space Background Import
+import About from "./components/About";
 
 /* Scroll Reveal */
 function useScrollReveal() {
@@ -47,6 +48,7 @@ function App() {
         <Navbar />
         <main>
           <section className="reveal"><Hero /></section>
+          <section className="reveal"><About/></section>
           <section className="reveal"><Overview /></section>
           <section className="reveal"><Skills /></section>
           <section className="reveal"><Projects /></section>

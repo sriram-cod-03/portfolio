@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import { Typewriter } from "react-simple-typewriter";
 import { FaArrowDown, FaGithub, FaLinkedin } from "react-icons/fa";
 import ScrollReveal from "./ScrollReveal";
-import { BlurText } from "./reactbits/BlurText";
 
 const Hero = () => {
   return (
@@ -14,7 +13,8 @@ const Hero = () => {
         style={{ minHeight: "100vh", background: "transparent" }}
       >
         <div className="container text-center d-flex flex-column align-items-center">
-          {/* TOP STATUS BADGE (Screenshot 1 Model) */}
+          
+          {/* TOP STATUS BADGE */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -39,16 +39,16 @@ const Hero = () => {
             Hello, I’m
           </motion.p>
 
-          {/* MAIN NAME WITH REACTBITS BLURTEXT */}
-          {/* Look for this line in Hero.jsx and make sure className is added */}
-          {/* Ensure it looks simple and clean like this */}
-          <h1 className="text-white w-100 d-flex justify-content-center">
-            <BlurText
-              text="Sriram R"
-              delay={120}
-              animateBy="words"
-              direction="top"
-            />
+          {/* SOLVED: MAIN NAME WITH INTEGRATED INTERACTIVE HOVER TRACKING */}
+          <h1 className="hero-centered-title">
+            {"Sriram R".split("").map((letter, index) => (
+              <span 
+                key={index} 
+                className={letter === " " ? "space-char" : "interactive-letter"}
+              >
+                {letter}
+              </span>
+            ))}
           </h1>
 
           {/* DYNAMIC TYPING SECTION */}
@@ -56,7 +56,7 @@ const Hero = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6 }}
-            className="hero-typing my-3 text-white"
+            className="hero-typing my-3 text-grey"
             style={{ fontSize: "1.8rem", fontWeight: "500" }}
           >
             I'm a{" "}
@@ -78,12 +78,12 @@ const Hero = () => {
             </span>
           </motion.h4>
 
-          {/* CENTERED DESCRIPTION */}
+          {/* CENTERED DESCRIPTION (UPGRADED SIZE & ALIGNMENT) */}
           <motion.p
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.9 }}
-            className="hero-desc-centered mx-auto mt-2 mb-4"
+            className="hero-desc-centered mx-auto mt-2 mb-4 hero-description-text"
           >
             Passionate about transforming data into intelligent solutions.
             Building AI-powered applications and crafting secure digital
@@ -120,12 +120,11 @@ const Hero = () => {
           </motion.div>
 
           {/* SOCIAL LINKS ROW */}
-          {/* CONNECT ROW WITH SQUIRCLE SOCIAL BOXES */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.5 }}
-            className="hero-socials"
+            className="hero-socials d-flex align-items-center gap-3 mt-3"
           >
             <span
               className="connect-text"
@@ -144,6 +143,7 @@ const Hero = () => {
               href="https://github.com/sriram-cod-03"
               target="_blank"
               rel="noreferrer"
+              className="social-icon-link"
             >
               <FaGithub />
             </a>
@@ -151,6 +151,7 @@ const Hero = () => {
               href="https://www.linkedin.com/in/sriram-r-6383ba2a9"
               target="_blank"
               rel="noreferrer"
+              className="social-icon-link"
             >
               <FaLinkedin />
             </a>

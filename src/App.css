@@ -1,5 +1,5 @@
 /* ========================================= */
-/* ROOT VARIABLES */
+/* ROOT VARIABLES                            */
 /* ========================================= */
 
 :root {
@@ -10,7 +10,7 @@
 }
 
 /* ========================================= */
-/* NAVBAR */
+/* NAVBAR                                    */
 /* ========================================= */
 
 .navbar {
@@ -29,10 +29,6 @@
 /* HERO TEXT & HEADERS (FIXED CENTERING)     */
 /* ========================================= */
 
-/* ========================================= */
-/* HERO MAIN TITLE (STRICT NO-WRAP CENTERING)*/
-/* ========================================= */
-
 .hero-centered-title {
   display: flex !important;
   justify-content: center !important;
@@ -40,9 +36,9 @@
   text-align: center !important;
   width: 100% !important;
   max-width: 100% !important;
-  margin: 20px auto !important;
-  font-size: 5rem;
-  font-weight: 800;
+  margin: 25px auto !important;
+  font-size: 5.5rem; 
+  font-weight: 900;
   letter-spacing: -0.02em;
   background: linear-gradient(180deg, #ffffff 40%, #cbd5e1 100%);
   -webkit-background-clip: text;
@@ -50,7 +46,7 @@
   -webkit-text-fill-color: transparent;
   line-height: 1.2;
   
-  /* CRITICAL FORCES THE PHRASE TO STAY ON A SINGLE LINE WITHOUT SPLITTING THE 'r' */
+  /* CRITICAL FORCES THE PHRASE TO STAY ON A SINGLE LINE WITHOUT SPLITTING */
   white-space: nowrap !important; 
 }
 
@@ -66,25 +62,381 @@
   width: 100% !important;
 }
 
-.hero-centered-title span {
+/* ========================================= */
+/* PREMIUM VIOLET HOVER GLOW INTERACTION     */
+/* ========================================= */
+
+/* Individual target character cell setup */
+.hero-centered-title .interactive-letter {
   display: inline-block !important;
   text-align: center !important;
+  color: #ffffff; /* Default clean bright white */
+  cursor: default;
+  
+  /* Buttery smooth fade-out back to white over 400ms when mouse leaves */
+  transition: color 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), 
+              transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
+              text-shadow 0.4s ease !important;
 }
 
-@media (max-width: 768px) {
-  .hero-centered-title {
-    font-size: 3rem;
-    white-space: normal !important; /* Allows native responsive handling for tiny mobile grids */
-  }
+/* Violet flash aura when cursor slides directly over the character span */
+.hero-centered-title .interactive-letter:hover {
+  color: #c084fc !important; 
+  -webkit-text-fill-color: #c084fc !important; /* Crushes clip gradient bounds instantly */
+  
+  /* High-fidelity cosmic neon core glow */
+  text-shadow: 0 0 22px #a855f7, 0 0 45px rgba(168, 85, 247, 0.6) !important;
+  transform: translateY(-6px) scale(1.08) !important; /* Premium physical lift layout reaction */
+  
+  /* Snaps color immediately without animation latency under mouse pointer */
+  transition: all 0s !important;
 }
-@media (max-width: 768px) {
-  .hero-centered-title {
-    font-size: 3rem;
+
+/* Preserves perfect text width formatting for layout empty space breaks */
+.hero-centered-title .space-char {
+  display: inline-block !important;
+  width: 0.26em !important;
+}
+
+/* HERO DESCRIPTION TEXT FOCUS STYLES */
+.hero-description-text {
+  /* INCREASES THE SIZE: Making it highly visible and premium */
+  font-size: 1.28rem !important; 
+  
+  /* PERFECTLY CENTERS THE TEXT CELLS */
+  text-align: center !important;
+  
+  /* LINE HEIGHT: Spaced beautifully so text lines don't choke */
+  line-height: 1.85 !important;
+  
+  /* MUTED COSMIC COLOR */
+  color: #cbd5e1 !important;
+  
+  /* BOUNDS CONTROLLING: Restricts max-width so text wraps elegantly in the center */
+  max-width: 780px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  
+  /* Adds a healthy gap before your buttons row */
+  margin-bottom: 50px !important; 
+  font-weight: 400;
+}
+
+/* ========================================= */
+/* ACETERNITY UI AURORA ABOUT ME ENGINE      */
+/* ========================================= */
+
+.about-aurora-section {
+  position: relative;
+  width: 100%;
+  padding: 140px 20px;
+  
+  /* SOLVED: Complete transparency allows your background starfield component to shine straight through! */
+  background: transparent !important;
+  background-color: transparent !important;
+  
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.custom-about-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 70px;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 5; /* Keeps text blocks sitting perfectly over the background elements */
+}
+
+.about-text-side,
+.about-graphic-side {
+  flex: 1;
+  min-width: 320px;
+}
+
+.about-section-title {
+  font-size: 3.2rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+}
+
+.about-main-para {
+  font-size: 1.25rem;
+  line-height: 1.75;
+  color: #e2e8f0;
+  font-weight: 400;
+  text-align: left;
+}
+
+.about-sub-para {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #94a3b8;
+  text-align: left;
+}
+
+.violet-text-highlight {
+  color: #c084fc;
+  font-weight: 600;
+  text-shadow: 0 0 15px rgba(168, 85, 247, 0.3);
+}
+
+/* ========================================= */
+/* THE CONTAINER FOR THE GLOW AND WAVE       */
+/* ========================================= */
+.aurora-ray-beam {
+  position: absolute;
+  bottom: -15%; 
+  left: -5%;
+  width: 110%;
+  height: 400px;
+  z-index: 1; 
+  pointer-events: none;
+  
+  /* HIGH-FIDELITY VECTOR WAVE PATH ELEMENT */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='none' stroke='url(%23gradient)' stroke-width='12' stroke-linecap='round' d='M0,160C288,224,576,96,864,128C1152,160,1296,256,1440,192'/%3E%3Cdefs%3E%3ClinearGradient id='gradient' x1='0%25' y1='0%25' x2='100%25' y2='0%25'%3E%3Cstop offset='0%25' stop-color='rgba(59, 130, 246, 0)' /%3E%3Cstop offset='20%25' stop-color='%233b82f6' /%3E%3Cstop offset='45%25' stop-color='%23ffffff' /%3E%3Cstop offset='55%25' stop-color='%23a855f7' /%3E%3Cstop offset='75%25' stop-color='%23eab308' /%3E%3Cstop offset='100%25' stop-color='rgba(234, 179, 8, 0)' /%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E");
+  
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  
+  filter: drop-shadow(0 0 15px rgba(168, 85, 247, 0.6)) 
+          drop-shadow(0 0 30px rgba(59, 130, 246, 0.4));
+          
+  animation: aurora-wave-sway 8s ease-in-out infinite alternate;
+}
+
+/* ========================================= */
+/* AMBIENT REFLECTION BLUR AND DARK VIOLET MASK */
+/* ========================================= */
+.aurora-ray-beam::before {
+  content: '';
+  position: absolute;
+  inset: -100px 0;
+  
+  /* FIXED: The dark cosmic ambient gradient mask now sits inside the ray container, 
+     blending beautifully without blocking your background star elements! */
+  background: radial-gradient(circle at 50% 100%, rgba(18, 5, 36, 0.65) 0%, transparent 70%);
+  
+  filter: blur(35px); 
+  z-index: -1;
+}
+
+/* ========================================= */
+/* STATS COMPONENT SYSTEM                    */
+/* ========================================= */
+
+.about-stats-row {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+.stat-box {
+  text-align: left;
+}
+
+.stat-box h3 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0;
+  background: linear-gradient(180deg, #ffffff 30%, #a855f7 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.stat-box p {
+  font-size: 0.95rem;
+  color: #64748b;
+  margin-top: 4px;
+  font-weight: 500;
+}
+
+/* ========================================= */
+/* THE CONTAINER FOR THE GLOW AND WAVE       */
+/* ========================================= */
+/* ========================================= */
+/* THE CONTAINER FOR THE GLOW AND WAVE       */
+/* ========================================= */
+.aurora-ray-beam {
+  position: absolute;
+  bottom: -15%; /* Positioned deeply along the lower section break */
+  left: -5%;
+  width: 110%;
+  height: 400px;
+  z-index: 1; 
+  pointer-events: none;
+  
+  /* HIGH-FIDELITY VECTOR WAVE: Uses a custom SVG path to draw the exact fluid wave curve from the video */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='none' stroke='url(%23gradient)' stroke-width='12' stroke-linecap='round' d='M0,160C288,224,576,96,864,128C1152,160,1296,256,1440,192'/%3E%3Cdefs%3E%3ClinearGradient id='gradient' x1='0%25' y1='0%25' x2='100%25' y2='0%25'%3E%3Cstop offset='0%25' stop-color='rgba(59, 130, 246, 0)' /%3E%3Cstop offset='20%25' stop-color='%233b82f6' /%3E%3Cstop offset='45%25' stop-color='%23ffffff' /%3E%3Cstop offset='55%25' stop-color='%23a855f7' /%3E%3Cstop offset='75%25' stop-color='%23eab308' /%3E%3Cstop offset='100%25' stop-color='rgba(234, 179, 8, 0)' /%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E");
+  
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  
+  /* Adds a pristine local emission bloom to simulate neon lighting gas */
+  filter: drop-shadow(0 0 15px rgba(168, 85, 247, 0.6)) 
+          drop-shadow(0 0 30px rgba(59, 130, 246, 0.4));
+          
+  animation: aurora-wave-sway 8s ease-in-out infinite alternate;
+}
+
+/* ========================================= */
+/* AMBIENT UNDERLYING REFLECTION BLUR        */
+/* ========================================= */
+.aurora-ray-beam::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: inherit; /* Copies the exact same curve path shape */
+  
+  /* Heavy blur creates the ambient background light bleed stretching behind the card elements */
+  filter: blur(45px); 
+  opacity: 0.6;
+  z-index: -1;
+}
+
+/* ========================================= */
+/* KINETIC WAVE SWAY ANIMATION ENGINE        */
+/* ========================================= */
+@keyframes aurora-wave-sway {
+  0% {
+    transform: translateY(0) scaleY(1) rotate(-1deg);
+  }
+  50% {
+    /* Simulates the rolling fluid movement from your screen recording */
+    transform: translateY(-15px) scaleY(1.08) rotate(1deg);
+    filter: drop-shadow(0 0 22px rgba(168, 85, 247, 0.8)) 
+            drop-shadow(0 0 40px rgba(59, 130, 246, 0.5));
+  }
+  100% {
+    transform: translateY(10px) scaleY(0.95) rotate(-2deg);
   }
 }
 
 /* ========================================= */
-/* STATUS BADGE (NEW SCREENSHOT 1 EFFECT)    */
+/* THE SHARP HIGH-INTENSITY NEON RAY STRIP    */
+/* ========================================= */
+.aurora-ray-beam::before {
+  content: '';
+  position: absolute;
+  top: 0; 
+  left: 0;
+  width: 100%;
+  height: 6px; 
+  
+  /* HIGH CONTRAST SPECTRUM TRACK (Matches Screen Recording) */
+  background: linear-gradient(
+    90deg,
+    rgba(59, 130, 246, 0) 10%,
+    rgba(59, 130, 246, 1) 25%,   
+    rgba(255, 255, 255, 1) 45%,  
+    rgba(168, 85, 247, 1) 55%,   
+    rgba(234, 179, 8, 1) 75%,    
+    rgba(34, 197, 94, 0) 90%
+  );
+  
+  filter: blur(3px); 
+  opacity: 0.9;
+}
+
+@keyframes aurora-wave-drift {
+  0% {
+    transform: rotate(-4deg) translateY(0) scaleY(1);
+  }
+  50% {
+    transform: rotate(-2deg) translateY(-20px) scaleY(1.1);
+  }
+  100% {
+    transform: rotate(-5deg) translateY(10px) scaleY(0.95);
+  }
+}
+
+/* ========================================= */
+/* PREMIUM RIGHT-SIDE INTERACTIVE CARD       */
+/* ========================================= */
+
+.premium-aurora-card {
+  position: relative;
+  
+  /* SOLVED: Dropped background opacity to 0.12 to let the neon wave shine through cleanly */
+  background: rgba(255, 255, 255, 0.02) !important; 
+  
+  /* FIXED: Adjusted border opacity so the card shape stays distinct but elegant */
+  border: 1px solid rgba(168, 85, 247, 0.25) !important;
+  border-radius: 24px;
+  padding: 50px 40px;
+  height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  /* SOLVED: Reduced blur radius from 20px to 8px to fix the opaque masking effect */
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+  
+  /* Soft ambient drop shadow */
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3) !important;
+  overflow: hidden;
+}
+
+/* Digital Grid Accent Background Matrix Adjustment */
+.premium-aurora-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(rgba(168, 85, 247, 0.04) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(168, 85, 247, 0.04) 1px, transparent 1px);
+  background-size: 30px 30px;
+  opacity: 0.5; /* Muted slightly to emphasize transparency */
+  z-index: 1;
+}
+
+.tech-stack-display {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  position: relative;
+  z-index: 2; /* Keeps tags crisp and clickable above the background layers */
+}
+
+.tech-tag {
+  background: rgba(31, 16, 56, 0.4);
+  border: 1px solid rgba(168, 85, 247, 0.25);
+  padding: 8px 18px;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #e9d5ff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.premium-aurora-card:hover .tech-tag {
+  border-color: rgba(168, 85, 247, 0.5);
+  box-shadow: 0 0 15px rgba(168, 85, 247, 0.25);
+}
+
+.card-glow-reflection {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  background: #a855f7;
+  filter: blur(80px);
+  opacity: 0.25;
+  top: -20px;
+  right: -20px;
+  pointer-events: none;
+}
+
+/* ========================================= */
+/* BUTTONS & BADGES                          */
 /* ========================================= */
 
 .status-badge {
@@ -116,7 +468,7 @@
 }
 
 /* ========================================= */
-/* ACETERNITY UI BORDER MAGIC (BOX FORMAT FIX) */
+/* ACETERNITY UI BORDER MAGIC BUTTON ENGINE  */
 /* ========================================= */
 
 .btn-premium-gradient,
@@ -127,8 +479,8 @@
   letter-spacing: 0.8px;
   font-size: 15px;
   
-  /* FORCES PERFECT SMOOTH CORNERS ON ALL LAYERS */
-  border-radius: 16px !important; 
+  /* FORCES PERFECT SMOOTH CORNERS ON ALL DESIGN LAYERS */
+  border-radius: 12px !important; 
   
   display: inline-flex;
   align-items: center;
@@ -138,15 +490,17 @@
   background: #090314; 
   color: #ffffff !important;
   overflow: hidden !important; 
+  
+  /* Mask layers prevent the rotating border laser from leaking outside the corners */
   -webkit-mask-image: -webkit-radial-gradient(white, black);
   mask-image: radial-gradient(white, black);
   background-clip: padding-box;
   z-index: 1;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-  border: 1px solid transparent; 
+  border: 1px solid transparent !important; 
 }
 
-/* THE INFINITELY ROTATING LASER STRIP */
+/* THE INFINITELY ROTATING NEON LASER BEAM STRIP */
 .btn-premium-gradient::before,
 .btn-outline-premium::before {
   content: '';
@@ -160,7 +514,7 @@
   animation: border-magic-spin 4s linear infinite;
 }
 
-/* Color Setup 1: Download Resume */
+/* Conic Gradient Color Tracking for 'Download Resume' Button */
 .btn-premium-gradient::before {
   background: conic-gradient(
     from 90deg at 50% 50%,
@@ -169,10 +523,10 @@
     #a855f7 85%,  
     #3b82f6 95%,  
     transparent 100%
-  );
+  ) !important;
 }
 
-/* Color Setup 2: View Projects */
+/* Conic Gradient Color Tracking for 'View Projects' Button */
 .btn-outline-premium::before {
   background: conic-gradient(
     from 90deg at 50% 50%,
@@ -181,40 +535,56 @@
     rgba(168, 85, 247, 0.4) 88%, 
     #c084fc 96%,   
     transparent 100%
-  );
+  ) !important;
 }
 
-/* THE MATTE INTERNAL SHIELD (DARK INNER MASK) */
+/* THE INNER DARK MASK CORE SHIELD */
 .btn-premium-gradient::after,
 .btn-outline-premium::after {
   content: '';
   position: absolute;
-  
-  /* FIXED: Adjusted to 0px with a background border simulation to hide leaks */
   inset: 1px; 
-  background: #0d0614; 
-  
-  /* Match the outer squircle curvature smoothly */
-  border-radius: 15px !important; 
+  background: #0d0614 !important; /* Rich deep matte internal shield */
+  border-radius: 11px !important; /* Aligns smoothly right inside the 12px radius outer layer */
   z-index: -1;
   transition: background 0.3s ease;
 }
 
-/* INTERACTIVE MOUSEOVER STATES */
+/* ========================================= */
+/* DYNAMIC MOUSEOVER HOVER ENHANCEMENTS      */
+/* ========================================= */
+
 .btn-premium-gradient:hover,
 .btn-outline-premium:hover {
   transform: translateY(-4px) scale(1.02);
-  box-shadow: 0 0 25px rgba(168, 85, 247, 0.4);
 }
 
 .btn-premium-gradient:hover::after {
-  background: rgba(22, 10, 36, 0.95);
+  background: rgba(22, 10, 36, 0.9) !important; /* Illuminates the inner shield on hover */
 }
 
 .btn-outline-premium:hover::after {
-  background: rgba(31, 12, 51, 0.9);
+  background: rgba(31, 12, 51, 0.85) !important;
 }
 
+.btn-premium-gradient:hover {
+  box-shadow: 0 12px 28px rgba(168, 85, 247, 0.4), 
+              0 0 15px rgba(168, 85, 247, 0.2) !important;
+  color: #ffffff !important;
+}
+
+.btn-outline-premium:hover {
+  box-shadow: 0 12px 25px rgba(168, 85, 247, 0.3), 
+              0 0 12px rgba(168, 85, 247, 0.1) !important;
+  color: #ffffff !important;
+}
+
+.btn-premium-gradient:active,
+.btn-outline-premium:active {
+  transform: translateY(-1px) scale(0.99);
+}
+
+/* THE SPIN MATRIX */
 @keyframes border-magic-spin {
   from {
     transform: translate(-50%, -50%) rotate(0deg);
@@ -224,155 +594,6 @@
   }
 }
 
-/* ========================================= */
-/* DYNAMIC SQUIRCLE HOVER GLOW ACTIONS       */
-/* ========================================= */
-
-.btn-premium-gradient:hover {
-  transform: translateY(-4px) scale(1.02);
-  background: rgba(168, 85, 247, 0.15); /* Fills beautifully with space purple aura on hover */
-  border-color: rgba(192, 132, 252, 0.9); /* Stroke wakes up to maximum brightness */
-  color: #ffffff !important;
-  box-shadow: 
-    0 12px 28px rgba(168, 85, 247, 0.45), /* Strong ambient backglow spread */
-    0 0 15px rgba(168, 85, 247, 0.25);
-}
-
-.btn-outline-premium:hover {
-  transform: translateY(-4px) scale(1.02);
-  background: rgba(168, 85, 247, 0.1);
-  border-color: rgba(168, 85, 247, 0.6);
-  color: #ffffff !important; /* Text switches to bright white on interactive focus */
-  box-shadow: 
-    0 12px 25px rgba(168, 85, 247, 0.35),
-    0 0 12px rgba(168, 85, 247, 0.15);
-}
-
-.btn-premium-gradient:active,
-.btn-outline-premium:active {
-  transform: translateY(-1px) scale(0.99);
-}
-
-/* Perfect balanced button row container framework */
-.hero-buttons-group {
-  margin-top: 25px;
-  margin-bottom: 25px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 18px;
-  width: 100%;
-}
-
-/* ========================================= */
-/* HERO SOCIAL ICONS (FIXED CENTERING)      */
-/* ========================================= */
-
-.hero-socials {
-  margin-top: 25px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 15px;
-}
-
-.hero-socials a {
-  width: 40px;
-  height: 40px;
-  border-radius: 10px; /* Made slightly boxed matching screenshot 1 */
-  background: rgba(255, 255, 255, 0.03);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 18px;
-  color: #94a3b8 !important;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  transition: all 0.3s ease;
-  backdrop-filter: blur(10px);
-}
-
-.hero-socials a:hover {
-  background: rgba(168, 85, 247, 0.1);
-  border-color: rgba(168, 85, 247, 0.4);
-  color: white !important;
-  transform: translateY(-2px);
-}
-
-/* ========================================= */
-/* ANIMATIONS DEFINITIONS                    */
-/* ========================================= */
-
-.scroll-indicator-centered {
-  color: var(--purple-main);
-  font-size: 1.5rem;
-  animation: bounce-slow 2s infinite;
-}
-
-@keyframes dot-pulse {
-  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
-  70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(34, 197, 94, 0); }
-  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
-}
-
-@keyframes bounce-slow {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(8px); }
-}
-
-/* ========================================= */
-/* BUTTONS */
-/* ========================================= */
-
-/* Primary Button: Download Resume */
-.btn-premium-gradient {
-  background: transparent;
-  color: #c084fc !important; /* Soft violet text color */
-  padding: 12px 32px;
-  border-radius: 12px; /* Matching unga screenshot border radius */
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  border: 1px solid rgba(168, 85, 247, 0.6); /* Solid violet thin border */
-  box-shadow: 0 0 15px rgba(168, 85, 247, 0.15); /* Subtly cosmic ambient glow */
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.btn-premium-gradient:hover {
-  transform: translateY(-3px);
-  background: rgba(168, 85, 247, 0.1); /* Soft violet background reveal on hover */
-  color: #ffffff !important; /* Text switches to pure crisp white */
-  border-color: #a855f7;
-  box-shadow: 0 0 25px rgba(168, 85, 247, 0.5), 0 4px 15px rgba(168, 85, 247, 0.3);
-}
-
-/* Secondary Button: View Projects */
-.btn-outline-premium {
-  background: transparent;
-  color: #d8b4fe !important; /* Muted violet text matching the lineup */
-  padding: 12px 32px;
-  border-radius: 12px;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  border: 1px solid rgba(192, 132, 252, 0.35); /* Lighter translucent purple outline */
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.btn-outline-premium:hover {
-  transform: translateY(-3px);
-  background: rgba(192, 132, 252, 0.08);
-  border-color: #c084fc;
-  color: #ffffff !important;
-  box-shadow: 0 0 20px rgba(192, 132, 252, 0.3);
-}
-
-/* Container Spacing Elements */
 .hero-buttons-group {
   margin-top: 20px;
   margin-bottom: 25px;
@@ -381,10 +602,6 @@
   align-items: center;
   gap: 15px;
 }
-
-/* ========================================= */
-/* VISIT PROJECT BUTTON (Modern Dark Style) */
-/* ========================================= */
 
 .btn-visit {
   display: inline-flex;
@@ -409,7 +626,7 @@
 }
 
 /* ========================================= */
-/* PROJECT CARDS */
+/* PROJECT CARDS                             */
 /* ========================================= */
 
 .modern-project-card {
@@ -465,10 +682,6 @@
   flex-grow: 1;
 }
 
-/* ========================================= */
-/* GITHUB CORNER ICON */
-/* ========================================= */
-
 .github-corner {
   position: absolute;
   top: 15px;
@@ -494,7 +707,7 @@
 }
 
 /* ========================================= */
-/* GLASS UNIVERSAL CARD */
+/* GLASS CARD SYSTEM                         */
 /* ========================================= */
 
 .glass-card {
@@ -514,7 +727,7 @@
 }
 
 /* ========================================= */
-/* CATEGORIZED SKILLS SECTIONS GRID (FIXED)  */
+/* CATEGORIZED SKILLS SECTIONS GRID          */
 /* ========================================= */
 
 .category-title {
@@ -523,7 +736,6 @@
   margin-top: 35px;
 }
 
-/* Stylish vertical neon line indicators next to section category headings */
 .category-title::before {
   content: '';
   position: absolute;
@@ -538,20 +750,18 @@
 
 .skills-grid {
   display: grid;
-  /* MERGED: Keeping your auto-fit grid structure logic with absolute sizing parameters */
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 30px; /* Your exact structural gap setup */
+  gap: 30px; 
   margin-top: 25px;
   margin-bottom: 40px;
 }
 
-/* Enhanced Squircle Grid Cards matching your core glassmorphic parameters */
 .glass-card.skill-card {
   background: rgba(31, 0, 51, 0.25);
   border: 1px solid rgba(168, 85, 247, 0.15);
-  border-radius: 16px; /* High-fidelity 16px Squircle shape alignment */
-  padding: 25px; /* Your explicit padding parameter rule */
-  text-align: center; /* Your clean text alignment layout */
+  border-radius: 16px; 
+  padding: 25px; 
+  text-align: center; 
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -569,8 +779,8 @@
 }
 
 .skill-icon {
-  font-size: 45px; /* Your exact micro-font scale rule */
-  margin-bottom: 15px; /* Your bottom line space offset constraints */
+  font-size: 45px; 
+  margin-bottom: 15px; 
   display: flex;
   align-items: center;
   justify-content: center;
@@ -578,32 +788,20 @@
 }
 
 .glass-card.skill-card:hover .skill-icon {
-  transform: scale(1.1) rotate(2deg); /* Added a slight kinetic tilt when mouse hovers over it */
+  transform: scale(1.1) rotate(2deg); 
 }
 
-/* Skill title text parameters formatting rules mapping */
 .skill-card p, 
 .skill-name {
-  font-weight: 500; /* Your exact text weight token */
+  font-weight: 500; 
   color: #ffffff;
   font-size: 1rem;
   letter-spacing: 0.5px;
   margin: 0;
 }
 
-/* Smooth responsive container scaling tweaks for micro viewport frameworks */
-@media (max-width: 576px) {
-  .skills-grid {
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-    gap: 15px;
-  }
-  .skill-icon {
-    font-size: 38px;
-  }
-}
-
 /* ========================================= */
-/* ACETERNITY UI GLASS CONTACT SECTION       */
+/* CONTACT SECTION                           */
 /* ========================================= */
 
 .contact-section {
@@ -628,7 +826,6 @@
   min-width: 320px;
 }
 
-/* Header Floating Icon */
 .contact-icon-wrapper {
   width: 46px;
   height: 46px;
@@ -659,7 +856,6 @@
   max-width: 480px;
 }
 
-/* Meta Spacing Row */
 .contact-meta-row {
   display: flex;
   align-items: center;
@@ -675,36 +871,26 @@
 }
 
 /* ========================================= */
-/* MAP VISUAL & PULSING TARGET BEACON        */
+/* PREMIUM WORLD MAP GEOLOCATION ENGINE      */
 /* ========================================= */
 
 .world-map-wrapper {
   position: relative;
   width: 100%;
-  height: 240px;
+  height: 280px;
   margin-top: 30px;
 }
 
-/* Simulated dark minimalist dot grid matrix background mapping */
-  /* ========================================= */
-  /* ULTRA-CLEAN SVG SPACE MAP GRAPHIC ENGINE  */
-  /* ========================================= */
-
-/* ========================================= */
-/* PREMIUM WORLD MAP CONTAINER INTERFACE     */
-/* ========================================= */
-
 .map-base-graphic {
   width: 100%;
-  height: 280px; /* FIXED: Explicit height gives your map asset room to display */
+  height: 280px; 
   border-radius: 16px;
   position: relative;
   border: 1px solid rgba(168, 85, 247, 0.15);
   box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.6);
   overflow: hidden;
-  background-color: #0d0614; /* Deep space matte base backdrop */
+  background-color: #0d0614; 
 
-  /* CLEANED UP: Only keeping your futuristic digital dot matrix overlay pattern */
   background-image: radial-gradient(rgba(168, 85, 247, 0.12) 1.2px, transparent 1.2px);
   background-size: 24px 24px;
   background-position: 0 0;
@@ -715,14 +901,12 @@
   justify-content: center;
 }
 
-/* THE RADAR BEACON LOCATOR DOT SPATIAL POSITIONING */
+/* FIXED CONSOLIDATION: SINGLE SOURCE OF TRUTH COORDINATE SYSTEM FOR INDIA */
 .map-pin-pulse {
   position: absolute;
-  /* FORCED: Shifted right (from 71.2% to 75.5%) and down (from 55.5% to 59.5%) */
   top: 59.5% !important; 
-  left: 67.5% !important;
-  bottom: 9.5%;
-  display: inline-flex;
+  left: 75.5% !important;
+  display: inline-flex !important;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -730,20 +914,10 @@
   transform: translate(-50%, -50%);
 }
 
-/* The Glowing Locator Beacon Ring Mechanics */
-.map-pin-pulse {
-  position: absolute;
-  top: 55%; /* Centered around India coordinates roughly on grid alignment */
-  left: 62%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .pulse-core-dot {
   width: 8px;
   height: 8px;
-  background: #3b82f6; /* Cyan tracking core */
+  background: #3b82f6; 
   border-radius: 50%;
   z-index: 2;
   box-shadow: 0 0 10px #3b82f6;
@@ -760,7 +934,6 @@
   z-index: 1;
 }
 
-/* Tooltip Badge above the Radar Dot */
 .pin-tooltip-badge {
   position: absolute;
   bottom: 18px;
@@ -778,11 +951,11 @@
 }
 
 /* ========================================= */
-/* GLASS CONTACT FORM ELEMENTS                */
+/* GLASS CONTACT FORM                        */
 /* ========================================= */
 
 .glass-contact-card {
-  background: rgba(15, 6, 25, 0.4); /* Deep space translucent purple mesh backing */
+  background: rgba(15, 6, 25, 0.4); 
   border: 1px solid rgba(168, 85, 247, 0.15);
   border-radius: 20px;
   padding: 40px;
@@ -790,7 +963,6 @@
   -webkit-backdrop-filter: blur(16px);
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
   
-  /* Adds that premium glowing technical grid matrix in the top right corner */
   background-image: linear-gradient(rgba(168, 85, 247, 0.03) 1px, transparent 1px),
                     linear-gradient(90deg, rgba(168, 85, 247, 0.03) 1px, transparent 1px);
   background-size: 25px 25px;
@@ -823,14 +995,13 @@
   padding: 14px 16px;
   border-radius: 12px;
   border: 1px solid rgba(168, 85, 247, 0.2);
-  background: rgba(31, 16, 56, 0.25); /* Muted slate glass fields */
+  background: rgba(31, 16, 56, 0.25); 
   color: #ffffff;
   font-size: 0.95rem;
   outline: none;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-/* High contrast neon reactive glow on field focus selection matrix */
 .form-group-block input:focus,
 .form-group-block textarea:focus {
   border-color: rgba(192, 132, 252, 0.8);
@@ -838,36 +1009,75 @@
   box-shadow: 0 0 15px rgba(168, 85, 247, 0.25), inset 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-/* Placeholder adjustments styling tokens */
 .form-group-block input::placeholder,
 .form-group-block textarea::placeholder {
   color: #475569;
 }
 
-/* Form button stretch configuration rules helper overrides */
 .form-submit-wrapper .btn {
   cursor: pointer;
   width: 100% !important;
 }
 
 /* ========================================= */
-/* ANIMATION EFFECTS ENGINE FUNCTIONS        */
+/* SOCIAL LINKS INDEX                        */
 /* ========================================= */
+
+.hero-socials {
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.hero-socials a {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px; 
+  background: rgba(255, 255, 255, 0.03);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: #94a3b8 !important;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.hero-socials a:hover {
+  background: rgba(168, 85, 247, 0.1);
+  border-color: rgba(168, 85, 247, 0.4);
+  color: white !important;
+  transform: translateY(-2px);
+}
+
+/* ========================================= */
+/* GLOBALS & ANIMATIONS TRACK                */
+/* ========================================= */
+
+.scroll-indicator-centered {
+  color: var(--purple-main);
+  font-size: 1.5rem;
+  animation: bounce-slow 2s infinite;
+}
+
+@keyframes dot-pulse {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
+  70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(34, 197, 94, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+}
+
+@keyframes bounce-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(8px); }
+}
 
 @keyframes map-radar-ping {
   0% { transform: scale(0.5); opacity: 1; }
   100% { transform: scale(2.5); opacity: 0; }
 }
-
-@media (max-width: 991px) {
-  .contact-main-title { font-size: 2.6rem; }
-  .custom-contact-container { gap: 40px; }
-  .glass-contact-card { padding: 30px; }
-}
-
-/* ========================================= */
-/* FOOTER */
-/* ========================================= */
 
 footer {
   padding: 40px 0;
@@ -876,47 +1086,39 @@ footer {
   color: var(--text-muted);
 }
 
+.violet-glow {
+  color: #c084fc; 
+  text-shadow: 0 0 5px #a855f7, 0 0 10px #a855f7, 0 0 20px #9333ea;
+  transition: 0.3s ease;
+}
+
 /* ========================================= */
-/* RESPONSIVE HERO IMAGE */
+/* MEDIA QUERIES CONTROLS                    */
 /* ========================================= */
 
 @media (max-width: 991px) {
-  .hero-image-wrapper img {
-    width: 280px;
-    height: 280px;
+  .contact-main-title { font-size: 2.6rem; }
+  .custom-contact-container { gap: 40px; }
+  .glass-contact-card { padding: 30px; }
+  .hero-image-wrapper img { width: 280px; height: 280px; }
+}
+
+@media (max-width: 768px) {
+  .hero-centered-title {
+    font-size: 3.2rem;
+    white-space: normal !important; 
+  }
+  .hero-description-text {
+    font-size: 1.1rem !important;
+    line-height: 1.6 !important;
   }
 }
 
 @media (max-width: 575px) {
-  .hero-image-wrapper img {
-    width: 220px;
-    height: 220px;
+  .hero-image-wrapper img { width: 220px; height: 220px; }
+  .skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 15px;
   }
+  .skill-icon { font-size: 38px; }
 }
-
-/* ========================================= */
-/* VIOLET GLOW TEXT */
-/* ========================================= */
-
-.violet-glow {
-  color: #c084fc; /* soft violet */
-
-  text-shadow:
-    0 0 5px #a855f7,
-    0 0 10px #a855f7,
-    0 0 20px #9333ea,
-    0 0 40px #7e22ce;
-
-  transition: 0.3s ease;
-}
-
-/* Optional hover enhancement */
-.violet-glow:hover {
-  text-shadow:
-    0 0 10px #c084fc,
-    0 0 20px #a855f7,
-    0 0 40px #9333ea,
-    0 0 60px #7e22ce;
-}
-
-
