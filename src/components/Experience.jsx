@@ -48,6 +48,10 @@ const Experience = () => {
 
           {/* MASTER ALTERNATING ROWS CONTAINER */}
           <div className="experience-wrapper-track">
+            
+            {/* SOLVED: CENTRAL INTEGRATED TIMELINE AXIS BEAM LINE */}
+            <div className="timeline-axis-beam"></div>
+
             {workData.map((item, index) => {
               const isEven = index % 2 === 0;
               return (
@@ -55,12 +59,18 @@ const Experience = () => {
                   key={item.id} 
                   className={`experience-item-row ${isEven ? "row-left-align" : "row-right-align"}`}
                 >
+                  
+                  {/* SOLVED: GLOWING TIMELINE INTERACTIVE BECON NODES */}
+                  <div className="timeline-node-beacon">
+                    <div className="node-core-glow"></div>
+                  </div>
+
                   {/* TEXT PANEL COLUMN WITH RESTORED RADAR HOVER GENERATORS */}
                   <div className="experience-card-column">
                     <SlideReveal direction={isEven ? "left" : "right"}>
                       <div className="experience-space-glass-card">
                         
-                        {/* KINETIC WAVE RINGS GENERATOR NODES FOR SCREEN RECORD NO.1 EFFECT */}
+                        {/* KINETIC WAVE RINGS GENERATOR NODES */}
                         <div className="card-radar-wave-emitter emitter-left"></div>
                         <div className="card-radar-wave-emitter emitter-right"></div>
                         

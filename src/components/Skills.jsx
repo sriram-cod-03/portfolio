@@ -71,54 +71,53 @@ const skillCategories = [
 const Skills = () => {
   return (
     <ScrollReveal>
-      <section id="skills" className="py-5" style={{ background: "transparent" }}>
-        <div className="container">
+      <section id="skills" className="skills-modular-section">
+        <div className="container custom-skills-container">
           
-          {/* CORE SECTION HEADER SECTION */}
-          <div className="text-center mb-5">
+          {/* CORE SECTION HEADER */}
+          <div className="text-center w-100 mb-5">
             <SlideReveal direction="left">
-              <h2 className="section-title text-white">Skills</h2>
+              <h2 className="skills-main-heading text-white">Skills</h2>
               <p className="section-subtitle" style={{ color: "#94a3b8" }}>
                 Technologies I Work With
               </p>
+              <div className="heading-violet-underline"></div>
             </SlideReveal>
           </div>
 
           {/* DYNAMIC CATEGORY ITERATOR LAYER */}
-          {skillCategories.map((category, catIndex) => (
-            <div key={catIndex} className="mb-5">
-              <SlideReveal direction="left">
-                <h3 className="category-title mb-4 text-start ms-2">
-                  <span className="violet-glow" style={{ fontSize: "1.4rem", fontWeight: "600", letterSpacing: "1px" }}>
+          <div className="skills-categories-wrapper w-100">
+            {skillCategories.map((category, catIndex) => (
+              <div key={catIndex} className="skill-category-block mb-4">
+                
+                <SlideReveal direction="left">
+                  <h3 className="category-row-title mb-3 text-start">
                     {category.title}
-                  </span>
-                </h3>
-              </SlideReveal>
+                  </h3>
+                </SlideReveal>
 
-              <div className="skills-grid">
-                {category.items.map((skill, index) => (
-                  <motion.div
-                    key={index}
-                    className="glass-card skill-card"
-                    whileHover={{ scale: 1.03 }}
-                    transition={{ type: "spring", stiffness: 200 }}
-                  >
-                    <ScrollReveal>
-                      <div className="skill-icon">
+                {/* FORCED HORIZONTAL TRACK GRID RUNNING NOWRAP */}
+                <div className="skills-horizontal-scroll-row">
+                  {category.items.map((skill, index) => (
+                    <motion.div
+                      key={index}
+                      className="glass-card medium-skill-card"
+                      whileHover={{ scale: 1.04, translateY: -4 }}
+                      transition={{ type: "spring", stiffness: 250, damping: 15 }}
+                    >
+                      <div className="compact-skill-icon-wrap">
                         {skill.icon}
                       </div>
-                    </ScrollReveal>
-                    
-                    <SlideReveal direction="right">
-                      <p className="skill-name m-0 mt-2">
+                      <span className="compact-skill-name">
                         {skill.name}
-                      </p>
-                    </SlideReveal>
-                  </motion.div>
-                ))}
+                      </span>
+                    </motion.div>
+                  ))}
+                </div>
+
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
 
         </div>
       </section>

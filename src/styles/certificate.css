@@ -1,0 +1,166 @@
+/* ========================================= */
+/* PREMIUM CREDENTIALS DESIGN MATRIX SHEET   */
+/* ========================================= */
+
+.certificate-modular-section {
+  position: relative;
+  width: 100%;
+  padding: 100px 0;
+  background: transparent !important; /* Lets your cosmic starfield particles shine through safely */
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.custom-certificate-container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 5;
+}
+
+.certificate-main-heading {
+  font-size: 3.4rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: #ffffff;
+}
+
+/* RESPONSIVE LAYOUT MATRIX USING FLEX ROW SYSTEMS */
+.certificate-responsive-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  width: 100%;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+/* INDIVIDUAL COLUMN CALCULATIONS TRACK */
+.certificate-card-wrapper {
+  flex: 0 0 calc(50% - 15px); /* Balanced side-by-side split cards across desktop monitors */
+  min-width: 320px; /* Safe fallbacks for tablet viewports */
+  display: flex;
+}
+
+/* ========================================= */
+/* HIGH-TRANSPARENCY FROSTED GLASS CARDS     */
+/* ========================================= */
+
+.glass-card.certificate-premium-card {
+  background: rgba(14, 5, 26, 0.45) !important; /* Transparent deep cosmic dark purple space mask tint */
+  border: 1px solid rgba(168, 85, 247, 0.16) !important; /* Thin ambient space-violet border track */
+  border-radius: 20px !important;
+  padding: 30px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  text-align: left !important;
+  width: 100%;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+  transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+}
+
+/* PREMIUM INTERACTIVE MOUSEOVER ENHANCEMENTS */
+.glass-card.certificate-premium-card:hover {
+  transform: translateY(-6px) !important;
+  border-color: rgba(168, 85, 247, 0.45) !important;
+  box-shadow: 0 20px 45px rgba(168, 85, 247, 0.25) !important;
+  background: rgba(22, 9, 38, 0.55) !important; /* Illuminates backplane slightly on active focus */
+}
+
+/* ========================================= */
+/* METADATA OVERLAY LABELS AND ACCENTS       */
+/* ========================================= */
+
+.cert-header-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.cert-date-badge {
+  font-family: monospace;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #cbd5e1;
+  background: rgba(255, 255, 255, 0.04);
+  padding: 4px 12px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.cert-issuer-tag {
+  font-family: monospace;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+/* SOLVED: High-contrast ambient neon glow overrides for your distinct corporate issuers */
+.cert-issuer-tag.guvi-green {
+  color: #10b981 !important; /* Premium Emerald Green for your GUVI modules */
+  filter: drop-shadow(0 0 4px rgba(16, 185, 129, 0.4));
+}
+
+.cert-issuer-tag.oracle-red {
+  color: #ef4444 !important; /* Bold Crimson Red for your Oracle credentials */
+  filter: drop-shadow(0 0 4px rgba(239, 68, 68, 0.4));
+}
+
+.cert-issuer-tag.advi-blue {
+  color: #3b82f6 !important; /* Electric Blue for your ADVI Group frameworks */
+  filter: drop-shadow(0 0 4px rgba(59, 130, 246, 0.4));
+}
+
+/* ========================================= */
+/* TYPOGRAPHY ELEMENTS INSIDE CARDS          */
+/* ========================================= */
+
+.cert-title-label {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.2px;
+  line-height: 1.4;
+}
+
+.cert-description-para {
+  font-size: 0.94rem;
+  line-height: 1.6;
+  color: #94a3b8;
+  margin: 0;
+}
+
+/* ========================================= */
+/* DYNAMIC MOBILE PORT RESPONSIVE BREAKPOINTS */
+/* ========================================= */
+
+@media (max-width: 991px) {
+  .certificate-responsive-row {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .certificate-card-wrapper {
+    flex: 0 0 100%; /* Spans single full width row layout dynamically on phones */
+  }
+  .glass-card.certificate-premium-card {
+    padding: 24px !important;
+    border-radius: 16px !important;
+  }
+  .cert-title-label {
+    font-size: 1.2rem;
+  }
+  .cert-description-para {
+    font-size: 0.88rem;
+  }
+}

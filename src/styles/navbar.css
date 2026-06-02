@@ -10,3 +10,28 @@
 .navbar .nav-link {
   color: #ffffff !important;
 }
+
+/* Custom fluid padding resets for larger link items counts arrays */
+.custom-navbar .nav-link {
+  font-size: 0.92rem !important;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  padding: 6px 10px !important;
+  transition: color 0.3s ease;
+}
+
+.custom-navbar .nav-link.active {
+  color: #c084fc !important; /* Active tracking line indicator highlight */
+  text-shadow: 0 0 10px rgba(168, 85, 247, 0.4);
+}
+
+@media (max-width: 991px) {
+  /* Gives adequate block separation handles when elements stack inside a mobile collapse drawer */
+  .custom-navbar .navbar-nav {
+    padding: 15px 0;
+    text-align: left;
+  }
+  .custom-navbar .nav-item {
+    margin: 4px 0;
+  }
+}

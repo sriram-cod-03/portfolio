@@ -1,0 +1,206 @@
+/* ========================================= */
+/* COMPACT HORIZONTAL SKILLS GRID LAYOUT     */
+/* ========================================= */
+
+.skills-modular-section {
+  position: relative;
+  width: 100%;
+  padding: 60px 0;
+  background: transparent !important;
+}
+
+.custom-skills-container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.skills-main-heading {
+  font-size: 3.4rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: #ffffff;
+}
+
+.skills-categories-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.skill-category-block {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.category-row-title {
+  position: relative;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #c084fc; /* High-intensity space violet neon core */
+  padding-left: 14px;
+  letter-spacing: 0.5px;
+}
+
+/* Sharp left vertical accent indicator bar */
+.category-row-title::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 15%;
+  height: 70%;
+  width: 3px;
+  background-color: #a855f7;
+  border-radius: 4px;
+  box-shadow: 0 0 10px #a855f7;
+}
+
+/* FORCES ALL TECHNOLOGY ITEMS TO STAY RIGIDLY ON A SINGLE LINE PIPELINE */
+.skills-horizontal-scroll-row {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important; /* CRITICAL: Prevents any wrapping onto extra rows */
+  gap: 16px;
+  width: 100%;
+  justify-content: flex-start;
+  overflow-x: auto; /* Enables fluid horizontal swipe actions on mobile */
+  padding: 12px 4px;
+  scrollbar-width: none; /* Wipes away desktop scrollbars */
+}
+
+.skills-horizontal-scroll-row::-webkit-scrollbar {
+  display: none; /* Suppresses track line visuals on Chrome/Safari engines */
+}
+
+/* RE-ENGINEERED: CLEAN UNIFORM MEDIUM TECHNOLOGY CARDS */
+.glass-card.medium-skill-card {
+  flex: 0 0 auto !important; /* Halts width distortion or shrinkage */
+  width: 170px !important;
+  height: 110px !important;
+  background: rgba(14, 5, 26, 0.45) !important; /* Low-opacity dark cosmic matte mask */
+  border: 1px solid rgba(168, 85, 247, 0.16) !important;
+  border-radius: 16px !important;
+  padding: 15px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+}
+
+.glass-card.medium-skill-card:hover {
+  border-color: rgba(168, 85, 247, 0.5) !important;
+  background: rgba(31, 16, 56, 0.45) !important;
+  box-shadow: 0 10px 25px rgba(168, 85, 247, 0.25) !important;
+}
+
+/* LOGO GRAPHIC METRICS */
+.compact-skill-icon-wrap {
+  font-size: 32px !important; /* Normalized from 45px for a precise dashboard layout */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.glass-card.medium-skill-card:hover .compact-skill-icon-wrap {
+  transform: scale(1.12) rotate(3deg);
+}
+
+.compact-skill-name {
+  font-size: 0.9rem !important;
+  font-weight: 600 !important;
+  color: #ffffff !important;
+  letter-spacing: 0.3px;
+  margin: 0;
+  text-align: center;
+}
+
+/* RESPONSIVE FLUID SCALING FOR SMALL SCREENS */
+@media (max-width: 768px) {
+  .glass-card.medium-skill-card {
+    width: 140px !important;
+    height: 100px !important;
+    border-radius: 12px !important;
+  }
+  .compact-skill-icon-wrap { font-size: 26px !important; }
+  .compact-skill-name { font-size: 0.8rem !important; }
+}
+
+/* ========================================= */
+/* SOLVED: FLOATING GITHUB ACCENT LINK       */
+/* ========================================= */
+
+.project-github-link {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: rgba(9, 3, 20, 0.7) !important; /* Translucent dark space shield mask */
+  border: 1px solid rgba(168, 85, 247, 0.35) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: #cbd5e1 !important;
+  font-size: 19px;
+  text-decoration: none;
+  z-index: 5;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* Interactive Hover Reactions */
+.project-github-link:hover {
+  background: #090314 !important;
+  color: #c084fc !important; /* Glow violet accent color shift */
+  border-color: #a855f7 !important;
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 0 15px rgba(168, 85, 247, 0.5);
+}
+
+/* ========================================= */
+/* SOLVED: FLOATING GITHUB ACCENT LINK       */
+/* ========================================= */
+
+.project-github-link {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: rgba(9, 3, 20, 0.7) !important; /* Translucent dark space shield mask */
+  border: 1px solid rgba(168, 85, 247, 0.35) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: #cbd5e1 !important;
+  font-size: 19px;
+  text-decoration: none;
+  z-index: 5;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* Interactive Hover Reactions */
+.project-github-link:hover {
+  background: #090314 !important;
+  color: #c084fc !important; /* Glow violet accent color shift */
+  border-color: #a855f7 !important;
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 0 15px rgba(168, 85, 247, 0.5);
+}

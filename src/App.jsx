@@ -5,18 +5,17 @@ import "./App.css";
 /* Components */
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
-import Overview from "./components/Overview";
-import Skills from "./components/Skills";
-import Projects from "./components/Projects";
-import Certificates from "./components/Certificates";
-import Contact from "./components/Contact";
+import About from "./components/About";
+import Timeline from "./components/Timeline";       /* 01. Education Section */
+import Experience from "./components/Experience";   /* 02. Work Experience */
+import Certificates from "./components/Certificates"; /* 03. Certifications Section */
+import Skills from "./components/Skills";           /* 04. Tech Stack Sets */
+import Projects from "./components/Projects";       /* 05. Projects Showcase */
+import Contact from "./components/Contact";         /* 06. Form & Map Gateway */
 import Footer from "./components/Footer";
 import { SpaceBackground } from "./components/SpaceBackground"; // Space Background Import
-import About from "./components/About";
-import Timeline from "./components/Timeline";
-import Experience from "./components/Experience";
 
-/* Scroll Reveal */
+/* Scroll Reveal Hook System Engine */
 function useScrollReveal() {
   useEffect(() => {
     const elements = document.querySelectorAll(".reveal");
@@ -36,7 +35,7 @@ function useScrollReveal() {
   }, []);
 }
 
-/* MAIN APP */
+/* MAIN APP WINDOW CONTAINER */
 function App() {
   useScrollReveal();
   
@@ -48,16 +47,51 @@ function App() {
       {/* Main Container Wrappers */}
       <div style={{ position: "relative", zIndex: 1 }}>
         <Navbar />
+        
         <main>
-          <section className="reveal"><Hero /></section>
-          <section className="reveal"><About/></section>
-          <section className="reveal"><Skills /></section>
-          <sectio className="reveal"><Experience/></sectio>
-          <section className="reveal"><Projects /></section>
-          <sectin className="reveal"><Timeline/></sectin>
-          <section className="reveal"><Certificates /></section>
-          <section className="reveal"><Contact /></section>
+          {/* SOLVED: Order arranged exactly to match your Navbar map index configurations safely */}
+          
+          {/* 1. HOME SECTION */}
+          <section id="home" className="reveal">
+            <Hero />
+          </section>
+
+          {/* 2. ABOUT SECTION */}
+          <section id="about" className="reveal">
+            <About />
+          </section>
+
+          {/* 3. EDUCATION TIMELINE SECTION */}
+          <section id="education" className="reveal">
+            <Timeline />
+          </section>
+
+          {/* 4. WORK EXPERIENCE SECTION */}
+          <section id="experience" className="reveal">
+            <Experience />
+          </section>
+
+          {/* 5. CERTIFICATE SECTION */}
+          <section id="certificate" className="reveal">
+            <Certificates />
+          </section>
+
+          {/* 6. SKILLS STACK SECTION */}
+          <section id="skills" className="reveal">
+            <Skills />
+          </section>
+
+          {/* 7. PROJECTS SECTION */}
+          <section id="projects" className="reveal">
+            <Projects />
+          </section>
+
+          {/* 8. CONTACT SECTION */}
+          <section id="contact" className="reveal">
+            <Contact />
+          </section>
         </main>
+
         <Footer />
       </div>
     </>

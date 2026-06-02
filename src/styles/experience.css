@@ -17,7 +17,6 @@
   padding: 0 24px;
   display: flex;
   flex-direction: column;
-  align-items: center;
   position: relative;
   z-index: 5;
 }
@@ -30,7 +29,7 @@
 }
 
 /* ========================================= */
-/* BACKGROUND BACKGROUND STATIC RADAR MAGIC RINGS */
+/* BACKGROUND STATIC RADAR MAGIC RINGS       */
 /* ========================================= */
 
 .experience-rings-backdrop {
@@ -67,7 +66,7 @@
 }
 
 /* ========================================= */
-/* ROW LAYOUT STRUCTURE TRACK GRID           */
+/* ROW LAYOUT STRUCTURE & CENTRAL AXIS CORRIDOR */
 /* ========================================= */
 
 .experience-wrapper-track {
@@ -79,10 +78,24 @@
   gap: 40px;
 }
 
+/* SOLVED: CENTRAL VIOLET GLOW TIMELINE TRACK LINE */
+.timeline-axis-beam {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  background: linear-gradient(180deg, #a855f7 0%, #6366f1 70%, rgba(168, 85, 247, 0.01) 100%);
+  transform: translateX(-50%);
+  box-shadow: 0 0 12px rgba(168, 85, 247, 0.4);
+  z-index: 1;
+}
+
 .experience-item-row {
   display: flex;
   align-items: center;
   width: 100%;
+  position: relative;
 }
 
 .row-left-align { flex-direction: row; }
@@ -93,8 +106,37 @@
   width: 50%;
 }
 
-.row-left-align .experience-card-column { padding-right: 40px; }
-.row-right-align .experience-card-column { padding-left: 40px; }
+.row-left-align .experience-card-column { padding-right: 50px; }
+.row-right-align .experience-card-column { padding-left: 50px; }
+
+/* ========================================= */
+/* SOLVED: TIMELINE TRACK BEACON NODES       */
+/* ========================================= */
+
+.timeline-node-beacon {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 18px;
+  height: 18px;
+  background: #090314;
+  border: 3px solid #c084fc;
+  border-radius: 50%;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 10px #a855f7;
+}
+
+.node-core-glow {
+  width: 4px;
+  height: 4px;
+  background: #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 0 4px #ffffff;
+}
 
 /* ========================================= */
 /* HIGH-TRANSPARENCY GLASS CARD BASE SETUP   */
@@ -111,14 +153,13 @@
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
   transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
   text-align: left;
-  overflow: hidden; /* Keeps tracking loops locked cleanly inside boundaries */
+  overflow: hidden; 
 }
 
 /* ========================================= */
 /* KINETIC HOVER PULSE WAVES ENGINE          */
 /* ========================================= */
 
-/* Sets anchor bounds on the borders left and right inside the frame */
 .card-radar-wave-emitter {
   position: absolute;
   top: 0;
@@ -126,14 +167,13 @@
   width: 50%;
   pointer-events: none;
   z-index: 1;
-  opacity: 0; /* Hidden by default layout profiles rules */
+  opacity: 0; 
   transition: opacity 0.4s ease;
 }
 
 .emitter-left { left: 0; }
 .emitter-right { right: 0; }
 
-/* Draws the glowing vector circle rings arcs on left/right wings */
 .card-radar-wave-emitter::before,
 .card-radar-wave-emitter::after {
   content: '';
@@ -147,75 +187,38 @@
   transform: translateY(-50%) scale(0.2);
 }
 
-/* Positions left-side expanding waves */
 .emitter-left::before, .emitter-left::after { left: -100px; transform-origin: left center; }
-/* Positions right-side expanding waves */
 .emitter-right::before, .emitter-right::after { right: -100px; transform-origin: right center; }
 
-/* TRIGGERS SCREEN RECORD NO.1 ANIMATION STACKS INSTANTLY ON MOUSEOVER */
-.experience-space-glass-card:hover .card-radar-wave-emitter {
-  opacity: 1;
-}
+.experience-space-glass-card:hover .card-radar-wave-emitter { opacity: 1; }
 
-.experience-space-glass-card:hover .emitter-left::before {
-  animation: radar-wave-propagate-left 2s cubic-bezier(0.25, 0.8, 0.25, 1) infinite;
-}
-.experience-space-glass-card:hover .emitter-left::after {
-  animation: radar-wave-propagate-left 2s cubic-bezier(0.25, 0.8, 0.25, 1) infinite;
-  animation-delay: 1s; /* Stagger timing to alternate expanding lines */
-}
+.experience-space-glass-card:hover .emitter-left::before { animation: radar-wave-propagate-left 2s cubic-bezier(0.25, 0.8, 0.25, 1) infinite; }
+.experience-space-glass-card:hover .emitter-left::after { animation: radar-wave-propagate-left 2s cubic-bezier(0.25, 0.8, 0.25, 1) infinite; animation-delay: 1s; }
 
-.experience-space-glass-card:hover .emitter-right::before {
-  animation: radar-wave-propagate-right 2s cubic-bezier(0.25, 0.8, 0.25, 1) infinite;
-}
-.experience-space-glass-card:hover .emitter-right::after {
-  animation: radar-wave-propagate-right 2s cubic-bezier(0.25, 0.8, 0.25, 1) infinite;
-  animation-delay: 1s;
-}
+.experience-space-glass-card:hover .emitter-right::before { animation: radar-wave-propagate-right 2s cubic-bezier(0.25, 0.8, 0.25, 1) infinite; }
+.experience-space-glass-card:hover .emitter-right::after { animation: radar-wave-propagate-right 2s cubic-bezier(0.25, 0.8, 0.25, 1) infinite; animation-delay: 1s; }
 
-/* WAVES EXTRUDING RADIAL TRACK KEYFRAMES (Left and Right Splitting Matrix) */
 @keyframes radar-wave-propagate-left {
-  0% {
-    transform: translateY(-50%) scale(0.2);
-    opacity: 1;
-    box-shadow: 0 0 15px rgba(168, 85, 247, 0.3);
-  }
-  100% {
-    transform: translateY(-50%) scale(2.5);
-    opacity: 0;
-    border-color: rgba(59, 130, 246, 0); /* Shifts slightly towards electric blue limits on fade out */
-    box-shadow: 0 0 40px rgba(59, 130, 246, 0);
-  }
+  0% { transform: translateY(-50%) scale(0.2); opacity: 1; box-shadow: 0 0 15px rgba(168, 85, 247, 0.3); }
+  100% { transform: translateY(-50%) scale(2.5); opacity: 0; border-color: rgba(59, 130, 246, 0); box-shadow: 0 0 40px rgba(59, 130, 246, 0); }
 }
 
 @keyframes radar-wave-propagate-right {
-  0% {
-    transform: translateY(-50%) scale(0.2);
-    opacity: 1;
-    box-shadow: 0 0 15px rgba(168, 85, 247, 0.3);
-  }
-  100% {
-    transform: translateY(-50%) scale(2.5);
-    opacity: 0;
-    border-color: rgba(59, 130, 246, 0);
-    box-shadow: 0 0 40px rgba(59, 130, 246, 0);
-  }
+  0% { transform: translateY(-50%) scale(0.2); opacity: 1; box-shadow: 0 0 15px rgba(168, 85, 247, 0.3); }
+  100% { transform: translateY(-50%) scale(2.5); opacity: 0; border-color: rgba(59, 130, 246, 0); box-shadow: 0 0 40px rgba(59, 130, 246, 0); }
 }
 
-/* CARD DETAILS INTERNAL GLOW ADJUSTMENTS */
 .experience-space-glass-card:hover {
   transform: translateY(-5px);
   border-color: rgba(168, 85, 247, 0.5) !important;
-  box-shadow: 0 20px 45px rgba(168, 85, 247, 0.35), 
-              inset 0 0 20px rgba(168, 85, 247, 0.1); /* Adds internal center emission */
+  box-shadow: 0 20px 45px rgba(168, 85, 247, 0.35), inset 0 0 20px rgba(168, 85, 247, 0.1); 
 }
 
-/* TYPOGRAPHY METRICS INSIDE CARDS */
+/* CARDS STRUCTURAL CORES */
 .work-position-title { font-size: 1.35rem; font-weight: 700; color: #ffffff; letter-spacing: -0.3px; position: relative; z-index: 2; }
 .work-company-name { font-size: 0.98rem; font-weight: 500; color: #c084fc; letter-spacing: 0.3px; position: relative; z-index: 2; }
 .work-technical-bio { font-size: 0.95rem; line-height: 1.65; color: #cbd5e1; position: relative; z-index: 2; }
 
-/* CHIPS & TAG BADGES TRACK */
 .card-badge-header-row { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; position: relative; z-index: 2; }
 .work-duration-badge { font-family: monospace; font-size: 0.85rem; font-weight: 600; background: rgba(255, 255, 255, 0.04); padding: 6px 14px; border-radius: 8px; color: #e2e8f0; border: 1px solid rgba(255, 255, 255, 0.06); }
 
@@ -227,10 +230,12 @@
 .experience-card-tech-cloud { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 15px; position: relative; z-index: 2; }
 .experience-mini-tag { font-family: monospace; font-size: 0.78rem; background: rgba(168, 85, 247, 0.05); border: 1px solid rgba(168, 85, 247, 0.2); color: #d8b4fe; padding: 4px 10px; border-radius: 6px; font-weight: 500; }
 
-/* RESPONSIVE BREAKPOINTS COLLAPSE SCALING */
+/* RESPONSIVE SCALING */
 @media (max-width: 768px) {
-  .experience-item-row { flex-direction: column !important; gap: 20px; }
-  .experience-card-column { width: 100% !important; padding: 0 !important; }
+  .timeline-axis-beam { left: 20px; transform: none; }
+  .experience-item-row { flex-direction: column !important; align-items: flex-start; gap: 25px; }
+  .experience-card-column { width: 100% !important; padding: 0 0 0 45px !important; }
   .experience-empty-spacer-column { display: none; }
+  .timeline-node-beacon { left: 20px; top: 35px; transform: translate(-50%, -50%); }
   .exp-ring-3, .exp-ring-4 { display: none; }
 }
