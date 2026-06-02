@@ -2,6 +2,8 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Typewriter } from "react-simple-typewriter";
 import { FaArrowDown, FaGithub, FaLinkedin } from "react-icons/fa";
+import { HiLightningBolt } from "react-icons/hi"; // High-fidelity vector lightning bolt
+import { IoRocketSharp } from "react-icons/io5"; // Sharp professional vector rocket
 import ScrollReveal from "./ScrollReveal";
 
 const Hero = () => {
@@ -39,7 +41,7 @@ const Hero = () => {
             Hello, I’m
           </motion.p>
 
-          {/* SOLVED: MAIN NAME WITH INTEGRATED INTERACTIVE HOVER TRACKING */}
+          {/* MAIN NAME WITH INTEGRATED INTERACTIVE HOVER TRACKING */}
           <h1 className="hero-centered-title">
             {"Sriram R".split("").map((letter, index) => (
               <span 
@@ -78,7 +80,7 @@ const Hero = () => {
             </span>
           </motion.h4>
 
-          {/* CENTERED DESCRIPTION (UPGRADED SIZE & ALIGNMENT) */}
+          {/* CENTERED DESCRIPTION */}
           <motion.p
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
@@ -90,32 +92,23 @@ const Hero = () => {
             experiences that make a difference.
           </motion.p>
 
-          {/* BUTTONS WITH GRADIENT & GLOW */}
+          {/* PREMIUM BORDER MAGIC BUTTONS */}
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.2 }}
             className="hero-buttons-group d-flex justify-content-center align-items-center gap-3 flex-wrap"
           >
-            <a
-              href="/Sriram_R_Resume.pdf"
-              className="btn btn-premium-gradient d-flex align-items-center gap-2"
-            >
-              <svg
-                stroke="currentColor"
-                fill="currentColor"
-                strokeWidth="0"
-                viewBox="0 0 24 24"
-                height="18"
-                width="18"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path d="M5 20h14v-2H5v2zM19 9h-4V3H9v6H5l7 7 7-7z"></path>
-              </svg>
-              Download Resume
+            {/* HIRE ME BUTTON */}
+            <a href="#contact" className="btn btn-premium-gradient">
+              <HiLightningBolt className="btn-vector-icon lightning-orange " />
+              <span className="btn-custom-text">Hire Me</span>
             </a>
+            
+            {/* VIEW PROJECTS BUTTON */}
             <a href="#projects" className="btn btn-outline-premium">
-              View Projects &rarr;
+              <IoRocketSharp className="btn-vector-icon rocket-pink" />
+              <span className="btn-custom-text">View Projects</span>
             </a>
           </motion.div>
 
@@ -157,7 +150,30 @@ const Hero = () => {
             </a>
           </motion.div>
 
-          {/* BOUNCING DOWN ARROW */}
+          {/* COMPACT WHAT I DO INTEGRATION SYSTEM CONTAINER */}
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1.6 }}
+            className="hero-mini-services-section mt-5"
+          >
+            <span className="mini-section-tag">What I Do</span>
+            <p className="mini-section-subtext">Frontend • Backend • Full Stack</p>
+
+            <div className="mini-services-grid">
+              <div className="mini-service-card">
+                <span>Frontend Development</span>
+              </div>
+              <div className="mini-service-card">
+                <span>Backend APIs</span>
+              </div>
+              <div className="mini-service-card">
+                <span>Full Stack Apps</span>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* BOUNCING DOWN ARROW INDICATOR */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}

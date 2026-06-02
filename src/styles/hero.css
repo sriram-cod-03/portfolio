@@ -1,0 +1,349 @@
+/* ========================================= */
+/* HERO TEXT & HEADERS (FIXED CENTERING)     */
+/* ========================================= */
+
+.hero-centered-title {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 25px auto !important;
+  font-size: 5.5rem; 
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  background: linear-gradient(180deg, #ffffff 40%, #cbd5e1 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1.2;
+  white-space: nowrap !important; 
+}
+
+.hero-centered-title .blur-text,
+.hero-centered-title p {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  flex-wrap: nowrap !important;
+  text-align: center !important;
+  margin: 0 auto !important;
+  width: 100% !important;
+}
+
+/* PREMIUM VIOLET HOVER GLOW INTERACTION */
+.hero-centered-title .interactive-letter {
+  display: inline-block !important;
+  text-align: center !important;
+  color: #ffffff;
+  cursor: default;
+  transition: color 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), 
+              transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
+              text-shadow 0.4s ease !important;
+}
+
+.hero-centered-title .interactive-letter:hover {
+  color: #c084fc !important; 
+  -webkit-text-fill-color: #c084fc !important;
+  text-shadow: 0 0 22px #a855f7, 0 0 45px rgba(168, 85, 247, 0.6) !important;
+  transform: translateY(-6px) scale(1.08) !important;
+  transition: all 0s !important;
+}
+
+.hero-centered-title .space-char {
+  display: inline-block !important;
+  width: 0.26em !important;
+}
+
+.hero-description-text {
+  font-size: 1.28rem !important; 
+  text-align: center !important;
+  line-height: 1.85 !important;
+  color: #cbd5e1 !important;
+  max-width: 780px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  margin-bottom: 50px !important; 
+  font-weight: 400;
+}
+
+/* ========================================= */
+/* BUTTONS, BADGES, AND SOCIALS              */
+/* ========================================= */
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(168, 85, 247, 0.06);
+  border: 1px solid rgba(168, 85, 247, 0.25);
+  padding: 6px 16px;
+  border-radius: 30px;
+  backdrop-filter: blur(8px);
+}
+
+.pulse-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #22c55e;
+  border-radius: 50%;
+  box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+  animation: dot-pulse 1.6s infinite;
+}
+
+.badge-text {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--purple-light);
+  font-weight: 600;
+}
+
+/* ACETERNITY UI BORDER MAGIC BUTTON ENGINE */
+.btn-premium-gradient,
+.btn-outline-premium {
+  position: relative;
+  padding: 14px 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  text-decoration: none;
+  background: #090314; 
+  color: #ffffff !important;
+  border-radius: 12px !important; 
+  overflow: hidden !important; 
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
+  mask-image: radial-gradient(white, black);
+  background-clip: padding-box;
+  z-index: 1;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  border: 1px solid transparent !important; 
+}
+
+/* UNIQUE TEXT STYLE LOGIC MATCHING THE SCREENSHOT */
+.btn-custom-text {
+  font-family: 'SF Mono', SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1.5px !important;
+  color: #ffffff !important;
+}
+
+/* VECTOR ICON COLOR TUNING STYLES */
+.btn-vector-icon {
+  font-size: 18px;
+  flex-shrink: 0;
+  
+  /* SOLVED: Adds a clean, professional gap between the icon and text */
+  margin-right: 10px !important; 
+  
+  transition: transform 0.3s ease;
+}
+
+/* Glowing Neon Orange Lightning Bolt icon */
+.lightning-orange {
+  color: #f97316 !important;
+  filter: drop-shadow(0 0 5px rgba(249, 115, 22, 0.8));
+}
+
+/* Cosmic Pastel Rocket Pink icon */
+.rocket-pink {
+  color: #ec4899 !important;
+  filter: drop-shadow(0 0 5px rgba(236, 72, 153, 0.8));
+}
+
+.btn-premium-gradient::before,
+.btn-outline-premium::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%; 
+  height: 300%;
+  z-index: -2;
+  transform: translate(-50%, -50%) rotate(0deg);
+  animation: border-magic-spin 4s linear infinite;
+}
+
+.btn-premium-gradient::before {
+  background: conic-gradient(from 90deg at 50% 50%, transparent 0%, transparent 70%, #a855f7 85%, #3b82f6 95%, transparent 100%) !important;
+}
+
+.btn-outline-premium::before {
+  background: conic-gradient(from 90deg at 50% 50%, transparent 0%, transparent 75%, rgba(168, 85, 247, 0.4) 88%, #c084fc 96%, transparent 100%) !important;
+}
+
+.btn-premium-gradient::after,
+.btn-outline-premium::after {
+  content: '';
+  position: absolute;
+  inset: 1px; 
+  background: #0d0614 !important; 
+  border-radius: 11px !important; 
+  z-index: -1;
+  transition: background 0.3s ease;
+}
+
+/* HOVER INTERACTIONS */
+.btn-premium-gradient:hover,
+.btn-outline-premium:hover {
+  transform: translateY(-4px) scale(1.02);
+}
+
+.btn-premium-gradient:hover .btn-vector-icon,
+.btn-outline-premium:hover .btn-vector-icon {
+  transform: scale(1.15) rotate(-5deg);
+}
+
+.btn-premium-gradient:hover::after { background: rgba(22, 10, 36, 0.9) !important; }
+.btn-outline-premium:hover::after { background: rgba(31, 12, 51, 0.85) !important; }
+
+.btn-premium-gradient:hover {
+  box-shadow: 0 12px 28px rgba(168, 85, 247, 0.4), 0 0 15px rgba(168, 85, 247, 0.2) !important;
+}
+
+.btn-outline-premium:hover {
+  box-shadow: 0 12px 25px rgba(168, 85, 247, 0.3), 0 0 12px rgba(168, 85, 247, 0.1) !important;
+}
+
+.hero-buttons-group {
+  margin-top: 25px;
+  margin-bottom: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  width: 100%;
+}
+
+.hero-socials {
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.hero-socials a {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px; 
+  background: rgba(255, 255, 255, 0.03);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: #94a3b8 !important;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.hero-socials a:hover {
+  background: rgba(168, 85, 247, 0.1);
+  border-color: rgba(168, 85, 247, 0.4);
+  color: white !important;
+  transform: translateY(-2px);
+}
+
+/* ========================================= */
+/* COMPACT HERO MICRO-SERVICES ENGINE        */
+/* ========================================= */
+
+.hero-mini-services-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 720px;
+  margin: 35px auto 0 auto !important;
+  position: relative;
+  z-index: 10;
+}
+
+.mini-section-tag {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #c084fc; 
+  letter-spacing: -0.01em;
+  margin-bottom: 4px;
+}
+
+.mini-section-subtext {
+  font-family: monospace;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  color: #64748b; 
+  margin-bottom: 20px !important;
+}
+
+.mini-services-grid {
+  display: flex;
+  flex-direction: row !important; 
+  flex-wrap: nowrap !important;
+  gap: 12px;
+  width: 100%;
+  justify-content: center;
+}
+
+.mini-service-card {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.02) !important;
+  border: 1px solid rgba(168, 85, 247, 0.15) !important;
+  border-radius: 12px;
+  padding: 10px 14px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  cursor: default;
+}
+
+.mini-service-card span {
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: #ffffff;
+  letter-spacing: 0.3px;
+}
+
+.mini-service-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(168, 85, 247, 0.45) !important;
+  background: rgba(168, 85, 247, 0.06) !important;
+  box-shadow: 0 8px 20px rgba(168, 85, 247, 0.25);
+}
+
+/* ========================================= */
+/* KINETIC SPIN MECHANICS MATRIX AND MEDIA   */
+/* ========================================= */
+
+@keyframes border-magic-spin {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@media (max-width: 991px) {
+  .hero-image-wrapper img { width: 280px; height: 280px; }
+}
+@media (max-width: 575px) {
+  .hero-image-wrapper img { width: 220px; height: 220px; }
+}
+
+@media (max-width: 640px) {
+  .mini-services-grid {
+    flex-wrap: wrap !important;
+    gap: 10px;
+  }
+  .mini-service-card {
+    flex: none;
+    width: 100%;
+    padding: 12px !important;
+  }
+}

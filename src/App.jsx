@@ -49,7 +49,6 @@ function App() {
         <main>
           <section className="reveal"><Hero /></section>
           <section className="reveal"><About/></section>
-          <section className="reveal"><Overview /></section>
           <section className="reveal"><Skills /></section>
           <section className="reveal"><Projects /></section>
           <section className="reveal"><Certificates /></section>

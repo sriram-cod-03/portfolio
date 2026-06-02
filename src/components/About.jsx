@@ -1,74 +1,93 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { FaDownload } from "react-icons/fa";
 import ScrollReveal from "./ScrollReveal";
 import SlideReveal from "./SlideReveal";
 
 const About = () => {
   return (
     <ScrollReveal>
-      <section id="about" className="about-aurora-section">
-        
-        {/* THE MOVING SPACE-VIOLET AURORA RAY BEAM */}
-        <div className="aurora-ray-beam"></div>
-
+      <section id="about" className="about-space-section">
         <div className="container custom-about-container">
           
-          {/* LEFT SIDE: TEXT CONTENT */}
-          <div className="about-text-side">
-            <SlideReveal direction="left">
-              <h2 className="about-section-title text-white mb-4">About Me</h2>
-              <p className="about-main-para">
-                I am a passionate Full Stack Developer specializing in the 
-                <span className="violet-text-highlight"> MERN Stack</span>. I love taking complex backend problems, 
-                optimizing query structures, and transforming them into beautiful, 
-                seamless, and high-performance user interfaces.
-              </p>
-              <p className="about-sub-para mb-5">
-                Currently pursuing my Engineering degree, I focus heavily on writing clean, 
-                maintainable code, building secure API networks, and automating workflows. 
-                When I'm not coding architectures, you'll find me exploring technical 
-                advancements in security, deployment vectors, or gaming.
-              </p>
-
-              {/* STATS MATRIX */}
-              <div className="about-stats-row">
-                <div className="stat-box">
-                  <h3>7.8</h3>
-                  <p>Engineering CGPA</p>
-                </div>
-                <div className="stat-box">
-                  <h3>10+</h3>
-                  <p>Projects Crafted</p>
-                </div>
-                <div className="stat-box">
-                  <h3>3+</h3>
-                  <p>Certifications</p>
-                </div>
-              </div>
-            </SlideReveal>
+          {/* TOP SECTION BLOCK INDEX IDENTIFIER */}
+          <div className="text-center w-100 mb-4">
+            <span className="section-index-tag">01 // WHO AM I</span>
+            <h2 className="about-section-heading mt-2">About Me</h2>
+            <div className="heading-violet-underline"></div>
           </div>
 
-          {/* RIGHT SIDE: PREMIUM TECHNICAL GLASS GRAPHIC */}
-          <div className="about-graphic-side">
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.95, y: 30 }}
-              whileInView={{ opacity: 1, scale: 1, y: 0 }}
-              transition={{ duration: 0.7, ease: "easeOut" }}
-              className="premium-aurora-card"
-            >
-              {/* Corner Grid Accent Decoration */}
-              <div className="card-grid-accent"></div>
-              
-              <div className="tech-stack-display">
-                <span className="tech-tag">MongoDB</span>
-                <span className="tech-tag">Express.js</span>
-                <span className="tech-tag">React.js</span>
-                <span className="tech-tag">Node.js</span>
-                <span className="tech-tag">REST APIs</span>
-                <span className="tech-tag">CUDA Python</span>
-              </div>
-              <div className="card-glow-reflection"></div>
-            </motion.div>
+          <div className="about-layout-grid-row w-100 mt-4">
+            
+            {/* LEFT COLUMN: IDENTITY IDENTITY PANEL & META STATUS GRID */}
+            <div className="about-profile-panel-side">
+              <SlideReveal direction="left">
+                {/* Dynamic Rotating/Hovering Logo Container */}
+                <div className="profile-identity-box mb-4">
+                  <div className="kinetic-border-shape"></div>
+                  <h1 className="display-initials-text">SR</h1>
+                  <div className="nebula-reflection-pool"></div>
+                </div>
+
+                {/* META STATUS LISTING GRID */}
+                <div className="meta-status-table">
+                  <div className="meta-table-row">
+                    <span className="meta-label">STATUS</span>
+                    <span className="meta-value status-glow-dot">OPEN TO WORK</span>
+                  </div>
+                  <div className="meta-table-row">
+                    <span className="meta-label">LOCATION</span>
+                    <span className="meta-value">Salem, TN</span>
+                  </div>
+                  <div className="meta-table-row">
+                    <span className="meta-label">YEAR</span>
+                    <span className="meta-value">3rd Year CSE</span>
+                  </div>
+                </div>
+              </SlideReveal>
+            </div>
+
+            {/* RIGHT COLUMN: PROFESSIONAL STATEMENT & ATTRIBUTE TAGS */}
+            <div className="about-profile-content-side">
+              <SlideReveal direction="right">
+                <h3 className="about-profile-sub-intent mb-3">
+                  Building the Future, <br />
+                  <span className="violet-glow-intent">One Line at a Time</span>
+                </h3>
+
+                <p className="about-profile-bio">
+                  I'm Sriram — a third-year Computer Science Engineering student focused heavily on full-stack excellence. 
+                  My passion lies at the intersection of building highly performant backends and crafting clean, secure digital spaces.
+                </p>
+
+                <p className="about-profile-bio mb-4">
+                  I specialize in turning complex problems into scalable web applications. From designing responsive, 
+                  fluid frontends with React to managing multi-tier backend architectures with Node.js and MongoDB, 
+                  I am driven by clean logic and modern system performance.
+                </p>
+
+                {/* ATTRIBUTE TAG CLOUD */}
+                <div className="attribute-badge-cloud mb-5">
+                  <span className="attr-tag">Problem Solver</span>
+                  <span className="attr-tag">Quick Learner</span>
+                  <span className="attr-tag">MERN Developer</span>
+                  <span className="attr-tag">Analytical Thinker</span>
+                  <span className="attr-tag">Adaptable</span>
+                </div>
+
+                {/* THE RESUME DOWNLOAD ACTION LINK */}
+                <div className="action-button-alignment">
+                  <a
+                    href="/Sriram_R_Resume.pdf"
+                    className="btn btn-space-primary d-inline-flex align-items-center gap-2"
+                  >
+                    <FaDownload className="download-icon-bounce" />
+                    Download Resume
+                  </a>
+                </div>
+              </SlideReveal>
+            </div>
+
           </div>
 
         </div>
