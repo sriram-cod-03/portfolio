@@ -1,0 +1,236 @@
+/* ========================================= */
+/* ISOLATED EXPERIENCE MAGIC RINGS ENGINE    */
+/* ========================================= */
+
+.experience-rings-section {
+  position: relative;
+  width: 100%;
+  padding: 120px 0;
+  background: transparent !important;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.custom-experience-container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 5;
+}
+
+.experience-section-heading {
+  font-size: 3.4rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: #ffffff;
+}
+
+/* ========================================= */
+/* BACKGROUND BACKGROUND STATIC RADAR MAGIC RINGS */
+/* ========================================= */
+
+.experience-rings-backdrop {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.magic-ring-exp {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(168, 85, 247, 0.05);
+  background: transparent;
+  box-shadow: 0 0 35px rgba(168, 85, 247, 0.02), inset 0 0 25px rgba(59, 130, 246, 0.01);
+  animation: experience-ring-pulse 5s ease-in-out infinite alternate;
+}
+
+.exp-ring-1 { width: 400px; height: 400px; animation-delay: 0s; }
+.exp-ring-2 { width: 700px; height: 700px; animation-delay: 0.4s; border-color: rgba(59, 130, 246, 0.05); }
+.exp-ring-3 { width: 1000px; height: 1000px; animation-delay: 0.8s; }
+.exp-ring-4 { width: 1300px; height: 1300px; animation-delay: 1.2s; border-color: rgba(168, 85, 247, 0.08); }
+
+@keyframes experience-ring-pulse {
+  0% { transform: scale(0.97) rotate(0deg); opacity: 0.5; border-color: rgba(168, 85, 247, 0.04); }
+  100% { transform: scale(1.03) rotate(1deg); opacity: 0.9; border-color: rgba(192, 132, 252, 0.12); box-shadow: 0 0 45px rgba(168, 85, 247, 0.06), inset 0 0 30px rgba(59, 130, 246, 0.03); }
+}
+
+/* ========================================= */
+/* ROW LAYOUT STRUCTURE TRACK GRID           */
+/* ========================================= */
+
+.experience-wrapper-track {
+  position: relative;
+  width: 100%;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.experience-item-row {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.row-left-align { flex-direction: row; }
+.row-right-align { flex-direction: row-reverse; }
+
+.experience-card-column,
+.experience-empty-spacer-column {
+  width: 50%;
+}
+
+.row-left-align .experience-card-column { padding-right: 40px; }
+.row-right-align .experience-card-column { padding-left: 40px; }
+
+/* ========================================= */
+/* HIGH-TRANSPARENCY GLASS CARD BASE SETUP   */
+/* ========================================= */
+
+.experience-space-glass-card {
+  position: relative;
+  background: rgba(14, 5, 26, 0.5) !important; 
+  border: 1px solid rgba(168, 85, 247, 0.18) !important;
+  border-radius: 20px;
+  padding: 30px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  text-align: left;
+  overflow: hidden; /* Keeps tracking loops locked cleanly inside boundaries */
+}
+
+/* ========================================= */
+/* KINETIC HOVER PULSE WAVES ENGINE          */
+/* ========================================= */
+
+/* Sets anchor bounds on the borders left and right inside the frame */
+.card-radar-wave-emitter {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0; /* Hidden by default layout profiles rules */
+  transition: opacity 0.4s ease;
+}
+
+.emitter-left { left: 0; }
+.emitter-right { right: 0; }
+
+/* Draws the glowing vector circle rings arcs on left/right wings */
+.card-radar-wave-emitter::before,
+.card-radar-wave-emitter::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 2px solid rgba(168, 85, 247, 0.4);
+  background: transparent;
+  transform: translateY(-50%) scale(0.2);
+}
+
+/* Positions left-side expanding waves */
+.emitter-left::before, .emitter-left::after { left: -100px; transform-origin: left center; }
+/* Positions right-side expanding waves */
+.emitter-right::before, .emitter-right::after { right: -100px; transform-origin: right center; }
+
+/* TRIGGERS SCREEN RECORD NO.1 ANIMATION STACKS INSTANTLY ON MOUSEOVER */
+.experience-space-glass-card:hover .card-radar-wave-emitter {
+  opacity: 1;
+}
+
+.experience-space-glass-card:hover .emitter-left::before {
+  animation: radar-wave-propagate-left 2s cubic-bezier(0.25, 0.8, 0.25, 1) infinite;
+}
+.experience-space-glass-card:hover .emitter-left::after {
+  animation: radar-wave-propagate-left 2s cubic-bezier(0.25, 0.8, 0.25, 1) infinite;
+  animation-delay: 1s; /* Stagger timing to alternate expanding lines */
+}
+
+.experience-space-glass-card:hover .emitter-right::before {
+  animation: radar-wave-propagate-right 2s cubic-bezier(0.25, 0.8, 0.25, 1) infinite;
+}
+.experience-space-glass-card:hover .emitter-right::after {
+  animation: radar-wave-propagate-right 2s cubic-bezier(0.25, 0.8, 0.25, 1) infinite;
+  animation-delay: 1s;
+}
+
+/* WAVES EXTRUDING RADIAL TRACK KEYFRAMES (Left and Right Splitting Matrix) */
+@keyframes radar-wave-propagate-left {
+  0% {
+    transform: translateY(-50%) scale(0.2);
+    opacity: 1;
+    box-shadow: 0 0 15px rgba(168, 85, 247, 0.3);
+  }
+  100% {
+    transform: translateY(-50%) scale(2.5);
+    opacity: 0;
+    border-color: rgba(59, 130, 246, 0); /* Shifts slightly towards electric blue limits on fade out */
+    box-shadow: 0 0 40px rgba(59, 130, 246, 0);
+  }
+}
+
+@keyframes radar-wave-propagate-right {
+  0% {
+    transform: translateY(-50%) scale(0.2);
+    opacity: 1;
+    box-shadow: 0 0 15px rgba(168, 85, 247, 0.3);
+  }
+  100% {
+    transform: translateY(-50%) scale(2.5);
+    opacity: 0;
+    border-color: rgba(59, 130, 246, 0);
+    box-shadow: 0 0 40px rgba(59, 130, 246, 0);
+  }
+}
+
+/* CARD DETAILS INTERNAL GLOW ADJUSTMENTS */
+.experience-space-glass-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(168, 85, 247, 0.5) !important;
+  box-shadow: 0 20px 45px rgba(168, 85, 247, 0.35), 
+              inset 0 0 20px rgba(168, 85, 247, 0.1); /* Adds internal center emission */
+}
+
+/* TYPOGRAPHY METRICS INSIDE CARDS */
+.work-position-title { font-size: 1.35rem; font-weight: 700; color: #ffffff; letter-spacing: -0.3px; position: relative; z-index: 2; }
+.work-company-name { font-size: 0.98rem; font-weight: 500; color: #c084fc; letter-spacing: 0.3px; position: relative; z-index: 2; }
+.work-technical-bio { font-size: 0.95rem; line-height: 1.65; color: #cbd5e1; position: relative; z-index: 2; }
+
+/* CHIPS & TAG BADGES TRACK */
+.card-badge-header-row { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; position: relative; z-index: 2; }
+.work-duration-badge { font-family: monospace; font-size: 0.85rem; font-weight: 600; background: rgba(255, 255, 255, 0.04); padding: 6px 14px; border-radius: 8px; color: #e2e8f0; border: 1px solid rgba(255, 255, 255, 0.06); }
+
+.status-pill.work-glow-badge {
+  font-family: monospace; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; padding: 5px 12px; border-radius: 20px;
+  background: rgba(59, 130, 246, 0.1); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.experience-card-tech-cloud { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 15px; position: relative; z-index: 2; }
+.experience-mini-tag { font-family: monospace; font-size: 0.78rem; background: rgba(168, 85, 247, 0.05); border: 1px solid rgba(168, 85, 247, 0.2); color: #d8b4fe; padding: 4px 10px; border-radius: 6px; font-weight: 500; }
+
+/* RESPONSIVE BREAKPOINTS COLLAPSE SCALING */
+@media (max-width: 768px) {
+  .experience-item-row { flex-direction: column !important; gap: 20px; }
+  .experience-card-column { width: 100% !important; padding: 0 !important; }
+  .experience-empty-spacer-column { display: none; }
+  .exp-ring-3, .exp-ring-4 { display: none; }
+}

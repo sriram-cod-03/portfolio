@@ -1,0 +1,213 @@
+/* ========================================= */
+/* PREMIUM GLOWING VERTICAL TIMELINE ENGINE  */
+/* ========================================= */
+
+.timeline-space-section {
+  position: relative;
+  width: 100%;
+  padding: 100px 0;
+  background: transparent !important; /* Retains your pristine moving star background particles */
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.custom-timeline-container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 5;
+}
+
+.timeline-section-heading {
+  font-size: 3.4rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: #ffffff;
+}
+
+/* ========================================= */
+/* THE TIMELINE PIPELINE & CENTRAL AXIS CORRIDOR */
+/* ========================================= */
+
+.timeline-wrapper-track {
+  position: relative;
+  width: 100%;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* FIXED CONSOLIDATION: VIOLET RADAR LINE TRACKING EXACTLY LIKE IMAGE_8DCD64.PNG */
+.timeline-central-axis-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 3px;
+  background: linear-gradient(180deg, #a855f7 0%, #6366f1 50%, rgba(168, 85, 247, 0.1) 100%);
+  transform: translateX(-50%);
+  box-shadow: 0 0 15px rgba(168, 85, 247, 0.6);
+  z-index: 1;
+}
+
+/* MASTER ALTERNATING LAYOUT BLOCK ROW */
+.timeline-item-row {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+/* Symmetrical Grid Flippers */
+.row-left-align { flex-direction: row; }
+.row-right-align { flex-direction: row-reverse; }
+
+.timeline-card-column,
+.timeline-empty-spacer-column {
+  flex: 1;
+  width: 50%;
+}
+
+.row-left-align .timeline-card-column { padding-right: 50px; }
+.row-right-align .timeline-card-column { padding-left: 50px; }
+
+/* ========================================= */
+/* TIMELINE INTERACTIVE NODE BEACONS          */
+/* ========================================= */
+
+.timeline-track-node-beacon {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 22px;
+  height: 22px;
+  background: #0d0614;
+  border: 3px solid #c084fc; /* Hardlined violet bezel ring */
+  border-radius: 50%;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 12px #a855f7;
+}
+
+.node-core-glow {
+  width: 6px;
+  height: 6px;
+  background: #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 0 6px #ffffff;
+}
+
+/* ========================================= */
+/* FROSTED GLASS SPACE CARD TOKENS           */
+/* ========================================= */
+
+.timeline-space-glass-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.02) !important;
+  border: 1px solid rgba(168, 85, 247, 0.2) !important;
+  border-radius: 20px;
+  padding: 30px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3), inset 0 0 15px rgba(168, 85, 247, 0.05);
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.timeline-space-glass-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(168, 85, 247, 0.5) !important;
+  box-shadow: 0 20px 45px rgba(168, 85, 247, 0.25);
+}
+
+/* TYPOGRAPHY METRICS INSIDE CARDS */
+.education-degree-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.2px;
+}
+
+.education-college-location {
+  font-size: 0.98rem;
+  font-weight: 500;
+  color: #a855f7; /* Custom Violet focus coloring */
+  letter-spacing: 0.3px;
+}
+
+.education-academic-bio {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: #cbd5e1;
+  margin: 0;
+}
+
+/* ========================================= */
+/* OVERLAY BADGES LOGIC TRACK                */
+/* ========================================= */
+
+.card-badge-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.batch-duration-badge {
+  font-family: monospace;
+  font-size: 0.85rem;
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 6px 14px;
+  border-radius: 8px;
+  color: #cbd5e1;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.status-pill {
+  font-family: monospace;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 5px 12px;
+  border-radius: 20px;
+}
+
+/* High contrast pulsing variants for current statuses */
+.status-pill.pursuing-glow {
+  background: rgba(59, 130, 246, 0.1);
+  color: #60a5fa;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.status-pill.completed-glow {
+  background: rgba(168, 85, 247, 0.1);
+  color: #c084fc;
+  border: 1px solid rgba(168, 85, 247, 0.3);
+}
+
+/* ========================================= */
+/* RESPONSIVE FLUID SCALING COLLAPSE MAP     */
+/* ========================================= */
+
+@media (max-width: 768px) {
+  /* Shifts axis path line to the left perimeter edge on smaller tablets/mobile items */
+  .timeline-central-axis-line { left: 20px; transform: none; }
+  .timeline-item-row { flex-direction: column !important; align-items: flex-start; }
+  
+  .timeline-card-column, .timeline-empty-spacer-column { width: 100%; }
+  .row-left-align .timeline-card-column,
+  .row-right-align .timeline-card-column { padding: 0 0 0 45px; }
+  
+  .timeline-track-node-beacon { left: 20px; top: 35px; transform: translate(-50%, -50%); }
+}

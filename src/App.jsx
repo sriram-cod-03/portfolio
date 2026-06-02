@@ -13,6 +13,8 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import { SpaceBackground } from "./components/SpaceBackground"; // Space Background Import
 import About from "./components/About";
+import Timeline from "./components/Timeline";
+import Experience from "./components/Experience";
 
 /* Scroll Reveal */
 function useScrollReveal() {
@@ -50,7 +52,9 @@ function App() {
           <section className="reveal"><Hero /></section>
           <section className="reveal"><About/></section>
           <section className="reveal"><Skills /></section>
+          <sectio className="reveal"><Experience/></sectio>
           <section className="reveal"><Projects /></section>
+          <sectin className="reveal"><Timeline/></sectin>
           <section className="reveal"><Certificates /></section>
           <section className="reveal"><Contact /></section>
         </main>
