@@ -1,37 +1,225 @@
-/* NAVBAR */
-.navbar {
-  background: rgba(31, 0, 51, 0.6);
-  backdrop-filter: blur(15px);
-  border-bottom: 1px solid rgba(168, 85, 247, 0.2);
+/* ========================================= */
+/* PREMIUM ULTRA-MODERN FIXED SPACIAL NAVBAR */
+/* ========================================= */
+
+.custom-navbar {
+  background: rgba(10, 4, 22, 0.4) !important; /* Elegant space transparency */
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(168, 85, 247, 0.12) !important;
+  padding: 12px 0;
+  transition: all 0.4s ease;
+  z-index: 1000;
 }
 
-.navbar a,
-.navbar .navbar-brand,
-.navbar .nav-link {
+.custom-nav-container {
+  max-width: 1340px;
+  margin: 0 auto;
+  padding: 0 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.custom-navbar .navbar-brand {
+  font-size: 1.4rem !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.5px;
   color: #ffffff !important;
 }
 
-/* Custom fluid padding resets for larger link items counts arrays */
-.custom-navbar .nav-link {
-  font-size: 0.92rem !important;
-  font-weight: 500;
-  letter-spacing: 0.3px;
-  padding: 6px 10px !important;
+.custom-navbar .brand-dot {
+  color: #c084fc;
+  text-shadow: 0 0 8px #a855f7;
+}
+
+/* ========================================= */
+/* CENTERED NAVIGATION MECHANICS             */
+/* ========================================= */
+
+.nav-links-center-group {
+  display: flex;
+  align-items: center;
+  background: rgba(14, 5, 26, 0.6); /* Space dark glass container pod */
+  padding: 6px;
+  border-radius: 40px;
+  border: 1px solid rgba(168, 85, 247, 0.15);
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.6);
+}
+
+.custom-navbar .nav-link.dynamic-nav-link {
+  font-size: 0.9rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.2px;
+  color: #94a3b8 !important;
+  padding: 8px 18px !important;
+  position: relative;
+  z-index: 10;
   transition: color 0.3s ease;
 }
 
-.custom-navbar .nav-link.active {
-  color: #c084fc !important; /* Active tracking line indicator highlight */
-  text-shadow: 0 0 10px rgba(168, 85, 247, 0.4);
+.custom-navbar .nav-link.dynamic-nav-link.active-text {
+  color: #ffffff !important; /* Perfect crisp white overlay text */
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
 }
 
+/* ========================================= */
+/* SOLVED: PREMIUM ACETERNITY STAR BORDER    */
+/* ========================================= */
+
+.navbar-active-bg-pill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 5;
+  border-radius: 30px;
+  overflow: hidden; /* Clips the rotating light trail to the pill edges */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+/* The spinning light beam tracking trail */
+.star-border-glow-track {
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0%,
+    transparent 40%,
+    #c084fc 45%,   /* Neon star leading point color */
+    #a855f7 50%,   /* Mid trail purple */
+    transparent 55%,
+    transparent 100%
+  );
+  animation: star-border-spin 4s linear infinite;
+  z-index: 1;
+}
+
+/* Frosted mask that covers the center, revealing only a sharp border line */
+.star-border-card-content {
+  position: absolute;
+  top: 1.5px; /* Border thickness metrics scale */
+  left: 1.5px;
+  right: 1.5px;
+  bottom: 1.5px;
+  background: rgba(23, 10, 41, 0.85); /* Deep cosmic solid mask backing */
+  border-radius: 29px;
+  z-index: 2;
+  box-shadow: inset 0 0 10px rgba(168, 85, 247, 0.2);
+}
+
+/* Cosmic Rotation Engine */
+@keyframes star-border-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* ========================================= */
+/* PREMIUM GLOWING HIRE ME ACTION BUTTON     */
+/* ========================================= */
+
+.btn-navbar-hire-me {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 24px;
+  border-radius: 25px;
+  background: #090314;
+  color: #ffffff !important;
+  font-weight: 700;
+  font-size: 0.88rem;
+  text-decoration: none;
+  overflow: hidden;
+  border: 1px solid rgba(168, 85, 247, 0.5);
+  box-shadow: 0 4px 15px rgba(168, 85, 247, 0.2);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* SOLVED: Flex box alignment engine to lock text and icon in a perfect straight row */
+.hire-me-content-wrap {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px; /* Adds clean spacing between text and the paper plane icon */
+}
+
+/* SOLVED: Telegram Style Paper Plane Icon Metrics */
+.telegram-action-icon {
+  font-size: 0.85rem;
+  color: #c084fc; /* Vibrant theme violet accent tint */
+  transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), color 0.3s ease;
+}
+
+/* ========================================= */
+/* MOUSE OVER PHYSICS HOVER TRANSLATIONS     */
+/* ========================================= */
+
+.btn-navbar-hire-me:hover {
+  transform: translateY(-2px);
+  border-color: #c084fc;
+  box-shadow: 0 0 25px rgba(168, 85, 247, 0.6), 0 0 10px rgba(59, 130, 246, 0.2);
+}
+
+/* Cinematic reaction: Paper plane tilts upward and forward slightly like it's taking off */
+.btn-navbar-hire-me:hover .telegram-action-icon {
+  color: #ffffff; /* Transitions icon color to crisp white on focus */
+  transform: translate(2px, -2px) rotate(-15deg) scale(1.1);
+}
+
+.button-glow-radial {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.6) 0%, transparent 70%);
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.4s ease;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.btn-navbar-hire-me:hover .button-glow-radial { 
+  transform: translate(-50%, -50%) scale(1.6); 
+}
+
+/* ========================================= */
+/* MOBILE COLLAPSE RESPONSIVE OVERRIDES MAP */
+/* ========================================= */
+
 @media (max-width: 991px) {
-  /* Gives adequate block separation handles when elements stack inside a mobile collapse drawer */
-  .custom-navbar .navbar-nav {
-    padding: 15px 0;
-    text-align: left;
+  .navbar-collapse {
+    background: rgba(14, 6, 30, 0.98);
+    margin-top: 15px;
+    padding: 20px;
+    border-radius: 16px;
+    border: 1px solid rgba(168, 85, 247, 0.2);
   }
-  .custom-navbar .nav-item {
-    margin: 4px 0;
+  .nav-links-center-group {
+    flex-direction: column;
+    align-items: flex-start;
+    background: transparent;
+    border: none;
+    width: 100%;
+    gap: 8px;
+    padding: 0;
+    margin-bottom: 20px !important;
+    box-shadow: none;
+  }
+  .custom-navbar .nav-link.dynamic-nav-link {
+    width: 100%;
+    text-align: left;
+    padding: 10px 14px !important;
+  }
+  .navbar-active-bg-pill {
+    display: none !important; /* Hides star border animation inside vertical mobile stack trees */
   }
 }

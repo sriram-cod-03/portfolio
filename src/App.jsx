@@ -61,9 +61,9 @@ function App() {
             <About />
           </section>
 
-          {/* 3. EDUCATION TIMELINE SECTION */}
-          <section id="education" className="reveal">
-            <Timeline />
+          {/* 3. SKILLS STACK SECTION */}
+          <section id="skills" className="reveal">
+            <Skills />
           </section>
 
           {/* 4. WORK EXPERIENCE SECTION */}
@@ -71,19 +71,19 @@ function App() {
             <Experience />
           </section>
 
-          {/* 5. CERTIFICATE SECTION */}
-          <section id="certificate" className="reveal">
-            <Certificates />
-          </section>
-
-          {/* 6. SKILLS STACK SECTION */}
-          <section id="skills" className="reveal">
-            <Skills />
-          </section>
-
-          {/* 7. PROJECTS SECTION */}
+          {/* 5. PROJECTS SECTION */}
           <section id="projects" className="reveal">
             <Projects />
+          </section>
+          
+          {/* 6. EDUCATION TIMELINE SECTION */}
+          <section id="education" className="reveal">
+            <Timeline />
+          </section>
+
+          {/* 7. CERTIFICATE SECTION */}
+          <section id="certificate" className="reveal">
+            <Certificates />
           </section>
 
           {/* 8. CONTACT SECTION */}

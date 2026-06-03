@@ -1,7 +1,4 @@
-/* ========================================= */
-/* CONTACT SECTION & WORLD MAP BEACON        */
-/* ========================================= */
-
+/* PREMIUM SPACE COMMISSIONS / CONTACT CORE  */
 .contact-section {
   position: relative;
   width: 100%;
@@ -11,73 +8,155 @@
 
 .custom-contact-container {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 60px;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
   margin-top: 40px;
+  width: 100%;
+}
+
+/* GLOBAL HEADER CENTER ALIGNMENT MATRIX     */
+.global-contact-header-block {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.contact-main-title {
+  font-size: 3.2rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: #ffffff;
+}
+
+/* TWO-COLUMN FLEXGRID CORRIDOR FRAMEWORK    */
+.contact-content-split-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch; /* SOLVED EQUAL STRUCTURAL PROFILE HEIGHTS BALANCE */
+  width: 100%;
+  gap: 40px;
 }
 
 .contact-details-side,
 .contact-form-side {
   flex: 1;
+  width: 50%;
   min-width: 320px;
 }
 
-.contact-icon-wrapper {
-  width: 46px;
-  height: 46px;
-  border-radius: 12px;
-  background: rgba(31, 0, 51, 0.45);
-  border: 1px solid rgba(168, 85, 247, 0.35);
+/* Flex helper alignments inside cards blocks structure */
+.display-flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-grow-1 {
+  flex-grow: 1;
+}
+
+/* HIGH-TECH OPERATIONAL TERMINAL HEADER POD */
+.cyber-terminal-header-pod {
+  display: flex;
+  align-items: center;
+  background: rgba(31, 16, 56, 0.25);
+  border: 1px solid rgba(168, 85, 247, 0.25);
+  padding: 10px 18px;
+  border-radius: 14px;
+  max-width: 380px;
+  gap: 14px;
+  box-shadow: 0 4px 15px rgba(168, 85, 247, 0.1);
+}
+
+.terminal-badge-icon-wrap {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: rgba(14, 5, 26, 0.6);
+  border: 1px solid rgba(168, 85, 247, 0.4);
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 15px rgba(168, 85, 247, 0.2);
 }
 
-.violet-glow-icon {
-  font-size: 20px;
+.violet-glow-icon-mini {
   color: #c084fc;
+  font-size: 14px;
+  filter: drop-shadow(0 0 4px #a855f7);
 }
 
-.contact-main-title {
-  font-size: 3.2rem;
-  font-weight: 700;
-  letter-spacing: -0.01em;
+.terminal-status-details {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  flex-grow: 1;
 }
+
+.terminal-pod-title {
+  font-family: monospace;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 1px;
+}
+
+.terminal-pod-status {
+  font-family: monospace;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #94a3b8;
+  margin-top: 2px;
+}
+
+.terminal-pulse-ping-holder {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 12px;
+  height: 12px;
+}
+
+.terminal-ping-dot {
+  width: 6px;
+  height: 6px;
+  background: #06b6d4;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.terminal-ping-radar {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #06b6d4;
+  border-radius: 50%;
+  background: rgba(6, 182, 212, 0.2);
+  animation: map-radar-ping 1.8s infinite ease-out;
+  z-index: 1;
+}
+
+/* DETAILS DESCRIPTIONS AND INTERACTIVE MAPS */
 
 .contact-subtitle-desc {
   color: #94a3b8;
   font-size: 1.05rem;
   line-height: 1.6;
   max-width: 480px;
-}
-
-.contact-meta-row {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  flex-wrap: wrap;
-  color: #cbd5e1;
-  font-weight: 500;
-  font-size: 0.95rem;
-}
-
-.meta-divider {
-  color: rgba(168, 85, 247, 0.5);
+  text-align: left;
 }
 
 .world-map-wrapper {
   position: relative;
   width: 100%;
-  height: 280px;
-  margin-top: 30px;
+  height: 250px; /* Constrained dimensions tracker for symmetric layouts boundaries */
+  margin-top: 20px;
 }
 
 .map-base-graphic {
   width: 100%;
-  height: 280px;
   border-radius: 16px;
   position: relative;
   border: 1px solid rgba(168, 85, 247, 0.15);
@@ -94,10 +173,11 @@
   justify-content: center;
 }
 
-.map-pin-pulse {
+/* SOLVED GEOMETRIC MATRIX LOCATION PINNING FOR MAPS OVER INDIA */
+.map-pin-pulse-india {
   position: absolute;
-  top: 59.5% !important;
-  left: 75.5% !important;
+  top: 61.5% !important; /* Mapped precisely to align over Southern India */
+  left: 69.2% !important;
   display: inline-flex !important;
   flex-direction: column;
   align-items: center;
@@ -130,22 +210,141 @@
   position: absolute;
   bottom: 18px;
   white-space: nowrap;
-  background: rgba(15, 5, 26, 0.85);
-  border: 1px solid rgba(168, 85, 247, 0.4);
+  background: rgba(15, 5, 26, 0.9);
+  border: 1px solid rgba(168, 85, 247, 0.5);
   padding: 4px 10px;
   border-radius: 8px;
   font-size: 0.75rem;
   backdrop-filter: blur(4px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  color: #ffffff;
 }
 
-/* ========================================= */
-/* GLASS CONTACT FORM MECHANICS              */
-/* ========================================= */
+/* SOLVED: UNIFIED UNIFORM VIOLET GLOW BOXES */
+.contact-vertical-meta-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
 
+.meta-stack-row-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  text-align: left;
+}
+
+.stack-icon-shield.active-violet-shield-box {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  background: rgba(31, 0, 51, 0.45) !important;
+  border: 1px solid rgba(168, 85, 247, 0.35) !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(168, 85, 247, 0.25);
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.meta-stack-row-item:hover .stack-icon-shield.active-violet-shield-box {
+  transform: scale(1.05);
+  border-color: rgba(192, 132, 252, 0.7) !important;
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.45);
+}
+
+.stack-dynamic-vector-icon.color-pure-violet {
+  font-size: 18px !important;
+  color: #c084fc !important;
+  filter: drop-shadow(0 0 6px rgba(168, 85, 247, 0.5));
+}
+
+.stack-item-details-block {
+  display: flex;
+  flex-direction: column;
+}
+
+.stack-label-caption {
+  font-family: monospace;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #64748b;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.stack-value-content {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #e2e8f0;
+  margin-top: 2px;
+  letter-spacing: -0.1px;
+}
+
+/* EXTRA VISUAL ASSET: SCIFI CENTRAL DIVIDER */
+.contact-central-corridor-divider {
+  position: absolute;
+  left: 50%;
+  top: 15%;
+  bottom: 5%;
+  width: 100px;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.corridor-vertical-laser {
+  flex: 1;
+  width: 1px;
+  background: linear-gradient(180deg, transparent, rgba(168, 85, 247, 0.3) 30%, rgba(59, 130, 246, 0.3) 70%, transparent);
+}
+
+.corridor-status-node-pod {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 15px 8px;
+  background: rgba(10, 4, 22, 0.85);
+  border: 1px solid rgba(168, 85, 247, 0.3);
+  border-radius: 30px;
+  margin: 20px 0;
+  backdrop-filter: blur(8px);
+  width: 36px;
+  min-height: 120px;
+}
+
+.cyber-pulse-dot {
+  width: 6px;
+  height: 6px;
+  background: #10b981;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #10b981, 0 0 20px #10b981;
+  animation: cyber-beacon-blink 1.5s infinite ease-in-out;
+}
+
+.cyber-terminal-text {
+  font-family: monospace;
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #c084fc;
+  writing-mode: vertical-rl;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* GLASS CONTACT FORM ARMATURE MECHANICS     */
 .glass-contact-card {
-  background: rgba(15, 6, 25, 0.4);
-  border: 1px solid rgba(168, 85, 247, 0.15);
+  background: rgba(15, 6, 25, 0.4) !important;
+  border: 1px solid rgba(168, 85, 247, 0.15) !important;
   border-radius: 20px;
   padding: 40px;
   backdrop-filter: blur(16px);
@@ -161,7 +360,8 @@
 .aceternity-form-engine {
   display: flex;
   flex-direction: column;
-  gap: 22px;
+  justify-content: space-between;
+  height: 100%;
 }
 
 .form-group-block {
@@ -169,6 +369,7 @@
   flex-direction: column;
   gap: 8px;
   text-align: left;
+  margin-bottom: 12px;
 }
 
 .form-group-block label {
@@ -196,13 +397,48 @@
   box-shadow: 0 0 15px rgba(168, 85, 247, 0.25);
 }
 
+/* KEYFRAMES REANIMATION LIFECYCLES         */
 @keyframes map-radar-ping {
   0% { transform: scale(0.5); opacity: 1; }
   100% { transform: scale(2.5); opacity: 0; }
 }
 
+@keyframes cyber-beacon-blink {
+  0%, 100% { opacity: 0.4; transform: scale(0.9); }
+  50% { opacity: 1; transform: scale(1.1); box-shadow: 0 0 14px #10b981; }
+}
+
+/* RESPONSIVE SCALING ADAPTATIONS            */
+
+@media (max-width: 1199px) {
+  .contact-central-corridor-divider {
+    display: none !important;
+  }
+}
+
 @media (max-width: 991px) {
-  .contact-main-title { font-size: 2.6rem; }
-  .custom-contact-container { gap: 40px; }
-  .glass-contact-card { padding: 30px; }
+  .contact-content-split-wrapper {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 35px;
+  }
+  .contact-details-side,
+  .contact-form-side {
+    width: 100% !important;
+  }
+  .contact-main-title { 
+    font-size: 2.6rem; 
+  }
+  .glass-contact-card { 
+    padding: 30px; 
+  }
+}
+
+@media (max-width: 480px) {
+  .stack-value-content {
+    font-size: 0.95rem;
+  }
+  .meta-stack-row-item {
+    gap: 12px;
+  }
 }

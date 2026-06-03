@@ -1,12 +1,12 @@
 /* ========================================= */
-/* PREMIUM GLOWING VERTICAL TIMELINE ENGINE  */
+/* PREMIUM SCROLL-LINKED VERTICAL TIMELINE   */
 /* ========================================= */
 
 .timeline-space-section {
   position: relative;
   width: 100%;
-  padding: 100px 0;
-  background: transparent !important; /* Retains your pristine moving star background particles */
+  padding: 120px 0;
+  background: transparent !important;
   overflow: hidden;
   box-sizing: border-box;
 }
@@ -30,29 +30,43 @@
 }
 
 /* ========================================= */
-/* THE TIMELINE PIPELINE & CENTRAL AXIS CORRIDOR */
+/* THE DRAGGABLE TRACK PATH LINES MECHANICS  */
 /* ========================================= */
 
 .timeline-wrapper-track {
   position: relative;
   width: 100%;
-  margin-top: 50px;
+  margin-top: 60px;
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 60px;
 }
 
-/* FIXED CONSOLIDATION: VIOLET RADAR LINE TRACKING EXACTLY LIKE IMAGE_8DCD64.PNG */
-.timeline-central-axis-line {
+/* De-saturated base trace guide line running in background */
+.timeline-base-track-line {
   position: absolute;
   top: 0;
-  bottom: 0;
+  height: 100%;
   left: 50%;
   width: 3px;
-  background: linear-gradient(180deg, #a855f7 0%, #6366f1 50%, rgba(168, 85, 247, 0.1) 100%);
+  background: rgba(255, 255, 255, 0.05);
   transform: translateX(-50%);
-  box-shadow: 0 0 15px rgba(168, 85, 247, 0.6);
   z-index: 1;
+}
+
+/* SOLVED DYNAMIC LINK BEAM: Grows down pixel by pixel during user scroll operations */
+.timeline-active-scroll-beam {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 3px;
+  background: linear-gradient(180deg, #3b82f6 0%, #a855f7 70%, #c084fc 100%);
+  transform: translateX(-50%);
+  box-shadow:
+    0 0 15px rgba(168, 85, 247, 0.6),
+    0 0 30px rgba(59, 130, 246, 0.3);
+  z-index: 2;
+  transform-origin: top center;
 }
 
 /* MASTER ALTERNATING LAYOUT BLOCK ROW */
@@ -61,12 +75,15 @@
   align-items: center;
   width: 100%;
   position: relative;
-  z-index: 2;
+  z-index: 3;
 }
 
-/* Symmetrical Grid Flippers */
-.row-left-align { flex-direction: row; }
-.row-right-align { flex-direction: row-reverse; }
+.row-left-align {
+  flex-direction: row;
+}
+.row-right-align {
+  flex-direction: row-reverse;
+}
 
 .timeline-card-column,
 .timeline-empty-spacer-column {
@@ -74,11 +91,15 @@
   width: 50%;
 }
 
-.row-left-align .timeline-card-column { padding-right: 50px; }
-.row-right-align .timeline-card-column { padding-left: 50px; }
+.row-left-align .timeline-card-column {
+  padding-right: 60px;
+}
+.row-right-align .timeline-card-column {
+  padding-left: 60px;
+}
 
 /* ========================================= */
-/* TIMELINE INTERACTIVE NODE BEACONS          */
+/* SOLVED: INTERACTIVE NODE POINTER BEACONS   */
 /* ========================================= */
 
 .timeline-track-node-beacon {
@@ -86,39 +107,55 @@
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  width: 22px;
-  height: 22px;
-  background: #0d0614;
-  border: 3px solid #c084fc; /* Hardlined violet bezel ring */
+  width: 20px;
+  height: 20px;
+  background: #090314;
+  border: 3px solid rgba(255, 255, 255, 0.15); /* Soft gray ring when inactive */
   border-radius: 50%;
   z-index: 10;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 0 12px #a855f7;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  box-shadow: none;
 }
 
 .node-core-glow {
   width: 6px;
   height: 6px;
-  background: #ffffff;
+  background: rgba(255, 255, 255, 0.3);
   border-radius: 50%;
-  box-shadow: 0 0 6px #ffffff;
+  transition: all 0.4s ease;
+}
+
+/* SOLVED ACTIVE EFFECT STACK: Triggered instantly when active scroll beam intersects node coordinate */
+.timeline-track-node-beacon.ignite-neon-glow {
+  border-color: #c084fc !important;
+  background: #000000;
+  transform: translate(-50%, -50%) scale(1.25);
+  box-shadow:
+    0 0 20px #a855f7,
+    0 0 40px rgba(168, 85, 247, 0.6);
+}
+
+.timeline-track-node-beacon.ignite-neon-glow .node-core-glow {
+  background: #ffffff !important;
+  box-shadow: 0 0 8px #ffffff;
 }
 
 /* ========================================= */
-/* FROSTED GLASS SPACE CARD TOKENS           */
+/* PREMIUM FROSTED GLASS SPACE CARD TOKENS   */
 /* ========================================= */
 
 .timeline-space-glass-card {
   position: relative;
-  background: rgba(255, 255, 255, 0.02) !important;
-  border: 1px solid rgba(168, 85, 247, 0.2) !important;
+  background: rgba(14, 5, 26, 0.45) !important;
+  border: 1px solid rgba(168, 85, 247, 0.16) !important;
   border-radius: 20px;
   padding: 30px;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3), inset 0 0 15px rgba(168, 85, 247, 0.05);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
   transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
@@ -126,23 +163,22 @@
   transform: translateY(-5px);
   border-color: rgba(168, 85, 247, 0.5) !important;
   box-shadow: 0 20px 45px rgba(168, 85, 247, 0.25);
+  background: rgba(22, 9, 38, 0.55) !important;
 }
 
-/* TYPOGRAPHY METRICS INSIDE CARDS */
 .education-degree-title {
   font-size: 1.35rem;
   font-weight: 700;
   color: #ffffff;
   letter-spacing: -0.2px;
+  line-height: 1.4;
 }
-
 .education-college-location {
   font-size: 0.98rem;
   font-weight: 500;
-  color: #a855f7; /* Custom Violet focus coloring */
+  color: #c084fc;
   letter-spacing: 0.3px;
 }
-
 .education-academic-bio {
   font-size: 0.95rem;
   line-height: 1.65;
@@ -150,10 +186,25 @@
   margin: 0;
 }
 
-/* ========================================= */
-/* OVERLAY BADGES LOGIC TRACK                */
-/* ========================================= */
+/* CHIPS DECK CLOUDS */
+.timeline-card-tech-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 18px;
+}
+.timeline-mini-tag {
+  font-family: monospace;
+  font-size: 0.78rem;
+  background: rgba(168, 85, 247, 0.05);
+  border: 1px solid rgba(168, 85, 247, 0.2);
+  color: #d8b4fe;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-weight: 500;
+}
 
+/* META CHIPS */
 .card-badge-header-row {
   display: flex;
   justify-content: space-between;
@@ -161,53 +212,48 @@
   flex-wrap: wrap;
   gap: 10px;
 }
-
 .batch-duration-badge {
   font-family: monospace;
   font-size: 0.85rem;
   font-weight: 600;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.04);
   padding: 6px 14px;
   border-radius: 8px;
   color: #cbd5e1;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.06);
 }
-
-.status-pill {
-  font-family: monospace;
-  font-size: 0.75rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  padding: 5px 12px;
-  border-radius: 20px;
-}
-
-/* High contrast pulsing variants for current statuses */
-.status-pill.pursuing-glow {
-  background: rgba(59, 130, 246, 0.1);
-  color: #60a5fa;
-  border: 1px solid rgba(59, 130, 246, 0.3);
-}
-
-.status-pill.completed-glow {
+.status-pill.education-glow {
   background: rgba(168, 85, 247, 0.1);
   color: #c084fc;
   border: 1px solid rgba(168, 85, 247, 0.3);
 }
 
 /* ========================================= */
-/* RESPONSIVE FLUID SCALING COLLAPSE MAP     */
+/* RESPONSIVE FLUID COLLAPSE ENGINE MAPS     */
 /* ========================================= */
 
 @media (max-width: 768px) {
-  /* Shifts axis path line to the left perimeter edge on smaller tablets/mobile items */
-  .timeline-central-axis-line { left: 20px; transform: none; }
-  .timeline-item-row { flex-direction: column !important; align-items: flex-start; }
-  
-  .timeline-card-column, .timeline-empty-spacer-column { width: 100%; }
+  .timeline-base-track-line,
+  .timeline-active-scroll-beam {
+    left: 20px;
+    transform: none;
+  }
+  .timeline-item-row {
+    flex-direction: column !important;
+    align-items: flex-start;
+    gap: 24px;
+  }
+  .timeline-card-column,
+  .timeline-empty-spacer-column {
+    width: 100%;
+  }
   .row-left-align .timeline-card-column,
-  .row-right-align .timeline-card-column { padding: 0 0 0 45px; }
-  
-  .timeline-track-node-beacon { left: 20px; top: 35px; transform: translate(-50%, -50%); }
+  .row-right-align .timeline-card-column {
+    padding: 0 0 0 45px;
+  }
+  .timeline-track-node-beacon {
+    left: 20px;
+    top: 35px;
+    transform: translate(-50%, -50%);
+  }
 }

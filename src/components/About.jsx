@@ -12,8 +12,8 @@ const About = () => {
           
           {/* TOP SECTION BLOCK INDEX IDENTIFIER */}
           <div className="text-center w-100 mb-4">
-            <span className="section-index-tag">01 // WHO AM I</span>
-            <h2 className="about-section-heading mt-2">About Me</h2>
+            <span className="section-index-tag">01 // EXECUTIVE SUMMARY</span>
+            <h2 className="about-section-heading mt-2">Character Profile</h2>
             <div className="heading-violet-underline"></div>
           </div>
 

@@ -44,9 +44,10 @@ const Projects = () => {
           {/* SECTION TITLE ROW */}
           <div className="text-center w-100 mb-4">
             <SlideReveal direction="left">
-              <h2 className="projects-main-heading text-white">Projects</h2>
+              <span className="section-index-tag">04 // ENGINEERING SOLUTIONS</span>
+              <h2 className="projects-main-heading text-white">Custom Builds & Deployments</h2>
               <p style={{ color: "#94a3b8", fontSize: "1.05rem" }}>
-                Some of the real-world applications I've built
+                Production-ready deployments & architectural case studies
               </p>
               <div className="heading-violet-underline"></div>
             </SlideReveal>

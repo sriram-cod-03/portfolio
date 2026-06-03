@@ -77,9 +77,10 @@ const Skills = () => {
           {/* CORE SECTION HEADER */}
           <div className="text-center w-100 mb-5">
             <SlideReveal direction="left">
-              <h2 className="skills-main-heading text-white">Skills</h2>
+              <span className="section-index-tag">02 // CORE COMPETENCIES</span>
+              <h2 className="skills-main-heading text-white">Skill Tree & Ability Matrix</h2>
               <p className="section-subtitle" style={{ color: "#94a3b8" }}>
-                Technologies I Work With
+                Advanced tech stack & engineering architecture toolsets
               </p>
               <div className="heading-violet-underline"></div>
             </SlideReveal>

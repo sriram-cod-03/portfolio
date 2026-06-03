@@ -57,8 +57,8 @@ const Certificate = () => {
           {/* SECTION TITLE ROW */}
           <div className="text-center w-100 mb-5">
             <SlideReveal direction="left">
-              <span className="section-index-tag">04 // CREDENTIALS CHECK</span>
-              <h2 className="certificate-main-heading text-white mt-2">Certifications</h2>
+              <span className="section-index-tag">06 // TECHNICAL VERIFICATIONS</span>
+              <h2 className="certificate-main-heading text-white mt-2">Legendary Unlocks & Perks</h2>
               <div className="heading-violet-underline"></div>
             </SlideReveal>
           </div>
