@@ -192,6 +192,126 @@
 }
 
 /* ========================================= */
+/* SOLVED: BRAND PROFILE PICTURE ALIGNMENT    */
+/* ========================================= */
+
+.custom-navbar-brand-group {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px; /* Clean spacing block between avatar shell and typography text line */
+  text-decoration: none !important;
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.custom-navbar-brand-group:hover {
+  transform: scale(1.02); /* Crisp spatial reaction when hovered */
+}
+
+.navbar-profile-avatar-shield {
+  position: relative;
+  width: 36px; /* Optimized layout bounding box */
+  height: 36px;
+  border-radius: 50%;
+  padding: 1.5px; /* Creates space for the glowing sub-border */
+  background: rgba(168, 85, 247, 0.25);
+  border: 1px solid rgba(168, 85, 247, 0.35);
+  box-shadow: 0 0 12px rgba(168, 85, 247, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible; /* Allows the ambient glow ring shadow matrices to project out */
+}
+
+.navbar-avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  z-index: 5;
+  background: #0a0416;
+  
+  /* SOLVED: Decreases image asset background brightness and shifts white into space grey */
+  filter: brightness(0.75) contrast(1.1) saturate(95%);
+  transition: filter 0.3s ease;
+}
+
+.avatar-portal-highres-img {
+  width: 100%;
+  height: auto;
+  max-height: 520px;
+  object-fit: cover;
+  display: block;
+  
+  /* SOLVED: Deepens the dark values and lowers white backplane light emission */
+  filter: brightness(0.8) contrast(1.15);
+  border-radius: 16px;
+}
+
+/* Dynamic space ambient aura element behind picture ring */
+.avatar-ambient-glow-ring {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 50%;
+  box-shadow: inset 0 0 8px rgba(192, 132, 252, 0.6);
+  opacity: 0.6;
+  z-index: 2;
+  transition: opacity 0.3s ease;
+}
+
+.custom-navbar-brand-group:hover .navbar-avatar-img {
+  /* Restores full high fidelity clarity smoothly when hovered */
+  filter: brightness(0.95) contrast(1.05);
+}
+
+.brand-name-text {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.3px;
+}
+
+/* ========================================= */
+/* SOLVED: CYBER LOADING SPINNER ACCENT      */
+/* ========================================= */
+
+.cyber-spinner-loader {
+  animation: rotate-loader-loop 2s linear infinite;
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+}
+
+.cyber-spinner-loader .path {
+  stroke: #c084fc; /* Vibrant purple loading accent circle track */
+  stroke-linecap: round;
+  animation: dash-loader-pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes rotate-loader-loop {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes dash-loader-pulse {
+  0% {
+    stroke-dasharray: 1, 150;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -35;
+  }
+  100% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -124;
+  }
+}
+
+/* ========================================= */
 /* MOBILE COLLAPSE RESPONSIVE OVERRIDES MAP */
 /* ========================================= */
 

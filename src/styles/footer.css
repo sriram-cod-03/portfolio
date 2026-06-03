@@ -1,0 +1,311 @@
+/* ========================================= */
+/* PREMIUM ULTRA-MODERN GLOWING SPACE FOOTER */
+/* ========================================= */
+
+.custom-premium-footer {
+  position: relative;
+  width: 100%;
+  padding: 60px 0 20px 0;
+  background: rgba(10, 4, 22, 0.4) !important; /* Elegant matching transparency backdrop mask */
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-top: 1px solid rgba(168, 85, 247, 0.12) !important; /* Cyber space-violet border link line */
+  box-sizing: border-box;
+}
+
+.footer-content-wrapper {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.footer-column {
+  flex: 1;
+  min-width: 250px;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+/* ========================================= */
+/* BRAND SUMMARY COLUMN (COLUMN 1 SPECS)     */
+/* ========================================= */
+
+.footer-brand-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.5px;
+  margin-bottom: 15px;
+}
+
+.footer-brand-dot {
+  color: #c084fc;
+  text-shadow: 0 0 8px #a855f7;
+}
+
+.footer-bio-para {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: #94a3b8;
+  max-width: 360px;
+  margin-bottom: 20px;
+}
+
+/* SOCIAL DECK GLASS BUTTONS SHIELDS */
+.footer-social-deck {
+  display: flex;
+  gap: 12px;
+}
+
+.footer-social-icon-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: rgba(31, 16, 56, 0.25);
+  border: 1px solid rgba(168, 85, 247, 0.2);
+  color: #cbd5e1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  text-decoration: none !important;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.footer-social-icon-btn:hover {
+  color: #ffffff;
+  background: rgba(31, 16, 56, 0.45);
+  border-color: rgba(192, 132, 252, 0.7);
+  transform: translateY(-3px);
+  box-shadow: 0 0 15px rgba(168, 85, 247, 0.35);
+}
+
+/* ========================================= */
+/* QUICK LINK NAVIGATION ENTRIES (COLUMN 2)  */
+/* ========================================= */
+
+.footer-column-heading {
+  font-family: monospace;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.footer-links-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-links-list a {
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: #94a3b8;
+  text-decoration: none !important;
+  transition: color 0.2s ease, transform 0.2s ease;
+  display: inline-block;
+}
+
+.footer-links-list a:hover {
+  color: #c084fc;
+  transform: translateX(4px);
+}
+
+/* ========================================= */
+/* CONTACT DATA BLOCK UNIT (COLUMN 3 SPECS)  */
+/* ========================================= */
+
+.footer-contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.contact-detail-line {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #94a3b8;
+  font-size: 0.92rem;
+}
+
+.footer-mini-violet-icon {
+  color: #c084fc;
+  font-size: 14px;
+  filter: drop-shadow(0 0 4px #a855f7);
+}
+
+.footer-location-text {
+  font-size: 0.92rem;
+  color: #94a3b8;
+  margin: 0;
+  padding-left: 24px; /* Perfectly shifts text in clean line with email typography string */
+}
+
+/* ========================================= */
+/* COPYRIGHT BOTTOM CONTAINER RUNTIME BAR    */
+/* ========================================= */
+
+.footer-copyright-bottom-strip {
+  width: 100%;
+  margin-top: 50px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+  text-align: center;
+}
+
+.footer-copyright-bottom-strip p {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: #64748b;
+  margin: 0;
+}
+
+/* ========================================= */
+/* SOLVED FULL-SCREEN LIGHTBOX OVERLAY GRAPH */
+/* ========================================= */
+
+.fullscreen-avatar-overlay-portal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(8, 3, 18, 0.88); /* Ultra-dark cosmic space voids tint background */
+  backdrop-filter: blur(20px); /* Deep asset backdrop blurring matrix hook */
+  -webkit-backdrop-filter: blur(20px);
+  z-index: 99999 !important; /* Forces the absolute top stack tracking position layer override */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  cursor: zoom-out;
+}
+
+/* HIGH TECH CLOSING ACTION LINK VECTOR BADGE */
+.avatar-portal-close-btn {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(168, 85, 247, 0.25);
+  color: #cbd5e1;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.avatar-portal-close-btn:hover {
+  background: rgba(168, 85, 247, 0.15);
+  border-color: #c084fc;
+  color: #ffffff;
+  transform: rotate(90deg) scale(1.05);
+  box-shadow: 0 0 15px rgba(168, 85, 247, 0.5);
+}
+
+/* ========================================= */
+/* MAIN STRUCTURAL CARD FRAME EMBED SPECS    */
+/* ========================================= */
+
+.fullscreen-avatar-card-pod {
+  background: rgba(15, 6, 25, 0.6) !important;
+  border: 1px solid rgba(168, 85, 247, 0.3) !important;
+  border-radius: 24px;
+  padding: 20px;
+  max-width: 460px; /* Perfectly structured box layout for your portrait image ratios specs */
+  width: 100%;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7), 0 0 40px rgba(168, 85, 247, 0.15);
+  cursor: default;
+  overflow: hidden;
+}
+
+.avatar-portal-inner-glow-housing {
+  position: relative;
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.avatar-portal-highres-img {
+  width: 100%;
+  height: auto;
+  max-height: 520px;
+  object-fit: cover;
+  display: block;
+}
+
+/* DETAILS CAPTIONS HEADER BAR STRIP IN MODALS BLOCK */
+.avatar-portal-meta-footer-strip {
+  margin-top: 20px;
+  text-align: center;
+  width: 100%;
+}
+
+.portal-profile-name {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.2px;
+  margin: 0;
+}
+
+.portal-profile-rank {
+  font-family: monospace;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #c084fc;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-top: 6px;
+  display: inline-block;
+  text-shadow: 0 0 8px rgba(168, 85, 247, 0.3);
+}
+
+/* RESPONSIVE SCALING HANDLES */
+@media (max-width: 576px) {
+  .fullscreen-avatar-card-pod { padding: 14px; border-radius: 20px; }
+  .portal-profile-name { font-size: 1.25rem; }
+  .portal-profile-rank { font-size: 0.72rem; }
+  .avatar-portal-close-btn { top: 20px; right: 20px; width: 38px; height: 38px; font-size: 14px; }
+}
+
+/* ========================================= */
+/* RESPONSIVE FLUID LAYOUT OVERRIDE BREAKS   */
+/* ========================================= */
+
+@media (max-width: 768px) {
+  .footer-content-wrapper {
+    flex-direction: column;
+    gap: 35px;
+  }
+  .footer-column {
+    min-width: 100%;
+    text-align: left;
+  }
+  .footer-location-text {
+    padding-left: 0;
+  }
+}
