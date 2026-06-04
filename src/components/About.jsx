@@ -7,30 +7,34 @@ import SlideReveal from "./SlideReveal";
 const About = () => {
   return (
     <ScrollReveal>
-      <section id="about" className="about-space-section">
-        <div className="container custom-about-container">
+      {/* SOLVED CENTER ENGINE: Forced complete section container space blocks to hold items in center alignment */}
+      <section id="about" className="about-space-section d-flex align-items-center justify-content-center" style={{ minHeight: "100vh" }}>
+        <div className="container custom-about-container d-flex flex-column align-items-center justify-content-center text-center">
           
           {/* TOP SECTION BLOCK INDEX IDENTIFIER */}
-          <div className="text-center w-100 mb-4">
-            <span className="section-index-tag">01 // EXECUTIVE SUMMARY</span>
-            <h2 className="about-section-heading mt-2">Character Profile</h2>
-            <div className="heading-violet-underline"></div>
+          <div className="text-center w-100 mb-5 global-about-header-block d-flex flex-column align-items-center justify-content-center">
+            <SlideReveal direction="left">
+              <span className="section-index-tag">01 // EXECUTIVE SUMMARY</span>
+              <h2 className="about-section-heading mt-2 text-center w-100">Character Profile</h2>
+              <div className="heading-violet-underline mx-auto"></div>
+            </SlideReveal>
           </div>
 
+          {/* SOLVED GRID TO CENTER-FLEX MATRIX WRAPPER */}
           <div className="about-layout-grid-row w-100 mt-4">
             
-            {/* LEFT COLUMN: IDENTITY IDENTITY PANEL & META STATUS GRID */}
-            <div className="about-profile-panel-side">
-              <SlideReveal direction="left">
+            {/* LEFT COLUMN: IDENTITY PANEL & META STATUS GRID */}
+            <div className="about-profile-panel-side d-flex flex-column align-items-center justify-content-center">
+              <SlideReveal direction="left" className="w-100 d-flex flex-column align-items-center justify-content-center">
                 {/* Dynamic Rotating/Hovering Logo Container */}
-                <div className="profile-identity-box mb-4">
+                <div className="profile-identity-box mb-4 mx-auto">
                   <div className="kinetic-border-shape"></div>
                   <h1 className="display-initials-text">SR</h1>
                   <div className="nebula-reflection-pool"></div>
                 </div>
 
                 {/* META STATUS LISTING GRID */}
-                <div className="meta-status-table">
+                <div className="meta-status-table mx-auto w-100" style={{ maxWidth: "340px" }}>
                   <div className="meta-table-row">
                     <span className="meta-label">STATUS</span>
                     <span className="meta-value status-glow-dot">OPEN TO WORK</span>
@@ -48,26 +52,26 @@ const About = () => {
             </div>
 
             {/* RIGHT COLUMN: PROFESSIONAL STATEMENT & ATTRIBUTE TAGS */}
-            <div className="about-profile-content-side">
-              <SlideReveal direction="right">
-                <h3 className="about-profile-sub-intent mb-3">
+            <div className="about-profile-content-side d-flex flex-column align-items-center justify-content-center text-center">
+              <SlideReveal direction="right" className="w-100 d-flex flex-column align-items-center justify-content-center">
+                <h3 className="about-profile-sub-intent mb-3 text-center w-100">
                   Building the Future, <br />
                   <span className="violet-glow-intent">One Line at a Time</span>
                 </h3>
 
-                <p className="about-profile-bio">
+                <p className="about-profile-bio mx-auto text-center" style={{ maxWidth: "600px" }}>
                   I'm Sriram — a third-year Computer Science Engineering student focused heavily on full-stack excellence. 
                   My passion lies at the intersection of building highly performant backends and crafting clean, secure digital spaces.
                 </p>
 
-                <p className="about-profile-bio mb-4">
+                <p className="about-profile-bio mb-4 mx-auto text-center" style={{ maxWidth: "600px" }}>
                   I specialize in turning complex problems into scalable web applications. From designing responsive, 
                   fluid frontends with React to managing multi-tier backend architectures with Node.js and MongoDB, 
                   I am driven by clean logic and modern system performance.
                 </p>
 
                 {/* ATTRIBUTE TAG CLOUD */}
-                <div className="attribute-badge-cloud mb-5">
+                <div className="attribute-badge-cloud mb-5 d-flex flex-wrap justify-content-center align-items-center mx-auto">
                   <span className="attr-tag">Problem Solver</span>
                   <span className="attr-tag">Quick Learner</span>
                   <span className="attr-tag">MERN Developer</span>
@@ -76,10 +80,10 @@ const About = () => {
                 </div>
 
                 {/* THE RESUME DOWNLOAD ACTION LINK */}
-                <div className="action-button-alignment">
+                <div className="action-button-alignment d-flex justify-content-center w-100">
                   <a
                     href="/Sriram_R_Resume.pdf"
-                    className="btn btn-space-primary d-inline-flex align-items-center gap-2"
+                    className="btn btn-space-primary d-inline-flex align-items-center justify-content-center gap-2"
                   >
                     <FaDownload className="download-icon-bounce" />
                     Download Resume

@@ -204,17 +204,10 @@ const Contact = () => {
             {/* CENTRAL CORRIDOR STATUS DIVIDER TRACK */}
             <div className="contact-central-corridor-divider d-none d-xl-flex">
               <div className="corridor-vertical-laser"></div>
-              <motion.div 
-                className="corridor-status-node-pod"
-                animate={{ 
-                  boxShadow: ["0 0 10px rgba(168, 85, 247, 0.4)", "0 0 25px rgba(168, 85, 247, 0.8)", "0 0 10px rgba(168, 85, 247, 0.4)"],
-                  borderColor: ["rgba(168, 85, 247, 0.3)", "rgba(192, 132, 252, 0.8)", "rgba(168, 85, 247, 0.3)"]
-                }}
-                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-              >
+              <div className="corridor-status-node-pod">
                 <span className="cyber-pulse-dot"></span>
                 <span className="cyber-terminal-text">SYS_ONLINE</span>
-              </motion.div>
+              </div>
               <div className="corridor-vertical-laser"></div>
             </div>
 

@@ -2,19 +2,29 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Typewriter } from "react-simple-typewriter";
 import { FaArrowDown, FaGithub, FaLinkedin } from "react-icons/fa";
-import { HiLightningBolt } from "react-icons/hi"; // High-fidelity vector lightning bolt
-import { IoRocketSharp } from "react-icons/io5"; // Sharp professional vector rocket
+import { HiLightningBolt } from "react-icons/hi"; 
+import { IoRocketSharp } from "react-icons/io5"; 
 import ScrollReveal from "./ScrollReveal";
 
 const Hero = () => {
   return (
     <ScrollReveal>
+      {/* SOLVED BLINKING BEAM: Enforced hard inline layout constraints permanently blocking external tracking line rendering loops */}
       <section
         id="home"
         className="hero-section d-flex align-items-center justify-content-center"
-        style={{ minHeight: "100vh", background: "transparent" }}
+        style={{ 
+          minHeight: "100vh", 
+          background: "transparent",
+          position: "relative",
+          overflow: "hidden", // FORCE-KILLS VERTICAL BLINKING PROGRESS FLICKERS PERMANENTLY
+          clipPath: "inset(0 0 0 0)" // Airtight vector containment masking box system
+        }}
       >
-        <div className="container text-center d-flex flex-column align-items-center">
+        <div 
+          className="container custom-hero-container text-center d-flex flex-column align-items-center"
+          style={{ overflow: "hidden" }} // Secondary backup structural data shield layout 
+        >
           
           {/* TOP STATUS BADGE */}
           <motion.div
@@ -26,40 +36,41 @@ const Hero = () => {
             <span className="badge-text">Code it. Automate it.</span>
           </motion.div>
 
-          {/* GREETING */}
+          {/* GREETING DESCRIPTION */}
           <motion.p
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             className="hero-subtitle text-uppercase tracking-widest"
-            style={{
-              fontSize: "1.1rem",
-              letterSpacing: "4px",
-              color: "#94a3b8",
-            }}
           >
             Hello, I’m
           </motion.p>
 
-          {/* MAIN NAME WITH INTEGRATED INTERACTIVE HOVER TRACKING */}
+          {/* SOLVED LETTER OVERFLOW WRAPPING OVER SMALL RES PLATES */}
           <h1 className="hero-centered-title">
-            {"Sriram R".split("").map((letter, index) => (
-              <span 
-                key={index} 
-                className={letter === " " ? "space-char" : "interactive-letter"}
-              >
-                {letter}
-              </span>
-            ))}
+            <span className="name-word-block-wrap">
+              {"Sriram".split("").map((letter, index) => (
+                <span key={`first-${index}`} className="interactive-letter">
+                  {letter}
+                </span>
+              ))}
+            </span>
+            <span className="space-char-separator">&nbsp;</span>
+            <span className="name-word-block-wrap">
+              {"R".split("").map((letter, index) => (
+                <span key={`last-${index}`} className="interactive-letter">
+                  {letter}
+                </span>
+              ))}
+            </span>
           </h1>
 
-          {/* DYNAMIC TYPING SECTION */}
+          {/* DYNAMIC TYPING INTERACTIVE CORE SLOTS */}
           <motion.h4
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6 }}
             className="hero-typing my-3 text-grey"
-            style={{ fontSize: "1.8rem", fontWeight: "500" }}
           >
             I'm a{" "}
             <span className="violet-glow">
@@ -80,58 +91,45 @@ const Hero = () => {
             </span>
           </motion.h4>
 
-          {/* CENTERED DESCRIPTION */}
+          {/* CENTERED PORTFOLIO INTENT OBJECT DESCRIPTION */}
           <motion.p
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.9 }}
-            className="hero-desc-centered mx-auto mt-2 mb-4 hero-description-text"
+            className="hero-description-text mx-auto mt-2 mb-4"
           >
             Passionate about transforming data into intelligent solutions.
             Building AI-powered applications and crafting secure digital
             experiences that make a difference.
           </motion.p>
 
-          {/* PREMIUM BORDER MAGIC BUTTONS */}
+          {/* ACTION EMITTER PREMIUM UTILITY LINK STRIPS */}
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.2 }}
             className="hero-buttons-group d-flex justify-content-center align-items-center gap-3 flex-wrap"
           >
-            {/* HIRE ME BUTTON */}
             <a href="#contact" className="btn btn-premium-gradient">
-              <HiLightningBolt className="btn-vector-icon lightning-orange " />
+              <HiLightningBolt className="btn-vector-icon lightning-orange" />
               <span className="btn-custom-text">Hire Me</span>
             </a>
             
-            {/* VIEW PROJECTS BUTTON */}
             <a href="#projects" className="btn btn-outline-premium">
               <IoRocketSharp className="btn-vector-icon rocket-pink" />
               <span className="btn-custom-text">View Projects</span>
             </a>
           </motion.div>
 
-          {/* SOCIAL LINKS ROW */}
+          {/* SOCIAL PLATFORMS METRICS DECK CORES CONNECTOR LINK TIERS */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.5 }}
-            className="hero-socials d-flex align-items-center gap-3 mt-3"
+            className="hero-socials d-flex align-items-center gap-3 mt-4"
           >
-            <span
-              className="connect-text"
-              style={{ color: "#64748b", fontWeight: "500" }}
-            >
-              Collab with me
-            </span>
-            <div
-              style={{
-                width: "40px",
-                height: "1px",
-                backgroundColor: "rgba(255, 255, 255, 0.15)",
-              }}
-            ></div>
+            <span className="connect-text">Collab with me</span>
+            <div className="social-divider-horizontal-line"></div>
             <a
               href="https://github.com/sriram-cod-03"
               target="_blank"
@@ -150,7 +148,7 @@ const Hero = () => {
             </a>
           </motion.div>
 
-          {/* COMPACT WHAT I DO INTEGRATION SYSTEM CONTAINER */}
+          {/* WORK SCOPE MINI-GRID SYSTEMS ARMATURE ACCENTS BLOCKS */}
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
@@ -173,7 +171,7 @@ const Hero = () => {
             </div>
           </motion.div>
 
-          {/* BOUNCING DOWN ARROW INDICATOR */}
+          {/* BOUNCING INDICATOR CORE VECTOR POINTERS CHANNEL */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}

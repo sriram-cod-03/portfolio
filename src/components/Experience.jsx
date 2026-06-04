@@ -86,9 +86,11 @@ const Experience = () => {
           
           {/* SECTION HEADER BLOCK */}
           <div className="text-center w-100 mb-5">
-            <span className="section-index-tag">03 // INDUSTRY EXPERIENCE</span>
-            <h2 className="experience-section-heading mt-2">Completed Quests & Raids</h2>
-            <div className="heading-violet-underline"></div>
+            <SlideReveal direction="left">
+              <span className="section-index-tag">04 // INDUSTRY EXPERIENCE</span>
+              <h2 className="experience-section-heading mt-2">Completed Quests & Raids</h2>
+              <div className="heading-violet-underline"></div>
+            </SlideReveal>
           </div>
 
           {/* MASTER ALTERNATING ROWS CONTAINER */}

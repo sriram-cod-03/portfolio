@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FaPaperPlane, FaTimes } from "react-icons/fa"; // Imported FaTimes for smooth closing action
+import { FaPaperPlane, FaTimes, FaBars } from "react-icons/fa"; 
 
-// Importing your exact local asset directly from your assets folder structure
+// Importing local asset cleanly
 import profileAvatar from "../assets/profile.jpeg"; 
 
 const Navbar = () => {
   const [active, setActive] = useState("home");
-  
-  // SOLVED STATE: Boolean tracking flag to toggle the Full-Screen Profile view overlay safely
   const [isAvatarExpanded, setIsAvatarExpanded] = useState(false);
+  
+  // SOLVED STATE: Track toggle flag for mobile menu menu drop layers
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navigationItems = [
     { id: "home", label: "Home" },
@@ -47,15 +48,14 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="navbar navbar-expand-lg navbar-dark fixed-top custom-navbar">
-        <div className="container-fluid custom-nav-container">
+      {/* SOLVED FIXED WRAPPER MATRIX STRUCTURE */}
+      <nav className="custom-navbar fixed-top">
+        <div className="custom-nav-container">
 
-          {/* Left Side: Brand Link Wrapper incorporating Profile Avatar */}
-          {/* SOLVED CLICK ACTION: added explicit inline click handlers avoiding synthetic native bubble drops */}
+          {/* LEFT SIDE: Brand Avatar Link Wrapper */}
           <div 
             className="custom-navbar-brand-group" 
             onClick={() => setIsAvatarExpanded(true)}
-            style={{ cursor: "pointer" }}
           >
             <div className="navbar-profile-avatar-shield">
               <img 
@@ -71,66 +71,90 @@ const Navbar = () => {
             <span className="brand-name-text">Sriram R</span>
           </div>
 
-          {/* Mobile Hamburger Toggle Button */}
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button>
+          {/* CENTER LINKS GRID - FOR LARGE DESKTOP SYSTEMS ONLY */}
+          <ul className="nav-links-center-group d-none d-lg-flex">
+            {navigationItems.map((item) => (
+              <li className="nav-item position-relative" key={item.id}>
+                <a
+                  href={`#${item.id}`}
+                  className={`nav-link dynamic-nav-link ${active === item.id ? "active-text" : ""}`}
+                >
+                  {item.label}
+                </a>
 
-          {/* Center Links & Right Action Button Wrapper */}
-          <div className="collapse navbar-collapse" id="navbarNav">
-            
-            {/* CENTER NAVIGATION POD */}
-            <ul className="navbar-nav mx-auto align-items-lg-center gap-lg-1 nav-links-center-group">
-              {navigationItems.map((item) => (
-                <li className="nav-item position-relative" key={item.id}>
-                  <a
-                    href={`#${item.id}`}
-                    className={`nav-link dynamic-nav-link ${active === item.id ? "active-text" : ""}`}
+                {active === item.id && (
+                  <motion.div
+                    layoutId="navbar-active-teleport-pill"
+                    className="navbar-active-bg-pill"
+                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
                   >
-                    {item.label}
-                  </a>
+                    <div className="star-border-glow-track"></div>
+                    <div className="star-border-card-content"></div>
+                  </motion.div>
+                )}
+              </li>
+            ))}
+          </ul>
 
-                  {/* ANIMATED SPACE STAR BORDER PILL TELEPORTATION */}
-                  {active === item.id && (
-                    <motion.div
-                      layoutId="navbar-active-teleport-pill"
-                      className="navbar-active-bg-pill"
-                      transition={{ type: "spring", stiffness: 380, damping: 30 }}
-                    >
-                      <div className="star-border-glow-track"></div>
-                      <div className="star-border-card-content"></div>
-                    </motion.div>
-                  )}
-                </li>
-              ))}
-            </ul>
-
-            {/* RIGHT CORNER: Re-engineered "Hire Me" button with interactive Telegram icon */}
-            <div className="navbar-right-action-wrapper">
-              <a href="#contact" className="btn-navbar-hire-me">
-                <span className="hire-me-content-wrap">
-                  Hire Me 
-                  <FaPaperPlane className="telegram-action-icon" />
-                </span>
-                <div className="button-glow-radial"></div>
-              </a>
-            </div>
-
+          {/* RIGHT SIDE ACTION BUTTON - FOR LARGE DESKTOP SYSTEMS */}
+          <div className="navbar-right-action-wrapper d-none d-lg-block">
+            <a href="#contact" className="btn-navbar-hire-me">
+              <span className="hire-me-content-wrap">
+                Hire Me 
+                <FaPaperPlane className="telegram-action-icon" />
+              </span>
+              <div className="button-glow-radial"></div>
+            </a>
           </div>
 
+          {/* SOLVED HAMBURGER: Responsive manual structural button hook */}
+          <button 
+            className="mobile-hamburger-toggle-btn d-lg-none"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="Toggle Navigation Menu"
+          >
+            {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
+          </button>
+
         </div>
+
+        {/* SOLVED MOBILE OVERLAY MODAL SHEET ENGINE */}
+        <AnimatePresence>
+          {isMobileMenuOpen && (
+            <motion.div 
+              className="mobile-navigation-drawer-panel d-lg-none"
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.3 }}
+            >
+              <ul className="mobile-drawer-links-stack">
+                {navigationItems.map((item) => (
+                  <li key={item.id} onClick={() => setIsMobileMenuOpen(false)}>
+                    <a 
+                      href={`#${item.id}`} 
+                      className={`mobile-drawer-link ${active === item.id ? "drawer-active-tint" : ""}`}
+                    >
+                      {item.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+              
+              <div className="mobile-drawer-action-block" onClick={() => setIsMobileMenuOpen(false)}>
+                <a href="#contact" className="btn-navbar-hire-me w-100">
+                  <span className="hire-me-content-wrap">
+                    Hire Me 
+                    <FaPaperPlane className="telegram-action-icon" />
+                  </span>
+                </a>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </nav>
 
-      {/* SOLVED FULL-SCREEN MODAL PORTAL PORT OVERLAYS */}
-      {/* AnimatePresence handles mounting and unmounting fade animations cleanly without layout snapping */}
+      {/* FULL-SCREEN PORTRAIT MODAL OVERLAYS */}
       <AnimatePresence>
         {isAvatarExpanded && (
           <motion.div 
@@ -138,28 +162,25 @@ const Navbar = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            onClick={() => setIsAvatarExpanded(false)} // Closes instantly when backdrop void space is clicked
+            onClick={() => setIsAvatarExpanded(false)} 
           >
-            
-            {/* CLOSE RADAR EMITTER ACTION */}
             <button 
               className="avatar-portal-close-btn"
               onClick={(e) => {
-                e.stopPropagation(); // Blocks link trigger bubble inheritance chains
+                e.stopPropagation(); 
                 setIsAvatarExpanded(false);
               }}
             >
               <FaTimes />
             </button>
 
-            {/* IMAGE WRAP CONTAINER SHIELD DESIGN MATRIX */}
             <motion.div 
               className="fullscreen-avatar-card-pod"
               initial={{ scale: 0.8, y: 40, opacity: 0 }}
               animate={{ scale: 1, y: 0, opacity: 1 }}
               exit={{ scale: 0.8, y: 40, opacity: 0 }}
               transition={{ type: "spring", stiffness: 300, damping: 25 }}
-              onClick={(e) => e.stopPropagation()} // Prevents closing modal when clicking the card content itself
+              onClick={(e) => e.stopPropagation()} 
             >
               <div className="avatar-portal-inner-glow-housing">
                 <img 
@@ -169,13 +190,11 @@ const Navbar = () => {
                 />
               </div>
               
-              {/* SUBTITLE PROFILE BANNER */}
               <div className="avatar-portal-meta-footer-strip">
                 <h3 className="portal-profile-name">Sriram R</h3>
                 <span className="portal-profile-rank">Full Stack / MERN Engineering Core</span>
               </div>
             </motion.div>
-
           </motion.div>
         )}
       </AnimatePresence>
