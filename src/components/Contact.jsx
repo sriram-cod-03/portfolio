@@ -45,14 +45,11 @@ const Contact = () => {
       }
     });
 
-    // SOLVED MATRIX MAP: Standard fallback keys explicitly mirrored for EmailJS template ingestion
     const templateParams = {
-      name: formData.name,            // maps directly to your fields
+      name: formData.name, 
       email: formData.email,
       company: formData.company || "Not Provided",
       message: formData.message,
-      
-      // Secondary fallback pairing matrix strings just in case your fields expect snake_case templates
       from_name: formData.name, 
       from_email: formData.email,
       company_name: formData.company || "Not Provided",
@@ -78,7 +75,6 @@ const Contact = () => {
           }
         });
 
-        // Wipes form arrays cleanly upon success callback loop track
         setFormData({ name: "", email: "", company: "", message: "" });
       })
       .catch((error) => {
@@ -102,29 +98,29 @@ const Contact = () => {
 
   return (
     <ScrollReveal>
-      <section id="contact" className="contact-section py-5">
+      <section id="contact" className="contact-section py-5 d-flex align-items-center justify-content-center">
         
         <Toaster position="bottom-right" reverseOrder={false} />
 
-        <div className="container custom-contact-container position-relative">
+        <div className="container custom-contact-container position-relative d-flex flex-column align-items-center justify-content-center text-center">
           
           {/* HEADER SECTIONS MARKERS */}
-          <div className="text-center w-100 mb-5 global-contact-header-block">
+          <div className="text-center w-100 mb-5 global-contact-header-block d-flex flex-column align-items-center justify-content-center">
             <SlideReveal direction="left">
               <span className="section-index-tag">07 // SECURE GATEWAY</span>
               <h2 className="contact-main-title text-white mb-3 mt-1 text-center w-100">Establish Comms Link</h2>
-              <div className="heading-violet-underline"></div>
+              <div className="heading-violet-underline mx-auto"></div>
             </SlideReveal>
           </div>
 
-          <div className="contact-content-split-wrapper">
+          <div className="contact-content-split-wrapper w-100 d-flex justify-content-center align-items-stretch flex-wrap">
             
             {/* LEFT SIDE DETAILS */}
-            <div className="contact-details-side">
-              <SlideReveal direction="left" className="h-100">
-                <div className="glass-contact-card matching-height h-100 display-flex-column">
+            <div className="contact-details-side d-flex flex-column align-items-center">
+              <SlideReveal direction="left" className="h-100 w-100 d-flex flex-column align-items-center">
+                <div className="glass-contact-card matching-height h-100 display-flex-column align-items-center w-100">
                   
-                  <div className="cyber-terminal-header-pod mb-4">
+                  <div className="cyber-terminal-header-pod mb-4 mx-auto">
                     <div className="terminal-badge-icon-wrap">
                       <FaTerminal className="violet-glow-icon-mini" />
                     </div>
@@ -138,45 +134,45 @@ const Contact = () => {
                     </div>
                   </div>
                   
-                  <p className="contact-subtitle-desc mb-4">
+                  <p className="contact-subtitle-desc mb-4 text-center mx-auto">
                     Initiate a connection or project evaluation request. Secure a latency-free 
                     transmission channel and let's construct something legendary together.
                   </p>
 
-                  <div className="contact-vertical-meta-stack mb-4">
-                    <div className="meta-stack-row-item">
+                  <div className="contact-vertical-meta-stack mb-4 mx-auto d-flex flex-column align-items-center">
+                    <div className="meta-stack-row-item d-flex justify-content-center">
                       <div className="stack-icon-shield active-violet-shield-box">
                         <FaEnvelope className="stack-dynamic-vector-icon color-pure-violet" />
                       </div>
-                      <div className="stack-item-details-block">
+                      <div className="stack-item-details-block text-center">
                         <span className="stack-label-caption">EMAIL</span>
                         <span className="stack-value-content">sriramr03.dev@gmail.com</span>
                       </div>
                     </div>
 
-                    <div className="meta-stack-row-item">
+                    <div className="meta-stack-row-item d-flex justify-content-center">
                       <div className="stack-icon-shield active-violet-shield-box">
                         <FaPhoneAlt className="stack-dynamic-vector-icon color-pure-violet" />
                       </div>
-                      <div className="stack-item-details-block">
+                      <div className="stack-item-details-block text-center">
                         <span className="stack-label-caption">PHONE</span>
                         <span className="stack-value-content">+91 8778517976</span>
                       </div>
                     </div>
 
-                    <div className="meta-stack-row-item">
+                    <div className="meta-stack-row-item d-flex justify-content-center">
                       <div className="stack-icon-shield active-violet-shield-box">
                         <FaMapMarkerAlt className="stack-dynamic-vector-icon color-pure-violet" />
                       </div>
-                      <div className="stack-item-details-block">
+                      <div className="stack-item-details-block text-center">
                         <span className="stack-label-caption">LOCATION</span>
                         <span className="stack-value-content">Salem, Tamil Nadu, India</span>
                       </div>
                     </div>
                   </div>
 
-                  <div className="world-map-wrapper grow">
-                    <div className="map-base-graphic h-100">
+                  <div className="world-map-wrapper grow mx-auto w-100">
+                    <div className="map-base-graphic h-100 w-100">
                       <img
                         src="/world-base.jpg"
                         alt="Portfolio Interactive World Map"
@@ -212,65 +208,69 @@ const Contact = () => {
             </div>
 
             {/* RIGHT SIDE DATA FIELDS */}
-            <div className="contact-form-side">
+            <div className="contact-form-side d-flex flex-column align-items-center">
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
-                className="glass-contact-card h-100"
+                className="glass-contact-card h-100 w-100"
               >
-                <form className="aceternity-form-engine" onSubmit={handleSignalTransmission}>
-                  <div className="form-group-block">
-                    <label>Full name</label>
+                <form className="aceternity-form-engine w-100" onSubmit={handleSignalTransmission}>
+                  <div className="form-group-block text-center">
+                    <label className="w-100 text-center">Full name</label>
                     <input 
                       type="text" 
                       placeholder="Sriram R" 
                       value={formData.name}
                       onChange={(e) => handleInputChange(e, "name")}
                       disabled={isTransmitting}
+                      className="text-center"
                       required 
                     />
                   </div>
 
-                  <div className="form-group-block">
-                    <label>Email Address</label>
+                  <div className="form-group-block text-center">
+                    <label className="w-100 text-center">Email Address</label>
                     <input
                       type="email"
                       placeholder="yourname@gmail.com"
                       value={formData.email}
                       onChange={(e) => handleInputChange(e, "email")}
                       disabled={isTransmitting}
+                      className="text-center"
                       required
                     />
                   </div>
 
-                  <div className="form-group-block">
-                    <label>Company</label>
+                  <div className="form-group-block text-center">
+                    <label className="w-100 text-center">Company</label>
                     <input 
                       type="text" 
                       placeholder="Optional" 
                       value={formData.company}
                       onChange={(e) => handleInputChange(e, "company")}
                       disabled={isTransmitting}
+                      className="text-center"
                     />
                   </div>
 
-                  <div className="form-group-block">
-                    <label>Message</label>
+                  <div className="form-group-block text-center">
+                    <label className="w-100 text-center">Message</label>
                     <textarea
-                      rows="6"
+                      rows="5"
                       placeholder="Type your message here..."
                       value={formData.message}
                       onChange={(e) => handleInputChange(e, "message")}
                       disabled={isTransmitting}
+                      className="text-center"
                       required
                     ></textarea>
                   </div>
 
-                  <div className="form-submit-wrapper mt-4">
+                  <div className="form-submit-wrapper mt-4 w-100">
                     <button
                       type="submit"
-                      className="btn btn-premium-gradient w-100 py-3 position-relative overflow-hidden"
+                      className="btn btn-premium-gradient w-100 py-3 position-relative overflow-hidden d-flex align-items-center justify-content-center"
                       disabled={isTransmitting} 
                       style={{ 
                         opacity: isTransmitting ? 0.75 : 1,

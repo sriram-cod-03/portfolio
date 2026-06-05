@@ -51,26 +51,27 @@ const Certificate = () => {
   return (
     <ScrollReveal>
       {/* Target anchor linked perfectly to your centralized scrolling navbar logic */}
-      <section id="certificate" className="certificate-modular-section">
-        <div className="container custom-certificate-container">
+      <section id="certificate" className="certificate-modular-section d-flex align-items-center justify-content-center">
+        <div className="container custom-certificate-container d-flex flex-column align-items-center justify-content-center text-center">
           
           {/* SECTION TITLE ROW */}
-          <div className="text-center w-100 mb-5">
+          <div className="text-center w-100 mb-5 d-flex flex-column align-items-center justify-content-center">
             <SlideReveal direction="left">
               <span className="section-index-tag">06 // TECHNICAL VERIFICATIONS</span>
               <h2 className="certificate-main-heading text-white mt-2">Legendary Unlocks & Perks</h2>
-              <div className="heading-violet-underline"></div>
+              <div className="heading-violet-underline mx-auto"></div>
             </SlideReveal>
           </div>
 
           {/* CREDENTIALS MAPPING LAYER GRIDS */}
-          <div className="certificate-responsive-row">
+          {/* SOLVED CENTER ENGINE: Ensures card blocks load matching alignment boundaries symmetrically over devices */}
+          <div className="certificate-responsive-row w-100 d-flex justify-content-center align-items-center flex-wrap">
             {certificateData.map((cert) => (
-              <div key={cert.id} className="certificate-card-wrapper">
-                <div className="glass-card certificate-premium-card">
+              <div key={cert.id} className="certificate-card-wrapper d-flex justify-content-center">
+                <div className="glass-card certificate-premium-card d-flex flex-column align-items-center justify-content-center text-center">
                   
                   {/* METADATA ACCENTS */}
-                  <div className="cert-header-meta mb-3">
+                  <div className="cert-header-meta mb-3 d-flex justify-content-center align-items-center flex-wrap gap-2">
                     <span className="cert-date-badge">{cert.date}</span>
                     <span className={`cert-issuer-tag ${getIssuerClass(cert.issuer)}`}>
                       {cert.issuer}
@@ -78,8 +79,8 @@ const Certificate = () => {
                   </div>
                   
                   {/* DETAILS TEXT LAYOUTS */}
-                  <h4 className="cert-title-label mb-2">{cert.title}</h4>
-                  <p className="cert-description-para">{cert.description}</p>
+                  <h4 className="cert-title-label mb-2 text-center w-100">{cert.title}</h4>
+                  <p className="cert-description-para text-center mx-auto">{cert.description}</p>
                   
                 </div>
               </div>

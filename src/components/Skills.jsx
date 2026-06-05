@@ -71,33 +71,33 @@ const skillCategories = [
 const Skills = () => {
   return (
     <ScrollReveal>
-      <section id="skills" className="skills-modular-section">
-        <div className="container custom-skills-container">
+      <section id="skills" className="skills-modular-section d-flex align-items-center justify-content-center">
+        <div className="container custom-skills-container d-flex flex-column align-items-center justify-content-center text-center">
           
           {/* CORE SECTION HEADER */}
-          <div className="text-center w-100 mb-5">
+          <div className="text-center w-100 mb-5 d-flex flex-column align-items-center justify-content-center">
             <SlideReveal direction="left">
               <span className="section-index-tag">02 // CORE COMPETENCIES</span>
-              <h2 className="skills-main-heading text-white">Skill Tree & Ability Matrix</h2>
-              <p className="section-subtitle" style={{ color: "#94a3b8" }}>
+              <h2 className="skills-main-heading text-white mt-2">Skill Tree & Ability Matrix</h2>
+              <p className="section-subtitle mx-auto text-center" style={{ color: "#94a3b8" }}>
                 Advanced tech stack & engineering architecture toolsets
               </p>
-              <div className="heading-violet-underline"></div>
+              <div className="heading-violet-underline mx-auto"></div>
             </SlideReveal>
           </div>
 
-          {/* DYNAMIC CATEGORY ITERATOR LAYER */}
+          {/* SOLVED INDIVIDUAL HORIZONTAL SPLIT CARDS BINDING TRACK */}
           <div className="skills-categories-wrapper w-100">
             {skillCategories.map((category, catIndex) => (
               <div key={catIndex} className="skill-category-block mb-4">
                 
-                <SlideReveal direction="left">
-                  <h3 className="category-row-title mb-3 text-start">
+                <SlideReveal direction="left" className="w-100 skill-title-reveal-wrapper">
+                  <h3 className="category-row-title mb-3">
                     {category.title}
                   </h3>
                 </SlideReveal>
 
-                {/* FORCED HORIZONTAL TRACK GRID RUNNING NOWRAP */}
+                {/* HORIZONTAL SWIPE CONSTRAINTS MATRIX GRID SETUP */}
                 <div className="skills-horizontal-scroll-row">
                   {category.items.map((skill, index) => (
                     <motion.div

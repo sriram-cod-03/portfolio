@@ -1,182 +1,273 @@
-/* COSMIC VIOLET ABOUT ME SECTION ENGINE */
+/* ========================================================================= */
+/* PREMIUM ULTRA-MODERN FIXED SPACIAL ABOUT ME SECTION COMPONENTS SHEET      */
+/* ========================================================================= */
+
 .about-space-section {
-  position: relative;
-  width: 100%;
-  padding: 100px 0;
-  background: transparent !important;
+  position: relative !important;
+  width: 100% !important;
+  padding: 100px 0 !important;
+  background: transparent !important; /* Lets the central animated starfield stream through natively */
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-sizing: border-box !important;
 }
 
 .custom-about-container {
-  max-width: 1140px;
-  margin: 0 auto;
-  padding: 0 24px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  max-width: 1140px !important;
+  width: 100% !important;
+  margin: 0 auto !important;
+  padding: 0 24px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
   position: relative;
   z-index: 5;
 }
 
+/* ========================================= */
+/* TITLES & ACCENT DESIGN GRAPHICS ENGINE     */
+/* ========================================= */
+
 .section-index-tag {
-  font-family: monospace;
-  font-size: 0.9rem;
-  letter-spacing: 3px;
-  color: #c084fc;
-  font-weight: 600;
+  font-family: monospace !important;
+  font-size: 0.9rem !important;
+  letter-spacing: 3px !important;
+  color: #c084fc !important;
+  font-weight: 600 !important;
+  text-transform: uppercase;
 }
 
 .about-section-heading {
-  font-size: 3.4rem;
-  font-weight: 800;
-  letter-spacing: -0.01em;
-  color: #ffffff;
+  font-size: clamp(2.2rem, 6vw, 3.4rem) !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.01em !important;
+  color: #ffffff !important;
+  text-align: center !important;
 }
 
 .heading-violet-underline {
   width: 60px;
   height: 3px;
-  background: linear-gradient(90deg, #a855f7, #6366f1);
-  margin: 12px auto 0 auto;
-  border-radius: 2px;
-  box-shadow: 0 0 10px rgba(168, 85, 247, 0.6);
+  background: linear-gradient(90deg, #a855f7, #6366f1) !important;
+  margin: 12px auto 0 auto !important;
+  border-radius: 2px !important;
+  box-shadow: 0 0 10px rgba(168, 85, 247, 0.6) !important;
 }
+
+/* ========================================= */
+/* ROW/COLUMN CONFIGURATION & FLEX MECHANICS */
+/* ========================================= */
 
 .about-layout-grid-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 60px;
-  flex-wrap: wrap;
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: space-between !important;
+  align-items: flex-start !important;
+  gap: 60px !important;
+  flex-wrap: wrap !important;
+  margin-top: 3rem !important;
+  width: 100% !important;
 }
 
+/* Left panel bounding metrics */
 .about-profile-panel-side {
-  flex: 1;
-  min-width: 300px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex: 1 !important;
+  min-width: 280px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
 }
 
+/* Right content details bounding metrics */
 .about-profile-content-side {
-  flex: 1.6;
-  min-width: 320px;
-  text-align: left;
+  flex: 1.6 !important;
+  min-width: 320px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  text-align: left !important;
 }
 
-/* PROFILE PANEL BOX & META TABLE */
+/* ========================================= */
+/* KINETIC LOGO PROFILE IDENTITY BOX MODULE  */
+/* ========================================= */
+
 .profile-identity-box {
-  position: relative;
-  width: 260px;
-  height: 260px;
-  background: rgba(15, 6, 30, 0.5);
-  border: 1px solid rgba(168, 85, 247, 0.2);
-  border-radius: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  box-shadow: inset 0 0 25px rgba(168, 85, 247, 0.15), 0 15px 35px rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  position: relative !important;
+  width: 260px !important;
+  height: 260px !important;
+  background: rgba(15, 6, 30, 0.5) !important;
+  border: 1px solid rgba(168, 85, 247, 0.2) !important;
+  border-radius: 24px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  overflow: hidden !important;
+  box-shadow: inset 0 0 25px rgba(168, 85, 247, 0.15), 0 15px 35px rgba(0, 0, 0, 0.4) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
 }
 
 .display-initials-text {
-  font-size: 4.8rem;
-  font-weight: 900;
-  background: linear-gradient(135deg, #ffffff 30%, #c084fc 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  z-index: 3;
+  font-size: 4.8rem !important;
+  font-weight: 900 !important;
+  background: linear-gradient(135deg, #ffffff 30%, #c084fc 100%) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  z-index: 3 !important;
+  letter-spacing: -2px !important;
 }
 
 .kinetic-border-shape {
-  content: '';
-  position: absolute;
-  width: 90%;
-  height: 90%;
-  border: 1px dashed rgba(168, 85, 247, 0.35);
-  border-radius: 20px;
-  transform: rotate(15deg);
-  animation: slow-cosmic-spin 25s linear infinite;
-  z-index: 1;
+  content: '' !important;
+  position: absolute !important;
+  width: 90% !important;
+  height: 90% !important;
+  border: 1px dashed rgba(168, 85, 247, 0.35) !important;
+  border-radius: 20px !important;
+  transform: rotate(15deg) !important;
+  animation: slow-cosmic-spin 25s linear infinite !important;
+  z-index: 1 !important;
 }
 
 .nebula-reflection-pool {
-  position: absolute;
-  width: 140px;
-  height: 140px;
-  background: radial-gradient(circle, rgba(168, 85, 247, 0.3) 0%, transparent 70%);
-  filter: blur(25px);
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 2;
+  position: absolute !important;
+  width: 140px !important;
+  height: 140px !important;
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.3) 0%, transparent 70%) !important;
+  filter: blur(25px) !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  z-index: 2 !important;
 }
 
+/* ========================================= */
+/* GLOWING DATA META STATUS TABLE MODULE     */
+/* ========================================= */
+
 .meta-status-table {
-  width: 260px;
-  display: flex;
-  flex-direction: column;
-  background: rgba(12, 5, 24, 0.4);
-  border: 1px solid rgba(168, 85, 247, 0.15);
-  border-radius: 14px;
-  overflow: hidden;
-  backdrop-filter: blur(6px);
+  width: 260px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  background: rgba(12, 5, 24, 0.4) !important;
+  border: 1px solid rgba(168, 85, 247, 0.15) !important;
+  border-radius: 14px !important;
+  overflow: hidden !important;
+  backdrop-filter: blur(6px) !important;
+  -webkit-backdrop-filter: blur(6px) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3) !important;
 }
 
 .meta-table-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 14px 18px;
-  border-bottom: 1px solid rgba(168, 85, 247, 0.1);
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  padding: 14px 18px !important;
+  border-bottom: 1px solid rgba(168, 85, 247, 0.1) !important;
 }
 
-.meta-table-row:last-child { border-bottom: none; }
-.meta-label { font-family: monospace; font-size: 0.8rem; letter-spacing: 1px; color: #64748b; font-weight: 600; }
-.meta-value { font-size: 0.9rem; font-weight: 600; color: #e2e8f0; }
+.meta-table-row:last-child {
+  border-bottom: none !important;
+}
+
+.meta-label {
+  font-family: monospace !important;
+  font-size: 0.8rem !important;
+  letter-spacing: 1px !important;
+  color: #64748b !important;
+  font-weight: 600 !important;
+}
+
+.meta-value {
+  font-size: 0.9rem !important;
+  font-weight: 600 !important;
+  color: #e2e8f0 !important;
+}
 
 .meta-value.status-glow-dot {
-  color: #4ade80 !important;
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
+  color: #4ade80 !important; 
+  position: relative !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
 }
 
 .meta-value.status-glow-dot::before {
-  content: '';
-  width: 7px;
-  height: 7px;
-  background-color: #22c55e;
-  border-radius: 50%;
-  box-shadow: 0 0 8px #22c55e;
+  content: '' !important;
+  width: 7px !important;
+  height: 7px !important;
+  background-color: #22c55e !important;
+  border-radius: 50% !important;
+  box-shadow: 0 0 8px #22c55e !important;
 }
 
-/* CONTENT TEXT & CHIPS */
-.about-profile-sub-intent { font-size: 2.2rem; font-weight: 800; line-height: 1.3; color: #ffffff; }
-.violet-glow-intent { color: #c084fc; text-shadow: 0 0 20px rgba(168, 85, 247, 0.4); }
-.about-profile-bio { font-size: 1.1rem; line-height: 1.75; color: #cbd5e1; }
+/* ========================================= */
+/* TYPOGRAPHY BIOGRAPHIES & ACTION CHIPS     */
+/* ========================================= */
 
-.attribute-badge-cloud { display: flex; flex-wrap: wrap; gap: 10px; }
+.about-profile-sub-intent {
+  font-size: clamp(1.6rem, 4vw, 2.2rem) !important;
+  font-weight: 800 !important;
+  line-height: 1.3 !important;
+  color: #ffffff !important;
+  text-align: inherit !important;
+  width: 100% !important;
+}
+
+.violet-glow-intent {
+  color: #c084fc !important;
+  text-shadow: 0 0 20px rgba(168, 85, 247, 0.4) !important;
+}
+
+.about-profile-bio {
+  font-size: clamp(0.95rem, 2.5vw, 1.1rem) !important;
+  line-height: 1.75 !important;
+  color: #cbd5e1 !important;
+  max-width: 680px !important;
+  width: 100% !important;
+  text-align: inherit !important;
+}
+
+.attribute-badge-cloud {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 10px !important;
+  width: 100% !important;
+}
+
 .attr-tag {
-  font-family: monospace;
-  background: rgba(31, 16, 56, 0.4);
-  border: 1px solid rgba(168, 85, 247, 0.25);
-  padding: 8px 16px;
-  border-radius: 8px;
-  font-size: 0.85rem;
-  color: #d8b4fe;
-  transition: all 0.3s ease;
+  font-family: monospace !important;
+  background: rgba(31, 16, 56, 0.4) !important;
+  border: 1px solid rgba(168, 85, 247, 0.25) !important;
+  padding: 8px 16px !important;
+  border-radius: 8px !important;
+  font-size: 0.85rem !important;
+  color: #d8b4fe !important;
+  transition: all 0.3s ease !important;
+  user-select: none !important;
+  white-space: nowrap !important;
 }
 
 .attr-tag:hover {
-  background: rgba(168, 85, 247, 0.15);
-  border-color: rgba(168, 85, 247, 0.6);
-  color: #ffffff;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(168, 85, 247, 0.2);
+  background: rgba(168, 85, 247, 0.15) !important;
+  border-color: rgba(168, 85, 247, 0.6) !important;
+  color: #ffffff !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 12px rgba(168, 85, 247, 0.2) !important;
+}
+
+/* ========================================= */
+/* THE RESUME GRADIENT DOWNLOAD ACTION LINK  */
+/* ========================================= */
+
+.action-button-alignment {
+  width: 100% !important;
+  display: flex !important;
 }
 
 .btn-space-primary {
@@ -185,9 +276,13 @@
   padding: 14px 32px !important;
   font-weight: 600 !important;
   border-radius: 12px !important;
-  text-decoration: none;
+  text-decoration: none !important;
   box-shadow: 0 4px 20px rgba(126, 34, 206, 0.4) !important;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  max-width: 100% !important;
 }
 
 .btn-space-primary:hover {
@@ -195,15 +290,104 @@
   box-shadow: 0 12px 28px rgba(126, 34, 206, 0.6), 0 0 20px rgba(59, 130, 246, 0.4) !important;
 }
 
-.download-icon-bounce { transition: transform 0.3s ease; }
-.btn-space-primary:hover .download-icon-bounce { transform: translateY(2px); }
+.download-icon-bounce {
+  transition: transform 0.3s ease !important;
+}
+
+.btn-space-primary:hover .download-icon-bounce {
+  transform: translateY(2px) !important;
+}
+
+/* ========================================= */
+/* MOTIONS LIFECYCLES KEYFRAMES CONSTANTS    */
+/* ========================================= */
 
 @keyframes slow-cosmic-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
 
+/* ========================================================================= */
+/* SOLVED: RIGID MOBILE CONSTRAINTS MATRIX FOR 425px, 375px & 320px SCALES  */
+/* ========================================================================= */
+
 @media (max-width: 991px) {
-  .about-layout-grid-row { flex-direction: column; align-items: center; gap: 45px; }
-  .about-profile-content-side { width: 100%; }
+  /* FORCEFUL GEOMETRIC CENTER ENGINE OVERRIDES */
+  .about-layout-grid-row {
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    gap: 45px !important;
+    width: 100% !important;
+  }
+  
+  .about-profile-content-side {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 100% !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+  
+  /* Destroys standard text alignment drift gaps safely */
+  .about-profile-sub-intent,
+  .about-profile-bio {
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    max-width: 100% !important;
+  }
+
+  .attribute-badge-cloud {
+    justify-content: center !important;
+    align-items: center !important;
+    margin: 0 auto 30px auto !important;
+    max-width: 100% !important;
+  }
+  
+  .action-button-alignment {
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin: 0 auto !important;
+  }
+  
+  .btn-space-primary {
+    justify-content: center !important;
+  }
 }
+
+/* Optimized density scalings target metrics */
+@media (max-width: 425px) {
+  .about-profile-bio {
+    padding: 0 10px !important; /* Adds secure inner safe-zone gutters */
+    box-sizing: border-box !important;
+  }
+  .attribute-badge-cloud {
+    gap: 8px !important;
+    padding: 0 12px !important;
+  }
+  .action-button-alignment {
+    padding: 0 16px !important;
+    box-sizing: border-box !important;
+  }
+  .btn-space-primary {
+    width: 100% !important; /* Forces layout symmetry match on mobile views */
+  }
+}
+
+@media (max-width: 340px) {
+  .profile-identity-box {
+    width: 210px !important;
+    height: 210px !important;
+  }
+  .meta-status-table {
+    width: 210px !important;
+  }
+  .display-initials-text {
+    font-size: 3.8rem !important;
+  }
+} 

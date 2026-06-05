@@ -7,8 +7,8 @@ import SlideReveal from "./SlideReveal";
 const About = () => {
   return (
     <ScrollReveal>
-      {/* SOLVED CENTER ENGINE: Forced complete section container space blocks to hold items in center alignment */}
-      <section id="about" className="about-space-section d-flex align-items-center justify-content-center" style={{ minHeight: "100vh" }}>
+      {/* SOLVED LAYOUT CENTER ENGINE: Rigid flex-enforcements lock viewport geometry down straight */}
+      <section id="about" className="about-space-section d-flex align-items-center justify-content-center">
         <div className="container custom-about-container d-flex flex-column align-items-center justify-content-center text-center">
           
           {/* TOP SECTION BLOCK INDEX IDENTIFIER */}
@@ -20,11 +20,11 @@ const About = () => {
             </SlideReveal>
           </div>
 
-          {/* SOLVED GRID TO CENTER-FLEX MATRIX WRAPPER */}
-          <div className="about-layout-grid-row w-100 mt-4">
+          {/* SOLVED CONTENT WRAPPER HUB: Standard block arrays centered natively */}
+          <div className="about-layout-grid-row w-100 d-flex justify-content-center align-items-center flex-wrap">
             
             {/* LEFT COLUMN: IDENTITY PANEL & META STATUS GRID */}
-            <div className="about-profile-panel-side d-flex flex-column align-items-center justify-content-center">
+            <div className="about-profile-panel-side d-flex flex-column align-items-center justify-content-center text-center">
               <SlideReveal direction="left" className="w-100 d-flex flex-column align-items-center justify-content-center">
                 {/* Dynamic Rotating/Hovering Logo Container */}
                 <div className="profile-identity-box mb-4 mx-auto">
@@ -34,7 +34,7 @@ const About = () => {
                 </div>
 
                 {/* META STATUS LISTING GRID */}
-                <div className="meta-status-table mx-auto w-100" style={{ maxWidth: "340px" }}>
+                <div className="meta-status-table mx-auto w-100">
                   <div className="meta-table-row">
                     <span className="meta-label">STATUS</span>
                     <span className="meta-value status-glow-dot">OPEN TO WORK</span>
@@ -59,19 +59,19 @@ const About = () => {
                   <span className="violet-glow-intent">One Line at a Time</span>
                 </h3>
 
-                <p className="about-profile-bio mx-auto text-center" style={{ maxWidth: "600px" }}>
+                <p className="about-profile-bio mx-auto text-center">
                   I'm Sriram — a third-year Computer Science Engineering student focused heavily on full-stack excellence. 
                   My passion lies at the intersection of building highly performant backends and crafting clean, secure digital spaces.
                 </p>
 
-                <p className="about-profile-bio mb-4 mx-auto text-center" style={{ maxWidth: "600px" }}>
+                <p className="about-profile-bio mb-4 mx-auto text-center">
                   I specialize in turning complex problems into scalable web applications. From designing responsive, 
                   fluid frontends with React to managing multi-tier backend architectures with Node.js and MongoDB, 
                   I am driven by clean logic and modern system performance.
                 </p>
 
                 {/* ATTRIBUTE TAG CLOUD */}
-                <div className="attribute-badge-cloud mb-5 d-flex flex-wrap justify-content-center align-items-center mx-auto">
+                <div className="attribute-badge-cloud mb-5 mx-auto d-flex flex-wrap justify-content-center align-items-center">
                   <span className="attr-tag">Problem Solver</span>
                   <span className="attr-tag">Quick Learner</span>
                   <span className="attr-tag">MERN Developer</span>
@@ -80,7 +80,7 @@ const About = () => {
                 </div>
 
                 {/* THE RESUME DOWNLOAD ACTION LINK */}
-                <div className="action-button-alignment d-flex justify-content-center w-100">
+                <div className="action-button-alignment mx-auto d-flex justify-content-center">
                   <a
                     href="/Sriram_R_Resume.pdf"
                     className="btn btn-space-primary d-inline-flex align-items-center justify-content-center gap-2"

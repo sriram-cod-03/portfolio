@@ -6,7 +6,7 @@ import "./App.css";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
-import Timeline from "./components/Timeline";       /* 01. Education Section */
+import Education from "./components/Education"      /* 01. Education Section */
 import Experience from "./components/Experience";   /* 02. Work Experience */
 import Certificates from "./components/Certificates"; /* 03. Certifications Section */
 import Skills from "./components/Skills";           /* 04. Tech Stack Sets */
@@ -78,7 +78,7 @@ function App() {
           
           {/* 6. EDUCATION TIMELINE SECTION */}
           <section id="education" className="reveal">
-            <Timeline />
+            <Education/>
           </section>
 
           {/* 7. CERTIFICATE SECTION */}

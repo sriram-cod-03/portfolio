@@ -1,87 +1,104 @@
-/* ========================================= */
-/* COMPACT HORIZONTAL SKILLS GRID LAYOUT     */
-/* ========================================= */
+/* ========================================================================= */
+/* COMPACT ULTRA-SMALL HORIZONTAL SKILLS GRID LAYOUT SPECIFICATIONS SHEET    */
+/* ========================================================================= */
 
 .skills-modular-section {
-  position: relative;
-  width: 100%;
-  padding: 60px 0;
+  position: relative !important;
+  width: 100% !important;
+  padding: 100px 0 !important;
   background: transparent !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-sizing: border-box !important;
 }
 
 .custom-skills-container {
-  max-width: 1140px;
-  margin: 0 auto;
-  padding: 0 24px;
-  display: flex;
-  flex-direction: column;
+  max-width: 1140px !important;
+  width: 100% !important;
+  margin: 0 auto !important;
+  padding: 0 24px !important;
+  display: flex !important;
+  flex-direction: column !important;
 }
 
 .skills-main-heading {
-  font-size: 3.4rem;
-  font-weight: 800;
-  letter-spacing: -0.01em;
-  color: #ffffff;
+  font-size: clamp(2.2rem, 6vw, 3.4rem) !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.01em !important;
+  color: #ffffff !important;
+  text-align: center !important;
 }
 
 .skills-categories-wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  width: 100%;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 24px !important;
+  width: 100% !important;
 }
 
 .skill-category-block {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
+  width: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  justify-content: flex-start !important;
 }
 
 .category-row-title {
-  position: relative;
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: #c084fc; /* High-intensity space violet neon core */
-  padding-left: 14px;
-  letter-spacing: 0.5px;
+  position: relative !important;
+  font-size: 1.3rem !important;
+  font-weight: 700 !important;
+  color: #c084fc !important; /* High-intensity space violet neon core */
+  padding-left: 14px !important;
+  letter-spacing: 0.5px !important;
+  margin: 0 0 12px 0 !important;
+  text-align: left !important;
 }
 
-/* Sharp left vertical accent indicator bar */
+/* Sharp left vertical accent indicator bar for laptops */
 .category-row-title::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 15%;
-  height: 70%;
-  width: 3px;
-  background-color: #a855f7;
-  border-radius: 4px;
-  box-shadow: 0 0 10px #a855f7;
+  content: '' !important;
+  position: absolute !important;
+  left: 0 !important;
+  top: 15% !important;
+  height: 70% !important;
+  width: 3px !important;
+  background-color: #a855f7 !important;
+  border-radius: 4px !important;
+  box-shadow: 0 0 10px #a855f7 !important;
 }
 
 /* FORCES ALL TECHNOLOGY ITEMS TO STAY RIGIDLY ON A SINGLE LINE PIPELINE */
 .skills-horizontal-scroll-row {
   display: flex !important;
   flex-direction: row !important;
-  flex-wrap: nowrap !important; /* CRITICAL: Prevents any wrapping onto extra rows */
-  gap: 16px;
-  width: 100%;
-  justify-content: flex-start;
-  overflow-x: auto; /* Enables fluid horizontal swipe actions on mobile */
-  padding: 12px 4px;
-  scrollbar-width: none; /* Wipes away desktop scrollbars */
+  flex-wrap: nowrap !important; /* CRITICAL: Forcefully kills line wraps downwards */
+  gap: 16px !important;
+  width: 100% !important;
+  justify-content: flex-start !important;
+  align-items: center !important;
+  overflow-x: auto !important; /* Enables ultra-smooth horizontal touch swiping action loop */
+  padding: 12px 4px !important;
+  box-sizing: border-box !important;
+  
+  /* Suppresses visible browser default scrollbar tracks indicators clarity */
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
 }
 
 .skills-horizontal-scroll-row::-webkit-scrollbar {
-  display: none; /* Suppresses track line visuals on Chrome/Safari engines */
+  display: none !important; /* Kills chrome scroll tracking bars completely */
+  width: 0 !important;
+  height: 0 !important;
 }
 
-/* RE-ENGINEERED: CLEAN UNIFORM MEDIUM TECHNOLOGY CARDS */
+/* CLEAN UNIFORM TECHNOLOGY GLASS CARDS (DESKTOP METRICS) */
 .glass-card.medium-skill-card {
-  flex: 0 0 auto !important; /* Halts width distortion or shrinkage */
+  flex: 0 0 auto !important; /* Prevents card width distortion or shrinkage collapse */
   width: 170px !important;
   height: 110px !important;
-  background: rgba(14, 5, 26, 0.45) !important; /* Low-opacity dark cosmic matte mask */
+  background: rgba(14, 5, 26, 0.45) !important;
   border: 1px solid rgba(168, 85, 247, 0.16) !important;
   border-radius: 16px !important;
   padding: 15px !important;
@@ -90,117 +107,119 @@
   align-items: center !important;
   justify-content: center !important;
   gap: 8px !important;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+  box-sizing: border-box !important;
 }
 
 .glass-card.medium-skill-card:hover {
   border-color: rgba(168, 85, 247, 0.5) !important;
   background: rgba(31, 16, 56, 0.45) !important;
   box-shadow: 0 10px 25px rgba(168, 85, 247, 0.25) !important;
+  transform: translateY(-4px) !important;
 }
 
-/* LOGO GRAPHIC METRICS */
 .compact-skill-icon-wrap {
-  font-size: 32px !important; /* Normalized from 45px for a precise dashboard layout */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform 0.3s ease;
+  font-size: 32px !important; 
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: transform 0.3s ease !important;
 }
 
 .glass-card.medium-skill-card:hover .compact-skill-icon-wrap {
-  transform: scale(1.12) rotate(3deg);
+  transform: scale(1.12) rotate(3deg) !important;
 }
 
 .compact-skill-name {
   font-size: 0.9rem !important;
   font-weight: 600 !important;
   color: #ffffff !important;
-  letter-spacing: 0.3px;
-  margin: 0;
-  text-align: center;
+  letter-spacing: 0.3px !important;
+  margin: 0 !important;
+  text-align: center !important;
 }
 
-/* RESPONSIVE FLUID SCALING FOR SMALL SCREENS */
-@media (max-width: 768px) {
-  .glass-card.medium-skill-card {
-    width: 140px !important;
-    height: 100px !important;
-    border-radius: 12px !important;
+/* ========================================================================= */
+/* 🛠️ SOLVED: ULTRA-SMALL MOBILE RESPONSE CORES SYSTEM TARGET (LESS THAN 991px) */
+/* ========================================================================= */
+
+@media (max-width: 991px) {
+  .skill-category-block {
+    align-items: center !important; /* Centers the whole heading context over phones layout */
+    justify-content: center !important;
   }
-  .compact-skill-icon-wrap { font-size: 26px !important; }
-  .compact-skill-name { font-size: 0.8rem !important; }
+  
+  .skill-title-reveal-wrapper {
+    display: flex !important;
+    justify-content: center !important;
+    width: 100% !important;
+  }
+
+  .category-row-title {
+    text-align: center !important;
+    padding-left: 0 !important;
+    margin: 0 auto 12px auto !important;
+    display: inline-block !important;
+    font-size: 1.15rem !important;
+  }
+  
+  /* Suppresses left bar indicator to preserve dynamic center metrics look */
+  .category-row-title::before {
+    display: none !important;
+  }
+  
+  /* FIXED RIGID INLINE SINGLE ROW TRAFFIC: Forces scroll horizontal row layout strictly on mobile cellular bounds */
+  .skills-horizontal-scroll-row {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important; /* FORCES ABSOLUTE SINGLE ROW LINE PERMANENTLY */
+    justify-content: flex-start !important; /* Allows items to start flat left and scroll horizontally smoothly */
+    overflow-x: auto !important; /* Fully re-enables side gestures swipe on touch pads cell devices */
+    gap: 12px !important;
+    padding: 10px 4px !important;
+    -webkit-overflow-scrolling: touch !important; /* Extreme fluid swipe kinetics accelerator factor */
+  }
+
+  /* SOLVED TARGET COMPACT LOOK: Micro scaling logic specifically engineered for 425px, 375px & 320px screen resolutions */
+  .glass-card.medium-skill-card {
+    flex: 0 0 auto !important; /* Kills scaling width drops context loops */
+    width: 105px !important; /* Ultra compressed width for elegant fitting row view */
+    height: 85px !important;  /* Ultra compact structural height bounds */
+    border-radius: 12px !important;
+    padding: 8px !important;
+    gap: 4px !important;
+    background: rgba(14, 5, 26, 0.6) !important; /* Solidifies backplane clarity over small screens */
+  }
+  
+  /* Compact sizes parameters definitions */
+  .compact-skill-icon-wrap {
+    font-size: 22px !important; /* Scale micro metrics logo inside cards grids */
+  }
+  
+  .compact-skill-name {
+    font-size: 0.72rem !important; /* Clear readable micro font dimensions tracking text blocks */
+    letter-spacing: 0.1px !important;
+    white-space: nowrap !important; /* Strictly locks text into single line loops safely */
+  }
 }
 
-/* ========================================= */
-/* SOLVED: FLOATING GITHUB ACCENT LINK       */
-/* ========================================= */
-
-.project-github-link {
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  width: 38px;
-  height: 38px;
-  border-radius: 10px;
-  background: rgba(9, 3, 20, 0.7) !important; /* Translucent dark space shield mask */
-  border: 1px solid rgba(168, 85, 247, 0.35) !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  color: #cbd5e1 !important;
-  font-size: 19px;
-  text-decoration: none;
-  z-index: 5;
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-}
-
-/* Interactive Hover Reactions */
-.project-github-link:hover {
-  background: #090314 !important;
-  color: #c084fc !important; /* Glow violet accent color shift */
-  border-color: #a855f7 !important;
-  transform: scale(1.1) rotate(5deg);
-  box-shadow: 0 0 15px rgba(168, 85, 247, 0.5);
-}
-
-/* ========================================= */
-/* SOLVED: FLOATING GITHUB ACCENT LINK       */
-/* ========================================= */
-
-.project-github-link {
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  width: 38px;
-  height: 38px;
-  border-radius: 10px;
-  background: rgba(9, 3, 20, 0.7) !important; /* Translucent dark space shield mask */
-  border: 1px solid rgba(168, 85, 247, 0.35) !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  color: #cbd5e1 !important;
-  font-size: 19px;
-  text-decoration: none;
-  z-index: 5;
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-}
-
-/* Interactive Hover Reactions */
-.project-github-link:hover {
-  background: #090314 !important;
-  color: #c084fc !important; /* Glow violet accent color shift */
-  border-color: #a855f7 !important;
-  transform: scale(1.1) rotate(5deg);
-  box-shadow: 0 0 15px rgba(168, 85, 247, 0.5);
+/* Micro customizations for compact handset grids (320px) */
+@media (max-width: 340px) {
+  .skills-horizontal-scroll-row {
+    gap: 10px !important;
+  }
+  .glass-card.medium-skill-card {
+    width: 95px !important;
+    height: 80px !important;
+    padding: 6px !important;
+  }
+  .compact-skill-icon-wrap {
+    font-size: 20px !important;
+  }
+  .compact-skill-name {
+    font-size: 0.68rem !important;
+  }
 }

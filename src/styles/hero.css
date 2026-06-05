@@ -2,6 +2,36 @@
 /* HERO TEXT & HEADERS (FIXED CENTERING)     */
 /* ========================================= */
 
+.hero-section {
+  position: relative !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-height: 100vh !important;
+  /* FIXED: padding-top pushes content below fixed navbar */
+  padding: 160px 20px 60px 20px !important; 
+  z-index: 5;
+  overflow: hidden;
+}
+
+.hero-subtitle-wrapper {
+  width: 100%;
+  display: flex !important;
+  justify-content: center !important;
+  margin-bottom: 10px !important; /* Spacing fix */
+}
+
+.hero-subtitle {
+  color: #94a3b8 !important; /* Cement Color */
+  font-size: 0.95rem !important;
+  letter-spacing: 0.25rem !important;
+  text-transform: uppercase !important;
+  font-weight: 500 !important;
+  margin: 0 !important;
+  text-align: center !important;
+}
+
 .hero-centered-title {
   display: flex !important;
   justify-content: center !important;
@@ -17,8 +47,9 @@
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  line-height: 1.2;
-  white-space: nowrap !important; 
+  line-height: 1.1;
+  white-space: normal !important; /* FIXED: Now text can wrap instead of overflowing */
+  word-wrap: break-word !important;
 }
 
 .hero-centered-title .blur-text,
@@ -59,12 +90,10 @@
 .hero-description-text {
   font-size: 1.28rem !important; 
   text-align: center !important;
-  line-height: 1.85 !important;
+  line-height: 1.6 !important;
   color: #cbd5e1 !important;
   max-width: 780px !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-  margin-bottom: 50px !important; 
+  margin: 20px auto 40px auto !important;
   font-weight: 400;
 }
 
@@ -283,15 +312,15 @@
 
 .mini-services-grid {
   display: flex;
-  flex-direction: row !important; 
-  flex-wrap: nowrap !important;
-  gap: 12px;
-  width: 100%;
   justify-content: center;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap; /* Changed from nowrap to wrap for mobile */
+  margin-top: 20px;
+  width: 100%;
 }
 
 .mini-service-card {
-  flex: 1;
   background: rgba(255, 255, 255, 0.02) !important;
   border: 1px solid rgba(168, 85, 247, 0.15) !important;
   border-radius: 12px;
@@ -299,11 +328,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  white-space: nowrap;
   backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-  cursor: default;
 }
 
 .mini-service-card span {
@@ -331,6 +356,7 @@
 
 @media (max-width: 991px) {
   .hero-image-wrapper img { width: 280px; height: 280px; }
+  .hero-centered-title { font-size: 3.5rem !important; }
 }
 @media (max-width: 575px) {
   .hero-image-wrapper img { width: 220px; height: 220px; }

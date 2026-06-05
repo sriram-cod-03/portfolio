@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import { motion, useScroll, useTransform, useMotionValueEvent } from "framer-motion";
 
-const Timeline = () => {
+const Education = () => {
   const containerRef = useRef(null);
 
   // Hook into the page scroll tracking targeted specifically to this section's container boundaries
@@ -155,4 +155,4 @@ const Timeline = () => {
   );
 };
 
-export default Timeline;
+export default Education;

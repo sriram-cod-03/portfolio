@@ -5,7 +5,7 @@
 .timeline-space-section {
   position: relative;
   width: 100%;
-  padding: 120px 0;
+  padding: 100px 0;
   background: transparent !important;
   overflow: hidden;
   box-sizing: border-box;
@@ -22,11 +22,14 @@
   z-index: 5;
 }
 
+/* FIXED HEADING SIZE: Precise sizing matching your screenshot */
 .timeline-section-heading {
-  font-size: 3.4rem;
+  font-size: clamp(2rem, 5vw, 3.4rem) !important; /* Mobile: 2rem, Desktop: 3.4rem */
   font-weight: 800;
   letter-spacing: -0.01em;
   color: #ffffff;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 /* ========================================= */
@@ -42,7 +45,6 @@
   gap: 60px;
 }
 
-/* De-saturated base trace guide line running in background */
 .timeline-base-track-line {
   position: absolute;
   top: 0;
@@ -54,7 +56,6 @@
   z-index: 1;
 }
 
-/* SOLVED DYNAMIC LINK BEAM: Grows down pixel by pixel during user scroll operations */
 .timeline-active-scroll-beam {
   position: absolute;
   top: 0;
@@ -62,9 +63,7 @@
   width: 3px;
   background: linear-gradient(180deg, #3b82f6 0%, #a855f7 70%, #c084fc 100%);
   transform: translateX(-50%);
-  box-shadow:
-    0 0 15px rgba(168, 85, 247, 0.6),
-    0 0 30px rgba(59, 130, 246, 0.3);
+  box-shadow: 0 0 15px rgba(168, 85, 247, 0.6), 0 0 30px rgba(59, 130, 246, 0.3);
   z-index: 2;
   transform-origin: top center;
 }
@@ -78,12 +77,8 @@
   z-index: 3;
 }
 
-.row-left-align {
-  flex-direction: row;
-}
-.row-right-align {
-  flex-direction: row-reverse;
-}
+.row-left-align { flex-direction: row; }
+.row-right-align { flex-direction: row-reverse; }
 
 .timeline-card-column,
 .timeline-empty-spacer-column {
@@ -91,15 +86,11 @@
   width: 50%;
 }
 
-.row-left-align .timeline-card-column {
-  padding-right: 60px;
-}
-.row-right-align .timeline-card-column {
-  padding-left: 60px;
-}
+.row-left-align .timeline-card-column { padding-right: 60px; }
+.row-right-align .timeline-card-column { padding-left: 60px; }
 
 /* ========================================= */
-/* SOLVED: INTERACTIVE NODE POINTER BEACONS   */
+/* SOLVED: INTERACTIVE NODE POINTER BEACONS  */
 /* ========================================= */
 
 .timeline-track-node-beacon {
@@ -110,7 +101,7 @@
   width: 20px;
   height: 20px;
   background: #090314;
-  border: 3px solid rgba(255, 255, 255, 0.15); /* Soft gray ring when inactive */
+  border: 3px solid rgba(255, 255, 255, 0.15);
   border-radius: 50%;
   z-index: 10;
   display: flex;
@@ -128,14 +119,11 @@
   transition: all 0.4s ease;
 }
 
-/* SOLVED ACTIVE EFFECT STACK: Triggered instantly when active scroll beam intersects node coordinate */
 .timeline-track-node-beacon.ignite-neon-glow {
   border-color: #c084fc !important;
   background: #000000;
   transform: translate(-50%, -50%) scale(1.25);
-  box-shadow:
-    0 0 20px #a855f7,
-    0 0 40px rgba(168, 85, 247, 0.6);
+  box-shadow: 0 0 20px #a855f7, 0 0 40px rgba(168, 85, 247, 0.6);
 }
 
 .timeline-track-node-beacon.ignite-neon-glow .node-core-glow {
@@ -166,94 +154,21 @@
   background: rgba(22, 9, 38, 0.55) !important;
 }
 
-.education-degree-title {
-  font-size: 1.35rem;
-  font-weight: 700;
-  color: #ffffff;
-  letter-spacing: -0.2px;
-  line-height: 1.4;
-}
-.education-college-location {
-  font-size: 0.98rem;
-  font-weight: 500;
-  color: #c084fc;
-  letter-spacing: 0.3px;
-}
-.education-academic-bio {
-  font-size: 0.95rem;
-  line-height: 1.65;
-  color: #cbd5e1;
-  margin: 0;
-}
+.education-degree-title { font-size: 1.35rem; font-weight: 700; color: #ffffff; }
+.education-college-location { font-size: 0.98rem; font-weight: 500; color: #c084fc; }
+.education-academic-bio { font-size: 0.95rem; line-height: 1.65; color: #cbd5e1; margin-top: 10px; }
 
-/* CHIPS DECK CLOUDS */
-.timeline-card-tech-cloud {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 18px;
-}
-.timeline-mini-tag {
-  font-family: monospace;
-  font-size: 0.78rem;
-  background: rgba(168, 85, 247, 0.05);
-  border: 1px solid rgba(168, 85, 247, 0.2);
-  color: #d8b4fe;
-  padding: 4px 10px;
-  border-radius: 6px;
-  font-weight: 500;
-}
+.timeline-card-tech-cloud { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+.timeline-mini-tag { font-family: monospace; font-size: 0.78rem; background: rgba(168, 85, 247, 0.05); border: 1px solid rgba(168, 85, 247, 0.2); color: #d8b4fe; padding: 4px 10px; border-radius: 6px; }
 
-/* META CHIPS */
-.card-badge-header-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-.batch-duration-badge {
-  font-family: monospace;
-  font-size: 0.85rem;
-  font-weight: 600;
-  background: rgba(255, 255, 255, 0.04);
-  padding: 6px 14px;
-  border-radius: 8px;
-  color: #cbd5e1;
-  border: 1px solid rgba(255, 255, 255, 0.06);
-}
-.status-pill.education-glow {
-  background: rgba(168, 85, 247, 0.1);
-  color: #c084fc;
-  border: 1px solid rgba(168, 85, 247, 0.3);
-}
+.batch-duration-badge { font-family: monospace; font-size: 0.85rem; font-weight: 600; background: rgba(255, 255, 255, 0.04); padding: 6px 14px; border-radius: 8px; color: #cbd5e1; border: 1px solid rgba(255, 255, 255, 0.06); }
+.status-pill.education-glow { background: rgba(168, 85, 247, 0.1); color: #c084fc; border: 1px solid rgba(168, 85, 247, 0.3); }
 
-/* ========================================= */
-/* RESPONSIVE FLUID COLLAPSE ENGINE MAPS     */
-/* ========================================= */
-
+/* RESPONSIVE FLUID COLLAPSE ENGINE MAPS */
 @media (max-width: 768px) {
-  .timeline-base-track-line,
-  .timeline-active-scroll-beam {
-    left: 20px;
-    transform: none;
-  }
-  .timeline-item-row {
-    flex-direction: column !important;
-    align-items: flex-start;
-    gap: 24px;
-  }
-  .timeline-card-column,
-  .timeline-empty-spacer-column {
-    width: 100%;
-  }
-  .row-left-align .timeline-card-column,
-  .row-right-align .timeline-card-column {
-    padding: 0 0 0 45px;
-  }
-  .timeline-track-node-beacon {
-    left: 20px;
-    top: 35px;
-    transform: translate(-50%, -50%);
-  }
+  .timeline-base-track-line, .timeline-active-scroll-beam { left: 20px; transform: none; }
+  .timeline-item-row { flex-direction: column !important; align-items: flex-start; gap: 24px; }
+  .timeline-card-column, .timeline-empty-spacer-column { width: 100%; }
+  .row-left-align .timeline-card-column, .row-right-align .timeline-card-column { padding: 0 0 0 45px; }
+  .timeline-track-node-beacon { left: 20px; top: 35px; transform: translate(-50%, -50%); }
 }
