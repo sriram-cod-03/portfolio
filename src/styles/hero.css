@@ -43,12 +43,8 @@
   font-size: 5.5rem; 
   font-weight: 900;
   letter-spacing: -0.02em;
-  background: linear-gradient(180deg, #ffffff 40%, #cbd5e1 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
   line-height: 1.1;
-  white-space: normal !important; /* FIXED: Now text can wrap instead of overflowing */
+  white-space: normal !important; 
   word-wrap: break-word !important;
 }
 
@@ -67,14 +63,24 @@
 .hero-centered-title .interactive-letter {
   display: inline-block !important;
   text-align: center !important;
-  color: #ffffff;
   cursor: default;
+  /* Gradient ah direct ah letters ku apply panniyachu */
+  background: linear-gradient(180deg, #ffffff 40%, #cbd5e1 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent !important;
+  
+  will-change: transform, opacity, text-shadow; 
+  transform: translateZ(0); 
   transition: color 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), 
               transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
               text-shadow 0.4s ease !important;
 }
 
 .hero-centered-title .interactive-letter:hover {
+  background: none !important; /* Removes gradient on hover to apply solid color */
+  -webkit-background-clip: unset !important;
+  background-clip: unset !important;
   color: #c084fc !important; 
   -webkit-text-fill-color: #c084fc !important;
   text-shadow: 0 0 22px #a855f7, 0 0 45px rgba(168, 85, 247, 0.6) !important;
@@ -350,8 +356,8 @@
 /* ========================================= */
 
 @keyframes border-magic-spin {
-  from { transform: translate(-50%, -50%) rotate(0deg); }
-  to { transform: translate(-50%, -50%) rotate(360deg); }
+  from { transform: translate(-50%, -50%) rotate(0deg) translateZ(0); }
+  to { transform: translate(-50%, -50%) rotate(360deg) translateZ(0); }
 }
 
 @media (max-width: 991px) {

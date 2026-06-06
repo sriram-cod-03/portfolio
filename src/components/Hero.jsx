@@ -13,9 +13,11 @@ const Hero = () => {
         <div className="container custom-hero-container text-center d-flex flex-column align-items-center">
           {/* TOP STATUS BADGE */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, scale: 0.9, y: -10 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ duration: 0.6, type: "spring", stiffness: 100 }}
             className="status-badge mb-4"
+            style={{ willChange: "transform, opacity" }}
           >
             <span className="badge-text">Code it. Automate it.</span>
           </motion.div>
@@ -24,7 +26,9 @@ const Hero = () => {
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
             className="hero-subtitle-wrapper"
+            style={{ willChange: "transform, opacity" }}
           >
             <p className="hero-subtitle">Hello, I’m</p>
           </motion.div>
@@ -63,14 +67,26 @@ const Hero = () => {
           </motion.h4>
 
           {/* DESCRIPTION */}
-          <motion.p className="hero-description-text">
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, ease: "easeOut", delay: 0.4 }}
+            className="hero-description-text"
+            style={{ willChange: "transform, opacity" }}
+          >
             Passionate about transforming data into intelligent solutions.
             Building AI-powered applications and crafting secure digital
             experiences that make a difference.
           </motion.p>
 
           {/* ACTION BUTTONS */}
-          <motion.div className="hero-buttons-group">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, ease: "easeOut", delay: 0.5 }}
+            className="hero-buttons-group"
+            style={{ willChange: "transform, opacity" }}
+          >
             <a href="#contact" className="btn btn-premium-gradient">
               <HiLightningBolt className="btn-vector-icon lightning-orange" />
               <span className="btn-custom-text">Hire Me</span>
@@ -82,27 +98,31 @@ const Hero = () => {
           </motion.div>
 
           {/* SOCIAL LINKS */}
-          <motion.div className="hero-socials">
-            <span className="connect-text">Collab with me</span>
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, ease: "easeOut", delay: 0.6 }}
+            className="hero-socials"
+            style={{ willChange: "transform, opacity" }}
+          >
+            <span className="connect-text text-white">Collab with me</span>
             <div className="social-divider-horizontal-line"></div>
-            <a
-              href="https://github.com/sriram-cod-03"
-              target="_blank"
-              rel="noreferrer"
-            >
+            <a href="https://github.com/sriram-cod-03" target="_blank" rel="noreferrer">
               <FaGithub />
             </a>
-            <a
-              href="https://www.linkedin.com/in/sriram-r-6383ba2a9"
-              target="_blank"
-              rel="noreferrer"
-            >
+            <a href="https://www.linkedin.com/in/sriram-r-6383ba2a9" target="_blank" rel="noreferrer">
               <FaLinkedin />
             </a>
           </motion.div>
 
           {/* MINI SERVICES */}
-          <motion.div className="hero-mini-services-section mt-5">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, ease: "easeOut", delay: 0.7 }}
+            className="hero-mini-services-section mt-5"
+            style={{ willChange: "transform, opacity" }}
+          >
             <span className="mini-section-tag">What I Do</span>
             <p className="mini-section-subtext">
               Frontend • Backend • Full Stack
