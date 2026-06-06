@@ -1,4 +1,13 @@
 /* ========================================= */
+/* 🚀 HARDWARE ACCELERATION CLASSES          */
+/* ========================================= */
+.hardware-accelerated-card {
+  transform: translateZ(0) !important;
+  will-change: transform, box-shadow;
+  backface-visibility: hidden;
+}
+
+/* ========================================= */
 /* PREMIUM SPACE COMMISSIONS / CONTACT CORE  */
 /* ========================================= */
 
@@ -156,7 +165,7 @@
   line-height: 1.6 !important;
   max-width: 480px !important;
   width: 100% !important;
-  text-align: center !important; /* Perfect center logic flow tracking labels */
+  text-align: center !important; 
 }
 
 .world-map-wrapper {
@@ -231,19 +240,27 @@
   color: #ffffff !important;
 }
 
+/* ========================================= */
+/* 🚀 SOLVED: PERFECT ALIGNMENT STRUCTURE    */
+/* ========================================= */
 .contact-vertical-meta-stack {
   display: flex !important;
   flex-direction: column !important;
   gap: 20px !important;
-  width: 100% !important;
-  align-items: center !important;
+  width: fit-content !important; 
+  max-width: 100% !important; 
+  margin: 0 auto 24px auto !important; 
+  align-items: flex-start !important; 
 }
 
 .meta-stack-row-item {
   display: flex !important;
+  flex-direction: row !important; /* Forces icon and text side-by-side */
   align-items: center !important;
+  justify-content: flex-start !important; 
   gap: 16px !important;
   width: 100% !important;
+  margin: 0 !important;
 }
 
 .stack-icon-shield.active-violet-shield-box {
@@ -275,6 +292,8 @@
 .stack-item-details-block {
   display: flex !important;
   flex-direction: column !important;
+  align-items: flex-start !important; 
+  text-align: left !important; 
 }
 
 .stack-label-caption {
@@ -283,6 +302,8 @@
   font-weight: 700 !important;
   color: #64748b !important;
   letter-spacing: 1.5px !important;
+  text-align: left !important;
+  width: 100% !important;
 }
 
 .stack-value-content {
@@ -290,6 +311,8 @@
   font-weight: 600 !important;
   color: #e2e8f0 !important;
   margin-top: 2px !important;
+  text-align: left !important;
+  width: 100% !important;
 }
 
 /* SCIFI CENTRAL DIVIDER LINK CORES */
@@ -411,7 +434,7 @@
   50% { opacity: 1; transform: scale(1.1); box-shadow: 0 0 14px #10b981; }
 }
 
-/* RESPONSIVE SCALING HANDLERS INTERFACES CHANNELS OVERRIDES */
+/* 🚀 SOLVED: MOBILE PERFORMANCE & ALIGNMENT OVERRIDES */
 @media (max-width: 1199px) {
   .contact-central-corridor-divider { display: none !important; }
 }
@@ -432,16 +455,29 @@
     padding: 30px 20px !important; 
     text-align: center !important;
   }
+  
+  /* CRITICAL: Keeps items side-by-side on mobile while centering the block */
   .meta-stack-row-item {
-    flex-direction: column !important;
-    justify-content: center !important;
+    flex-direction: row !important;
+    justify-content: flex-start !important;
     align-items: center !important;
-    text-align: center !important;
-    gap: 8px !important;
+    text-align: left !important;
+    gap: 14px !important;
   }
+  
   .contact-subtitle-desc {
     margin-left: auto !important;
     margin-right: auto !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .glass-contact-card {
+    /* Kill the blur for smooth typing & scrolling */
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    background: rgba(15, 6, 25, 0.98) !important; 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6) !important; 
   }
 }
 

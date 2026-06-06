@@ -1,4 +1,18 @@
 /* ========================================= */
+/* 🚀 HARDWARE ACCELERATION CLASSES          */
+/* ========================================= */
+.hardware-accelerated-card {
+  transform: translateZ(0);
+  will-change: transform, box-shadow;
+  backface-visibility: hidden;
+}
+
+.hardware-accelerated-beam {
+  transform: translateX(-50%) translateZ(0) !important;
+  will-change: height;
+}
+
+/* ========================================= */
 /* PREMIUM SCROLL-LINKED VERTICAL TIMELINE   */
 /* ========================================= */
 
@@ -24,7 +38,7 @@
 
 /* FIXED HEADING SIZE: Precise sizing matching your screenshot */
 .timeline-section-heading {
-  font-size: clamp(2rem, 5vw, 3.4rem) !important; /* Mobile: 2rem, Desktop: 3.4rem */
+  font-size: clamp(2rem, 5vw, 3.4rem) !important; 
   font-weight: 800;
   letter-spacing: -0.01em;
   color: #ffffff;
@@ -62,7 +76,6 @@
   left: 50%;
   width: 3px;
   background: linear-gradient(180deg, #3b82f6 0%, #a855f7 70%, #c084fc 100%);
-  transform: translateX(-50%);
   box-shadow: 0 0 15px rgba(168, 85, 247, 0.6), 0 0 30px rgba(59, 130, 246, 0.3);
   z-index: 2;
   transform-origin: top center;
@@ -90,7 +103,7 @@
 .row-right-align .timeline-card-column { padding-left: 60px; }
 
 /* ========================================= */
-/* SOLVED: INTERACTIVE NODE POINTER BEACONS  */
+/* INTERACTIVE NODE POINTER BEACONS          */
 /* ========================================= */
 
 .timeline-track-node-beacon {
@@ -148,7 +161,7 @@
 }
 
 .timeline-space-glass-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-5px) translateZ(0);
   border-color: rgba(168, 85, 247, 0.5) !important;
   box-shadow: 0 20px 45px rgba(168, 85, 247, 0.25);
   background: rgba(22, 9, 38, 0.55) !important;
@@ -164,11 +177,35 @@
 .batch-duration-badge { font-family: monospace; font-size: 0.85rem; font-weight: 600; background: rgba(255, 255, 255, 0.04); padding: 6px 14px; border-radius: 8px; color: #cbd5e1; border: 1px solid rgba(255, 255, 255, 0.06); }
 .status-pill.education-glow { background: rgba(168, 85, 247, 0.1); color: #c084fc; border: 1px solid rgba(168, 85, 247, 0.3); }
 
-/* RESPONSIVE FLUID COLLAPSE ENGINE MAPS */
+/* ========================================= */
+/* 🛠️ SOLVED: MOBILE PORT RESPONSIVE OVERRIDES */
+/* ========================================= */
+
 @media (max-width: 768px) {
-  .timeline-base-track-line, .timeline-active-scroll-beam { left: 20px; transform: none; }
+  .timeline-base-track-line, .timeline-active-scroll-beam { 
+    left: 20px; 
+    transform: none !important; /* Forces correct left alignment without centering bugs */
+  }
+  
   .timeline-item-row { flex-direction: column !important; align-items: flex-start; gap: 24px; }
   .timeline-card-column, .timeline-empty-spacer-column { width: 100%; }
-  .row-left-align .timeline-card-column, .row-right-align .timeline-card-column { padding: 0 0 0 45px; }
-  .timeline-track-node-beacon { left: 20px; top: 35px; transform: translate(-50%, -50%); }
+  
+  .row-left-align .timeline-card-column, 
+  .row-right-align .timeline-card-column { 
+    padding: 0 0 0 45px; 
+  }
+  
+  .timeline-track-node-beacon { 
+    left: 20px; 
+    top: 35px; 
+    transform: translate(-50%, -50%); 
+  }
+  
+  /* 🚀 CRITICAL MOBILE FIX: Kill the blur for smooth scrolling */
+  .timeline-space-glass-card {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    background: rgba(22, 10, 38, 0.95) !important; /* Solid dark elegant space color */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6) !important; /* Simpler shadow */
+  }
 }

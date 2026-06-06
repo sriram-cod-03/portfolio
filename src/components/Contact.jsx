@@ -118,7 +118,8 @@ const Contact = () => {
             {/* LEFT SIDE DETAILS */}
             <div className="contact-details-side d-flex flex-column align-items-center">
               <SlideReveal direction="left" className="h-100 w-100 d-flex flex-column align-items-center">
-                <div className="glass-contact-card matching-height h-100 display-flex-column align-items-center w-100">
+                {/* 🚀 ADDED HARDWARE ACCELERATION CLASS */}
+                <div className="glass-contact-card hardware-accelerated-card matching-height h-100 d-flex flex-column align-items-center w-100">
                   
                   <div className="cyber-terminal-header-pod mb-4 mx-auto">
                     <div className="terminal-badge-icon-wrap">
@@ -146,7 +147,7 @@ const Contact = () => {
                       </div>
                       <div className="stack-item-details-block text-center">
                         <span className="stack-label-caption">EMAIL</span>
-                        <span className="stack-value-content">sriramr03.dev@gmail.com</span>
+                        <span className="stack-value-content">sriramr.webdev@gmail.com</span>
                       </div>
                     </div>
 
@@ -172,7 +173,7 @@ const Contact = () => {
                   </div>
 
                   <div className="world-map-wrapper grow mx-auto w-100">
-                    <div className="map-base-graphic h-100 w-100">
+                    <div className="map-base-graphic hardware-accelerated-card h-100 w-100">
                       <img
                         src="/world-base.jpg"
                         alt="Portfolio Interactive World Map"
@@ -213,7 +214,8 @@ const Contact = () => {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
-                className="glass-contact-card h-100 w-100"
+                /* 🚀 ADDED HARDWARE ACCELERATION CLASS */
+                className="glass-contact-card hardware-accelerated-card h-100 w-100"
               >
                 <form className="aceternity-form-engine w-100" onSubmit={handleSignalTransmission}>
                   <div className="form-group-block text-center">

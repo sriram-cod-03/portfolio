@@ -64,11 +64,11 @@ const Certificate = () => {
           </div>
 
           {/* CREDENTIALS MAPPING LAYER GRIDS */}
-          {/* SOLVED CENTER ENGINE: Ensures card blocks load matching alignment boundaries symmetrically over devices */}
           <div className="certificate-responsive-row w-100 d-flex justify-content-center align-items-center flex-wrap">
             {certificateData.map((cert) => (
               <div key={cert.id} className="certificate-card-wrapper d-flex justify-content-center">
-                <div className="glass-card certificate-premium-card d-flex flex-column align-items-center justify-content-center text-center">
+                {/* 🚀 ADDED HARDWARE ACCELERATION CLASS */}
+                <div className="glass-card certificate-premium-card hardware-accelerated-card d-flex flex-column align-items-center justify-content-center text-center">
                   
                   {/* METADATA ACCENTS */}
                   <div className="cert-header-meta mb-3 d-flex justify-content-center align-items-center flex-wrap gap-2">

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useScroll, useSpring } from "framer-motion"; // 🚀 Added Scroll hooks
 import { FaPaperPlane, FaTimes, FaBars } from "react-icons/fa"; 
 
 // Importing local asset cleanly
@@ -8,9 +8,15 @@ import profileAvatar from "../assets/profile.jpeg";
 const Navbar = () => {
   const [active, setActive] = useState("home");
   const [isAvatarExpanded, setIsAvatarExpanded] = useState(false);
-  
-  // SOLVED STATE: Track toggle flag for mobile menu menu drop layers
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  // 🚀 SOLVED: Shooting Star Scroll Progress Engine
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
 
   const navigationItems = [
     { id: "home", label: "Home" },
@@ -48,6 +54,13 @@ const Navbar = () => {
 
   return (
     <>
+      {/* 🚀 ADDED: SHOOTING STAR SCROLL PROGRESS BAR */}
+      <div className="scroll-progress-container">
+        <motion.div className="scroll-progress-bar" style={{ scaleX }}>
+          <div className="shooting-star-head"></div>
+        </motion.div>
+      </div>
+
       {/* SOLVED FIXED WRAPPER MATRIX STRUCTURE */}
       <nav className="custom-navbar fixed-top">
         <div className="custom-nav-container">

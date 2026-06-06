@@ -1,3 +1,12 @@
+/* ========================================= */
+/* 🚀 HARDWARE ACCELERATION CLASSES          */
+/* ========================================= */
+.hardware-accelerated-card {
+  transform: translateZ(0);
+  will-change: transform, box-shadow;
+  backface-visibility: hidden;
+}
+
 /* ========================================================================= */
 /* PREMIUM CREDENTIALS MODERN MICRO-ALIGNED DESIGN MATRIX SHEET              */
 /* ========================================================================= */
@@ -6,7 +15,7 @@
   position: relative !important;
   width: 100% !important;
   padding: 80px 0 !important;
-  background: transparent !important; /* Lets your cosmic starfield particles shine through safely */
+  background: transparent !important; 
   overflow: hidden !important;
   box-sizing: border-box !important;
   display: flex !important;
@@ -18,7 +27,7 @@
   max-width: 1140px !important;
   width: 100% !important;
   margin: 0 auto !important;
-  padding: 0 16px !important; /* Tightened safety layout boundaries */
+  padding: 0 16px !important; 
   display: flex !important;
   flex-direction: column !important;
   align-items: center !important;
@@ -36,7 +45,7 @@
 /* RESPONSIVE LAYOUT MATRIX USING FLEX ROW SYSTEMS */
 .certificate-responsive-row {
   display: flex !important;
-  flex-direction: column !important; /* Enforces strict single vertical column mapping */
+  flex-direction: column !important; 
   gap: 20px !important;
   width: 100% !important;
   justify-content: center !important;
@@ -47,7 +56,7 @@
 /* INDIVIDUAL COLUMN CALCULATIONS TRACK */
 .certificate-card-wrapper {
   width: 100% !important;
-  max-width: 100% !important; /* Forces total framework bounding sync */
+  max-width: 100% !important; 
   display: flex !important;
   justify-content: center !important;
   align-items: center !important;
@@ -59,10 +68,10 @@
 /* ========================================================================= */
 
 .glass-card.certificate-premium-card {
-  background: rgba(14, 5, 26, 0.45) !important; /* Transparent deep cosmic dark purple space mask tint */
-  border: 1px solid rgba(168, 85, 247, 0.16) !important; /* Thin ambient space-violet border track */
+  background: rgba(14, 5, 26, 0.45) !important; 
+  border: 1px solid rgba(168, 85, 247, 0.16) !important; 
   border-radius: 16px !important;
-  padding: 24px 16px !important; /* Balanced safety micro grids padding to prevent right text overflow clipping */
+  padding: 24px 16px !important; 
   display: flex !important;
   flex-direction: column !important;
   align-items: center !important; 
@@ -70,7 +79,7 @@
   text-align: center !important;
   
   width: 100% !important;
-  max-width: 100% !important; /* Forces layout tracking box to span beautifully inside constraints */
+  max-width: 100% !important; 
   box-sizing: border-box !important;
   
   backdrop-filter: blur(12px) !important;
@@ -81,7 +90,7 @@
 
 /* PREMIUM INTERACTIVE MOUSEOVER ENHANCEMENTS */
 .glass-card.certificate-premium-card:hover {
-  transform: translateY(-4px) !important;
+  transform: translateY(-4px) translateZ(0) !important; /* Added translateZ for smooth hover */
   border-color: rgba(168, 85, 247, 0.45) !important;
   box-shadow: 0 15px 35px rgba(168, 85, 247, 0.2) !important;
   background: rgba(22, 9, 38, 0.55) !important; 
@@ -121,7 +130,6 @@
   white-space: nowrap !important;
 }
 
-/* High-contrast ambient neon glow overrides for distinct corporate issuers */
 .cert-issuer-tag.guvi-green {
   color: #10b981 !important; 
   filter: drop-shadow(0 0 4px rgba(16, 185, 129, 0.4)) !important;
@@ -142,7 +150,7 @@
 /* ========================================= */
 
 .cert-title-label {
-  font-size: 1.15rem !important; /* Sized perfectly for 320px micro viewpoints symmetry */
+  font-size: 1.15rem !important; 
   font-weight: 700 !important;
   color: #ffffff !important;
   letter-spacing: -0.2px !important;
@@ -153,22 +161,35 @@
 }
 
 .cert-description-para {
-  font-size: 0.88rem !important; /* Balanced body text weight */
+  font-size: 0.88rem !important; 
   line-height: 1.55 !important;
   color: #94a3b8 !important;
   margin: 0 !important;
   text-align: center !important;
   width: 100% !important;
-  word-wrap: break-word !important; /* Prevents overflow line breaks leakage */
+  word-wrap: break-word !important; 
 }
 
-/* HARD SPECIFIC CONSTRAINTS FOR ULTRALIGHT COMPACT SCREENS HOOKS */
+/* ========================================= */
+/* 🛠️ SOLVED: MOBILE PERFORMANCE OVERRIDES   */
+/* ========================================= */
+
 @media (min-width: 769px) {
   .certificate-responsive-row {
-    flex-direction: row !important; /* Restores desktop side-by-side structures layout natively */
+    flex-direction: row !important; 
   }
   .certificate-card-wrapper {
     flex: 0 0 calc(50% - 15px) !important;
     max-width: 460px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  /* 🚀 CRITICAL MOBILE FIX: Kill the blur for smooth scrolling */
+  .glass-card.certificate-premium-card {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    background: rgba(22, 10, 38, 0.95) !important; /* Solid dark elegant space color */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6) !important; /* Simpler shadow */
   }
 }

@@ -79,7 +79,7 @@ const Experience = () => {
         <div className="container custom-experience-container">
           <div className="text-center w-100 mb-5">
             <SlideReveal direction="left">
-              <span className="section-index-tag">04 // INDUSTRY EXPERIENCE</span>
+              <span className="section-index-tag">03 // INDUSTRY EXPERIENCE</span>
               <h2 className="experience-section-heading mt-2">Completed Quests & Raids</h2>
               <div className="heading-violet-underline mx-auto"></div>
             </SlideReveal>

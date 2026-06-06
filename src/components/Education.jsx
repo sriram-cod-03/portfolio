@@ -39,13 +39,17 @@ const Education = () => {
   // State management arrays to independently track the ignition glow of each node safely
   const [activeNodes, setActiveNodes] = useState({});
 
-  // SOLVED: Modern Framer Motion event listener to catch scroll values without crashing
+  // 🚀 SOLVED: Modern Framer Motion event listener optimized to prevent unnecessary re-renders
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
     const updatedStates = {};
     timelineData.forEach((item) => {
       updatedStates[item.id] = latest >= item.progressThreshold;
     });
-    setActiveNodes(updatedStates);
+    
+    // Performance tweak: Only update state if values actually changed to stop lag
+    if (JSON.stringify(updatedStates) !== JSON.stringify(activeNodes)) {
+      setActiveNodes(updatedStates);
+    }
   });
 
   // Framer Motion card sliding entry variants
@@ -87,7 +91,7 @@ const Education = () => {
 
           {/* ACTIVE REAL-TIME SCROLL LINKED TIMELINE PROGRESS BEAM */}
           <motion.div 
-            className="timeline-active-scroll-beam"
+            className="timeline-active-scroll-beam hardware-accelerated-beam"
             style={{ height: lineHeight }}
           />
 
@@ -116,7 +120,8 @@ const Education = () => {
                   whileInView="visible"
                   viewport={{ once: true, amount: 0.3 }}
                 >
-                  <div className="timeline-space-glass-card">
+                  {/* 🚀 ADDED HARDWARE ACCELERATION CLASS */}
+                  <div className="timeline-space-glass-card hardware-accelerated-card">
                     
                     {/* BADGES HEADER ROW */}
                     <div className="card-badge-header-row mb-3">

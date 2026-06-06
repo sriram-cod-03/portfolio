@@ -1,4 +1,19 @@
 /* ========================================= */
+/* 🚀 HARDWARE ACCELERATION CLASSES          */
+/* ========================================= */
+.hardware-accelerated-card {
+  transform: translateZ(0);
+  will-change: transform, box-shadow;
+  backface-visibility: hidden;
+}
+
+.hardware-accelerated-img {
+  transform: translateZ(0);
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+/* ========================================= */
 /* PREMIUM INDEPENDENT PROJECTS GRID ENGINE  */
 /* ========================================= */
 
@@ -36,8 +51,8 @@
 
 /* INDIVIDUAL COLUMN CALCULATIONS TRACK */
 .project-card-column {
-  flex: 0 0 calc(33.333% - 20px) !important; /* Symmetrical 3-Column setup on screens */
-  min-width: 300px !important; /* Safe fallbacks for smaller viewports */
+  flex: 0 0 calc(33.333% - 20px) !important; 
+  min-width: 300px !important; 
   max-width: 100% !important;
   display: flex !important;
 }
@@ -47,7 +62,7 @@
 /* ========================================= */
 
 .modern-project-card {
-  background: rgba(14, 5, 26, 0.45) !important; /* Elegant dark space layout tint */
+  background: rgba(14, 5, 26, 0.45) !important; 
   backdrop-filter: blur(20px) !important;
   -webkit-backdrop-filter: blur(20px) !important;
   border-radius: 20px !important;
@@ -62,14 +77,14 @@
 }
 
 .modern-project-card:hover {
-  transform: translateY(-8px) !important;
+  transform: translateY(-8px) translateZ(0) !important; /* Added translateZ for smooth hover */
   border-color: rgba(168, 85, 247, 0.45) !important;
   box-shadow: 0 20px 50px rgba(168, 85, 247, 0.3) !important;
 }
 
 .project-image {
   width: 100% !important;
-  height: 220px !important; /* Anchors height so layout cards look uniformly balanced */
+  height: 220px !important; 
   overflow: hidden !important;
   position: relative !important;
   background: rgba(0, 0, 0, 0.2) !important;
@@ -78,12 +93,12 @@
 .project-image img {
   width: 100% !important;
   height: 100% !important;
-  object-fit: cover !important; /* Forces graphic pixels to crop within spatial bounds beautifully */
+  object-fit: cover !important; 
   transition: transform 0.4s ease !important;
 }
 
 .modern-project-card:hover .project-image img {
-  transform: scale(1.08) !important; /* Cinematic zoom scale trace transition */
+  transform: scale(1.08) translateZ(0) !important; 
 }
 
 /* FLOATING PREMIUM GITHUB LINK OVERLAY SYSTEM */
@@ -110,7 +125,7 @@
   background: #a855f7 !important;
   border-color: #c084fc !important;
   box-shadow: 0 0 12px #a855f7 !important;
-  transform: scale(1.1);
+  transform: scale(1.1) translateZ(0) !important;
 }
 
 /* ========================================= */
@@ -121,7 +136,7 @@
   padding: 24px !important;
   display: flex !important;
   flex-direction: column !important;
-  align-items: center !important; /* Forces center layout inside standard card desktop stacks */
+  align-items: center !important; 
   flex-grow: 1 !important;
   text-align: center !important;
 }
@@ -169,26 +184,34 @@
 }
 
 .btn-visit:hover {
-  transform: translateY(-2px) !important;
+  transform: translateY(-2px) translateZ(0) !important;
   border-color: #a855f7 !important;
   box-shadow: 0 0 15px rgba(168, 85, 247, 0.4) !important;
 }
 
 /* ========================================= */
-/* MOBILE PORT RESPONSIVE STRETCH CORES       */
+/* 🛠️ SOLVED: MOBILE PORT RESPONSIVE OVERRIDES */
 /* ========================================= */
 
 @media (max-width: 991px) {
   .project-card-column {
-    flex: 0 0 calc(50% - 15px) !important; /* Scales cleanly down to 2 columns on tablets */
+    flex: 0 0 calc(50% - 15px) !important; 
   }
 }
 
 @media (max-width: 768px) {
   .projects-responsive-flex-row { gap: 24px !important; }
   .project-card-column {
-    flex: 0 0 100% !important; /* Spans full width dynamically on phones */
+    flex: 0 0 100% !important; 
   }
   .project-image { height: 195px !important; }
   .project-body { padding: 20px !important; }
+
+  /* 🚀 CRITICAL MOBILE FIX: Kill the blur for smooth scrolling */
+  .modern-project-card {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    background: rgba(22, 10, 38, 0.95) !important; /* Solid dark elegant space color */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6) !important; /* Simpler shadow */
+  }
 }
