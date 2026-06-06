@@ -2,15 +2,24 @@
 /* PREMIUM ULTRA-MODERN FIXED SPACIAL ABOUT ME SECTION COMPONENTS SHEET      */
 /* ========================================================================= */
 
+/* PERFORMANCE OPTIMIZATION CLASSES */
+.hardware-accelerated {
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
 .about-space-section {
   position: relative !important;
   width: 100% !important;
   padding: 100px 0 !important;
-  background: transparent !important; /* Lets the central animated starfield stream through natively */
+  background: transparent !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
   box-sizing: border-box !important;
+  overflow: hidden; /* Prevents unwanted scrollbars during animations */
 }
 
 .custom-about-container {
@@ -71,7 +80,6 @@
   width: 100% !important;
 }
 
-/* Left panel bounding metrics */
 .about-profile-panel-side {
   flex: 1 !important;
   min-width: 280px !important;
@@ -81,7 +89,6 @@
   justify-content: center !important;
 }
 
-/* Right content details bounding metrics */
 .about-profile-content-side {
   flex: 1.6 !important;
   min-width: 320px !important;
@@ -129,9 +136,13 @@
   height: 90% !important;
   border: 1px dashed rgba(168, 85, 247, 0.35) !important;
   border-radius: 20px !important;
-  transform: rotate(15deg) !important;
-  animation: slow-cosmic-spin 25s linear infinite !important;
   z-index: 1 !important;
+}
+
+.smooth-spin {
+  transform-origin: center center;
+  animation: slow-cosmic-spin 25s linear infinite !important;
+  will-change: transform; /* Boosts continuous rotation performance */
 }
 
 .nebula-reflection-pool {
@@ -251,6 +262,7 @@
   transition: all 0.3s ease !important;
   user-select: none !important;
   white-space: nowrap !important;
+  will-change: transform, box-shadow; /* Optimizes hover state */
 }
 
 .attr-tag:hover {
@@ -283,6 +295,7 @@
   align-items: center !important;
   justify-content: center !important;
   max-width: 100% !important;
+  will-change: transform, box-shadow;
 }
 
 .btn-space-primary:hover {
@@ -303,8 +316,8 @@
 /* ========================================= */
 
 @keyframes slow-cosmic-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from { transform: rotate(0deg) translateZ(0); }
+  to { transform: rotate(360deg) translateZ(0); }
 }
 
 /* ========================================================================= */
@@ -312,7 +325,6 @@
 /* ========================================================================= */
 
 @media (max-width: 991px) {
-  /* FORCEFUL GEOMETRIC CENTER ENGINE OVERRIDES */
   .about-layout-grid-row {
     flex-direction: column !important;
     align-items: center !important;
@@ -331,7 +343,6 @@
     text-align: center !important;
   }
   
-  /* Destroys standard text alignment drift gaps safely */
   .about-profile-sub-intent,
   .about-profile-bio {
     text-align: center !important;
@@ -360,10 +371,9 @@
   }
 }
 
-/* Optimized density scalings target metrics */
 @media (max-width: 425px) {
   .about-profile-bio {
-    padding: 0 10px !important; /* Adds secure inner safe-zone gutters */
+    padding: 0 10px !important; 
     box-sizing: border-box !important;
   }
   .attribute-badge-cloud {
@@ -375,7 +385,7 @@
     box-sizing: border-box !important;
   }
   .btn-space-primary {
-    width: 100% !important; /* Forces layout symmetry match on mobile views */
+    width: 100% !important; 
   }
 }
 
@@ -390,4 +400,4 @@
   .display-initials-text {
     font-size: 3.8rem !important;
   }
-} 
+}

@@ -27,14 +27,14 @@ const About = () => {
             <div className="about-profile-panel-side d-flex flex-column align-items-center justify-content-center text-center">
               <SlideReveal direction="left" className="w-100 d-flex flex-column align-items-center justify-content-center">
                 {/* Dynamic Rotating/Hovering Logo Container */}
-                <div className="profile-identity-box mb-4 mx-auto">
-                  <div className="kinetic-border-shape"></div>
+                <div className="profile-identity-box mb-4 mx-auto hardware-accelerated">
+                  <div className="kinetic-border-shape smooth-spin"></div>
                   <h1 className="display-initials-text">SR</h1>
                   <div className="nebula-reflection-pool"></div>
                 </div>
 
                 {/* META STATUS LISTING GRID */}
-                <div className="meta-status-table mx-auto w-100">
+                <div className="meta-status-table mx-auto w-100 hardware-accelerated">
                   <div className="meta-table-row">
                     <span className="meta-label">STATUS</span>
                     <span className="meta-value status-glow-dot">OPEN TO WORK</span>
@@ -83,7 +83,7 @@ const About = () => {
                 <div className="action-button-alignment mx-auto d-flex justify-content-center">
                   <a
                     href="/Sriram_R_Resume.pdf"
-                    className="btn btn-space-primary d-inline-flex align-items-center justify-content-center gap-2"
+                    className="btn btn-space-primary d-inline-flex align-items-center justify-content-center gap-2 hardware-accelerated"
                   >
                     <FaDownload className="download-icon-bounce" />
                     Download Resume
@@ -93,7 +93,6 @@ const About = () => {
             </div>
 
           </div>
-
         </div>
       </section>
     </ScrollReveal>
