@@ -30,7 +30,8 @@ const About = () => {
                 <div className="profile-identity-box mb-4 mx-auto hardware-accelerated">
                   <div className="kinetic-border-shape smooth-spin"></div>
                   <h1 className="display-initials-text">SR</h1>
-                  <div className="nebula-reflection-pool"></div>
+                  {/* OPTIMIZED: Added hardware-accelerated to reduce DOM render cost */}
+                  <div className="nebula-reflection-pool hardware-accelerated"></div>
                 </div>
 
                 {/* META STATUS LISTING GRID */}

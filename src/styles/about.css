@@ -369,6 +369,29 @@
   .btn-space-primary {
     justify-content: center !important;
   }
+
+  /* 1. Disable heavy backdrop-filter on mobile, use solid opacity instead */
+  .profile-identity-box,
+  .meta-status-table {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    background: rgba(15, 6, 30, 0.95) !important; /* Darker background instead of blur */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5) !important; /* Simpler shadow */
+  }
+
+  /* 2. Reduce the filter blur radius dramatically for mobile GPUs */
+  .nebula-reflection-pool {
+    filter: blur(10px) !important; /* Changed from 25px to 10px */
+    width: 100px !important;
+    height: 100px !important;
+    opacity: 0.6 !important; /* Less opacity means less render cost */
+  }
+  
+  /* 3. Simplify the continuous animation */
+  .kinetic-border-shape {
+    border: 1px solid rgba(168, 85, 247, 0.3) !important; /* Solid border renders faster than dashed on animation */
+    animation: slow-cosmic-spin 30s linear infinite !important; /* Slowed down slightly */
+  }
 }
 
 @media (max-width: 425px) {
