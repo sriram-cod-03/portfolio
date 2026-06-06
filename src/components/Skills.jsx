@@ -23,6 +23,7 @@ import {
 import ScrollReveal from "./ScrollReveal";
 import SlideReveal from "./SlideReveal";
 
+
 // Categorized Skills Array Schema
 const skillCategories = [
   {
@@ -77,7 +78,7 @@ const Skills = () => {
           {/* CORE SECTION HEADER */}
           <div className="text-center w-100 mb-5 d-flex flex-column align-items-center justify-content-center">
             <SlideReveal direction="left">
-              <span className="section-index-tag">02 // CORE COMPETENCIES</span>
+              <span className="section-index-tag">03 // CORE COMPETENCIES</span>
               <h2 className="skills-main-heading text-white mt-2">Skill Tree & Ability Matrix</h2>
               <p className="section-subtitle mx-auto text-center" style={{ color: "#94a3b8" }}>
                 Advanced tech stack & engineering architecture toolsets
@@ -97,12 +98,12 @@ const Skills = () => {
                   </h3>
                 </SlideReveal>
 
-                {/* HORIZONTAL SWIPE CONSTRAINTS MATRIX GRID SETUP */}
-                <div className="skills-horizontal-scroll-row">
+                {/* HORIZONTAL SWIPE CONSTRAINTS MATRIX GRID SETUP - GPU ACCELERATED */}
+                <div className="skills-horizontal-scroll-row hardware-accelerated-scroll">
                   {category.items.map((skill, index) => (
                     <motion.div
                       key={index}
-                      className="glass-card medium-skill-card"
+                      className="glass-card medium-skill-card hardware-accelerated-card"
                       whileHover={{ scale: 1.04, translateY: -4 }}
                       transition={{ type: "spring", stiffness: 250, damping: 15 }}
                     >

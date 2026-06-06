@@ -2,6 +2,20 @@
 /* COMPACT ULTRA-SMALL HORIZONTAL SKILLS GRID LAYOUT SPECIFICATIONS SHEET    */
 /* ========================================================================= */
 
+/* 🚀 PERFORMANCE OPTIMIZATION ENGINES */
+.hardware-accelerated-scroll {
+  transform: translateZ(0);
+  -webkit-overflow-scrolling: touch !important; /* Force native smooth scrolling */
+  will-change: scroll-position;
+}
+
+.hardware-accelerated-card {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+  will-change: transform, box-shadow; /* Tells browser to prep for hover animation */
+}
+
 .skills-modular-section {
   position: relative !important;
   width: 100% !important;
@@ -49,14 +63,13 @@
   position: relative !important;
   font-size: 1.3rem !important;
   font-weight: 700 !important;
-  color: #c084fc !important; /* High-intensity space violet neon core */
+  color: #c084fc !important; 
   padding-left: 14px !important;
   letter-spacing: 0.5px !important;
   margin: 0 0 12px 0 !important;
   text-align: left !important;
 }
 
-/* Sharp left vertical accent indicator bar for laptops */
 .category-row-title::before {
   content: '' !important;
   position: absolute !important;
@@ -69,33 +82,30 @@
   box-shadow: 0 0 10px #a855f7 !important;
 }
 
-/* FORCES ALL TECHNOLOGY ITEMS TO STAY RIGIDLY ON A SINGLE LINE PIPELINE */
 .skills-horizontal-scroll-row {
   display: flex !important;
   flex-direction: row !important;
-  flex-wrap: nowrap !important; /* CRITICAL: Forcefully kills line wraps downwards */
+  flex-wrap: nowrap !important; 
   gap: 16px !important;
   width: 100% !important;
   justify-content: flex-start !important;
   align-items: center !important;
-  overflow-x: auto !important; /* Enables ultra-smooth horizontal touch swiping action loop */
+  overflow-x: auto !important; 
   padding: 12px 4px !important;
   box-sizing: border-box !important;
-  
-  /* Suppresses visible browser default scrollbar tracks indicators clarity */
   scrollbar-width: none !important;
   -ms-overflow-style: none !important;
 }
 
 .skills-horizontal-scroll-row::-webkit-scrollbar {
-  display: none !important; /* Kills chrome scroll tracking bars completely */
+  display: none !important; 
   width: 0 !important;
   height: 0 !important;
 }
 
 /* CLEAN UNIFORM TECHNOLOGY GLASS CARDS (DESKTOP METRICS) */
 .glass-card.medium-skill-card {
-  flex: 0 0 auto !important; /* Prevents card width distortion or shrinkage collapse */
+  flex: 0 0 auto !important; 
   width: 170px !important;
   height: 110px !important;
   background: rgba(14, 5, 26, 0.45) !important;
@@ -148,7 +158,7 @@
 
 @media (max-width: 991px) {
   .skill-category-block {
-    align-items: center !important; /* Centers the whole heading context over phones layout */
+    align-items: center !important; 
     justify-content: center !important;
   }
   
@@ -166,47 +176,48 @@
     font-size: 1.15rem !important;
   }
   
-  /* Suppresses left bar indicator to preserve dynamic center metrics look */
   .category-row-title::before {
     display: none !important;
   }
   
-  /* FIXED RIGID INLINE SINGLE ROW TRAFFIC: Forces scroll horizontal row layout strictly on mobile cellular bounds */
   .skills-horizontal-scroll-row {
     display: flex !important;
     flex-direction: row !important;
-    flex-wrap: nowrap !important; /* FORCES ABSOLUTE SINGLE ROW LINE PERMANENTLY */
-    justify-content: flex-start !important; /* Allows items to start flat left and scroll horizontally smoothly */
-    overflow-x: auto !important; /* Fully re-enables side gestures swipe on touch pads cell devices */
+    flex-wrap: nowrap !important; 
+    justify-content: flex-start !important; 
+    overflow-x: auto !important; 
     gap: 12px !important;
     padding: 10px 4px !important;
-    -webkit-overflow-scrolling: touch !important; /* Extreme fluid swipe kinetics accelerator factor */
+    -webkit-overflow-scrolling: touch !important; 
   }
 
-  /* SOLVED TARGET COMPACT LOOK: Micro scaling logic specifically engineered for 425px, 375px & 320px screen resolutions */
   .glass-card.medium-skill-card {
-    flex: 0 0 auto !important; /* Kills scaling width drops context loops */
-    width: 105px !important; /* Ultra compressed width for elegant fitting row view */
-    height: 85px !important;  /* Ultra compact structural height bounds */
+    flex: 0 0 auto !important; 
+    width: 105px !important; 
+    height: 85px !important;  
     border-radius: 12px !important;
     padding: 8px !important;
     gap: 4px !important;
-    background: rgba(14, 5, 26, 0.6) !important; /* Solidifies backplane clarity over small screens */
+    
+    /* 🚀 CRITICAL MOBILE FIX: Remove blur and use solid background to prevent swipe lag */
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    background: rgba(20, 8, 35, 0.9) !important; 
+    border: 1px solid rgba(168, 85, 247, 0.25) !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4) !important;
   }
   
-  /* Compact sizes parameters definitions */
   .compact-skill-icon-wrap {
-    font-size: 22px !important; /* Scale micro metrics logo inside cards grids */
+    font-size: 22px !important; 
   }
   
   .compact-skill-name {
-    font-size: 0.72rem !important; /* Clear readable micro font dimensions tracking text blocks */
+    font-size: 0.72rem !important; 
     letter-spacing: 0.1px !important;
-    white-space: nowrap !important; /* Strictly locks text into single line loops safely */
+    white-space: nowrap !important; 
   }
 }
 
-/* Micro customizations for compact handset grids (320px) */
 @media (max-width: 340px) {
   .skills-horizontal-scroll-row {
     gap: 10px !important;
