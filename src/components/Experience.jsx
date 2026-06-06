@@ -44,7 +44,10 @@ const Experience = () => {
     workData.forEach((item) => {
       updatedStates[item.id] = latest >= item.progressThreshold;
     });
-    setActiveNodes(updatedStates);
+    // Performance tweak: Only update state if values actually changed
+    if (JSON.stringify(updatedStates) !== JSON.stringify(activeNodes)) {
+      setActiveNodes(updatedStates);
+    }
   });
 
   const cardVariants = {
@@ -65,12 +68,12 @@ const Experience = () => {
     <ScrollReveal>
       <section id="experience" className="experience-rings-section" ref={containerRef}>
         
-        {/* Background Rings */}
+        {/* Background Rings - Optimized */}
         <div className="experience-rings-backdrop">
-          <div className="magic-ring-exp exp-ring-1"></div>
-          <div className="magic-ring-exp exp-ring-2"></div>
-          <div className="magic-ring-exp exp-ring-3"></div>
-          <div className="magic-ring-exp exp-ring-4"></div>
+          <div className="magic-ring-exp exp-ring-1 hardware-accelerated-ring"></div>
+          <div className="magic-ring-exp exp-ring-2 hardware-accelerated-ring"></div>
+          <div className="magic-ring-exp exp-ring-3 hardware-accelerated-ring"></div>
+          <div className="magic-ring-exp exp-ring-4 hardware-accelerated-ring"></div>
         </div>
 
         <div className="container custom-experience-container">
@@ -86,8 +89,11 @@ const Experience = () => {
             {/* Background Line */}
             <div className="experience-base-track-line"></div>
             
-            {/* Scroll Beam */}
-            <motion.div className="experience-active-scroll-beam" style={{ height: lineHeight }} />
+            {/* Scroll Beam - Hardware Accelerated */}
+            <motion.div 
+              className="experience-active-scroll-beam hardware-accelerated-beam" 
+              style={{ height: lineHeight }} 
+            />
 
             {workData.map((item, index) => {
               const isEven = index % 2 === 0;
@@ -111,7 +117,8 @@ const Experience = () => {
                     whileInView="visible"
                     viewport={{ once: true, amount: 0.3 }}
                   >
-                    <div className="experience-space-glass-card">
+                    <div className="experience-space-glass-card hardware-accelerated-card">
+                      {/* Emitters kept, but CSS will disable them on mobile */}
                       <div className="card-radar-wave-emitter emitter-left"></div>
                       <div className="card-radar-wave-emitter emitter-right"></div>
                       

@@ -1,8 +1,33 @@
 /* ========================================= */
+/* 🚀 HARDWARE ACCELERATION CLASSES          */
+/* ========================================= */
+.hardware-accelerated-card {
+  transform: translateZ(0);
+  will-change: transform, box-shadow;
+  backface-visibility: hidden;
+}
+
+.hardware-accelerated-beam {
+  transform: translateX(-50%) translateZ(0) !important;
+  will-change: height;
+}
+
+.hardware-accelerated-ring {
+  transform: translateZ(0);
+  will-change: transform, opacity;
+}
+
+/* ========================================= */
 /* ISOLATED EXPERIENCE MAGIC RINGS ENGINE    */
 /* ========================================= */
 
-.experience-rings-section { position: relative; width: 100%; padding: 100px 0; background: transparent !important; overflow: hidden; }
+.experience-rings-section {
+  position: relative;
+  width: 100%;
+  padding: 100px 0;
+  background: transparent !important;
+  overflow: hidden;
+}
 
 .custom-experience-container {
   max-width: 1140px;
@@ -15,7 +40,7 @@
 }
 
 .experience-section-heading {
-  font-size: clamp(2rem, 5vw, 3.4rem) !important; /* Mobile: 2rem, Desktop: 3.4rem */
+  font-size: clamp(2rem, 5vw, 3.4rem) !important;
   font-weight: 800;
   letter-spacing: -0.01em;
   color: #ffffff;
@@ -77,12 +102,12 @@
 
 @keyframes experience-ring-pulse {
   0% {
-    transform: scale(0.97) rotate(0deg);
+    transform: scale(0.97) rotate(0deg) translateZ(0);
     opacity: 0.5;
     border-color: rgba(168, 85, 247, 0.04);
   }
   100% {
-    transform: scale(1.03) rotate(1deg);
+    transform: scale(1.03) rotate(1deg) translateZ(0);
     opacity: 0.9;
     border-color: rgba(192, 132, 252, 0.12);
     box-shadow:
@@ -104,7 +129,6 @@
   gap: 60px;
 }
 
-/* De-saturated base trace guide line running in background */
 .experience-base-track-line {
   position: absolute;
   top: 0;
@@ -116,14 +140,12 @@
   z-index: 1;
 }
 
-/* SOLVED DYNAMIC LINK BEAM: Grows down during scroll operations */
 .experience-active-scroll-beam {
   position: absolute;
   top: 0;
   left: 50%;
   width: 3px;
   background: linear-gradient(180deg, #3b82f6 0%, #a855f7 70%, #c084fc 100%);
-  transform: translateX(-50%);
   box-shadow:
     0 0 15px rgba(168, 85, 247, 0.6),
     0 0 30px rgba(59, 130, 246, 0.3);
@@ -133,7 +155,7 @@
 
 .experience-item-row {
   display: flex !important;
-  flex-direction: column !important; /* Mobile Default */
+  flex-direction: column !important;
   align-items: center !important;
   width: 100% !important;
   gap: 20px !important;
@@ -149,9 +171,9 @@
 
 .experience-card-column,
 .experience-empty-spacer-column {
-  width: 90% !important; padding: 0 !important;
+  width: 90% !important;
+  padding: 0 !important;
 }
-
 .row-left-align .experience-card-column {
   padding-right: 60px;
 }
@@ -160,7 +182,7 @@
 }
 
 /* ========================================= */
-/* SOLVED: INTERACTIVE NODE POINTER BEACONS   */
+/* INTERACTIVE NODE POINTER BEACONS         */
 /* ========================================= */
 
 .experience-track-node-beacon {
@@ -171,7 +193,7 @@
   width: 20px;
   height: 20px;
   background: #090314;
-  border: 3px solid rgba(255, 255, 255, 0.15); /* Soft gray when inactive */
+  border: 3px solid rgba(255, 255, 255, 0.15);
   border-radius: 50%;
   z-index: 10;
   display: flex;
@@ -188,9 +210,10 @@
   transition: all 0.4s ease;
 }
 
-/* SOLVED ACTIVE EFFECT STACK: Triggered instantly when active scroll beam intersects node */
-.experience-track-node-beacon.ignite-neon-glow { border-color: #c084fc !important; box-shadow: 0 0 20px #a855f7; }
-
+.experience-track-node-beacon.ignite-neon-glow {
+  border-color: #c084fc !important;
+  box-shadow: 0 0 20px #a855f7;
+}
 .experience-track-node-beacon.ignite-neon-glow .experience-node-core-glow {
   background: #ffffff !important;
   box-shadow: 0 0 8px #ffffff;
@@ -201,13 +224,21 @@
 /* ========================================= */
 
 .experience-space-glass-card {
-  background: rgba(14, 5, 26, 0.5) !important; 
+  background: rgba(14, 5, 26, 0.5) !important;
   border: 1px solid rgba(168, 85, 247, 0.18) !important;
   border-radius: 20px;
   padding: 30px;
   width: 100%;
   backdrop-filter: blur(12px);
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+}
+
+.experience-space-glass-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(168, 85, 247, 0.5) !important;
+  box-shadow:
+    0 20px 45px rgba(168, 85, 247, 0.35),
+    inset 0 0 20px rgba(168, 85, 247, 0.1);
 }
 
 /* ========================================= */
@@ -259,7 +290,6 @@
 .experience-space-glass-card:hover .card-radar-wave-emitter {
   opacity: 1;
 }
-
 .experience-space-glass-card:hover .emitter-left::before {
   animation: radar-wave-propagate-left 2s cubic-bezier(0.25, 0.8, 0.25, 1)
     infinite;
@@ -269,7 +299,6 @@
     infinite;
   animation-delay: 1s;
 }
-
 .experience-space-glass-card:hover .emitter-right::before {
   animation: radar-wave-propagate-right 2s cubic-bezier(0.25, 0.8, 0.25, 1)
     infinite;
@@ -282,12 +311,12 @@
 
 @keyframes radar-wave-propagate-left {
   0% {
-    transform: translateY(-50%) scale(0.2);
+    transform: translateY(-50%) scale(0.2) translateZ(0);
     opacity: 1;
     box-shadow: 0 0 15px rgba(168, 85, 247, 0.3);
   }
   100% {
-    transform: translateY(-50%) scale(2.5);
+    transform: translateY(-50%) scale(2.5) translateZ(0);
     opacity: 0;
     border-color: rgba(59, 130, 246, 0);
     box-shadow: 0 0 40px rgba(59, 130, 246, 0);
@@ -296,24 +325,16 @@
 
 @keyframes radar-wave-propagate-right {
   0% {
-    transform: translateY(-50%) scale(0.2);
+    transform: translateY(-50%) scale(0.2) translateZ(0);
     opacity: 1;
     box-shadow: 0 0 15px rgba(168, 85, 247, 0.3);
   }
   100% {
-    transform: translateY(-50%) scale(2.5);
+    transform: translateY(-50%) scale(2.5) translateZ(0);
     opacity: 0;
     border-color: rgba(59, 130, 246, 0);
     box-shadow: 0 0 40px rgba(59, 130, 246, 0);
   }
-}
-
-.experience-space-glass-card:hover {
-  transform: translateY(-5px);
-  border-color: rgba(168, 85, 247, 0.5) !important;
-  box-shadow:
-    0 20px 45px rgba(168, 85, 247, 0.35),
-    inset 0 0 20px rgba(168, 85, 247, 0.1);
 }
 
 /* CARDS STRUCTURAL CORES */
@@ -340,7 +361,6 @@
   position: relative;
   z-index: 2;
 }
-
 .card-badge-header-row {
   display: flex;
   justify-content: space-between;
@@ -360,7 +380,6 @@
   color: #e2e8f0;
   border: 1px solid rgba(255, 255, 255, 0.06);
 }
-
 .status-pill.work-glow-badge {
   font-family: monospace;
   font-size: 0.75rem;
@@ -373,29 +392,64 @@
   color: #60a5fa;
   border: 1px solid rgba(59, 130, 246, 0.3);
 }
+.experience-card-tech-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 15px;
+}
+.experience-mini-tag {
+  font-family: monospace;
+  font-size: 0.78rem;
+  background: rgba(168, 85, 247, 0.05);
+  border: 1px solid rgba(168, 85, 247, 0.2);
+  color: #d8b4fe;
+  padding: 4px 10px;
+  border-radius: 6px;
+}
 
-.experience-card-tech-cloud { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 15px; }
-.experience-mini-tag { font-family: monospace; font-size: 0.78rem; background: rgba(168, 85, 247, 0.05); border: 1px solid rgba(168, 85, 247, 0.2); color: #d8b4fe; padding: 4px 10px; border-radius: 6px; }
-
-/* RESPONSIVE SCALING */
+/* ========================================= */
+/* 🛠️ SOLVED: MOBILE PERFORMANCE OVERRIDES   */
+/* ========================================= */
 
 @media (min-width: 992px) {
   .experience-item-row {
-    flex-direction: row !important; /* Laptop Side-by-Side */
+    flex-direction: row !important;
     align-items: center !important;
   }
-  .row-left-align { flex-direction: row !important; }
-  .row-right-align { flex-direction: row-reverse !important; }
-  .experience-card-column { width: 50% !important; padding: 0 60px !important; }
-  .experience-empty-spacer-column { width: 50% !important; display: block !important; }
+  .row-left-align {
+    flex-direction: row !important;
+  }
+  .row-right-align {
+    flex-direction: row-reverse !important;
+  }
+  .experience-card-column {
+    width: 50% !important;
+    padding: 0 60px !important;
+  }
+  .experience-empty-spacer-column {
+    width: 50% !important;
+    display: block !important;
+  }
 }
 
 @media (max-width: 768px) {
+  /* 1. Kill the background magic rings on mobile completely (Huge GPU Saver) */
+  .experience-rings-backdrop {
+    display: none !important;
+  }
+
+  /* 2. Kill the radar wave effects on touch devices (Prevents stutter on tap) */
+  .card-radar-wave-emitter {
+    display: none !important;
+  }
+
   .experience-base-track-line,
   .experience-active-scroll-beam {
     left: 20px;
-    transform: none;
+    transform: none !important; /* Removed -50% translation for cleaner mobile line */
   }
+
   .experience-item-row {
     flex-direction: column !important;
     align-items: flex-start;
@@ -408,12 +462,25 @@
   .experience-empty-spacer-column {
     display: none;
   }
+
   .experience-track-node-beacon {
-  position: absolute; top: 50%; transform: translate(-50%, -50%); width: 20px; height: 20px; background: #090314;
-  border: 3px solid rgba(255, 255, 255, 0.15); border-radius: 50%; z-index: 10;
-}
-  .exp-ring-3,
-  .exp-ring-4 {
-    display: none;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%); /* Fixed transform for mobile left-align */
+    left: 10px;
+    width: 20px;
+    height: 20px;
+    background: #090314;
+    border: 3px solid rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+    z-index: 10;
+  }
+
+  /* 3. Solidify the cards (Remove blur filter) */
+  .experience-space-glass-card {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    background: rgba(22, 10, 38, 0.95) !important; /* Solid dark purple/black */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5) !important;
   }
 }
