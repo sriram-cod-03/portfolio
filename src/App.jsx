@@ -1,19 +1,21 @@
-import { useEffect } from "react";
+import React, { useEffect, Suspense, lazy } from "react";
 import "./index.css";
 import "./App.css";
 
-/* Components */
+/* Critical Initial Load Components (Loads Immediately) */
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
-import About from "./components/About";
-import Education from "./components/Education"      /* 01. Education Section */
-import Experience from "./components/Experience";   /* 02. Work Experience */
-import Certificates from "./components/Certificates"; /* 03. Certifications Section */
-import Skills from "./components/Skills";           /* 04. Tech Stack Sets */
-import Projects from "./components/Projects";       /* 05. Projects Showcase */
-import Contact from "./components/Contact";         /* 06. Form & Map Gateway */
 import Footer from "./components/Footer";
-import { SpaceBackground } from "./components/SpaceBackground"; // Space Background Import
+import { SpaceBackground } from "./components/SpaceBackground"; 
+
+/* 🚀 Lazy Loaded Components (Optimizes Initial Load Time) */
+const About = lazy(() => import("./components/About"));
+const Education = lazy(() => import("./components/Education"));
+const Experience = lazy(() => import("./components/Experience"));
+const Certificates = lazy(() => import("./components/Certificates"));
+const Skills = lazy(() => import("./components/Skills"));
+const Projects = lazy(() => import("./components/Projects"));
+const Contact = lazy(() => import("./components/Contact"));
 
 /* Scroll Reveal Hook System Engine */
 function useScrollReveal() {
@@ -51,45 +53,57 @@ function App() {
         <main>
           {/* SOLVED: Order arranged exactly to match your Navbar map index configurations safely */}
           
-          {/* 1. HOME SECTION */}
+          {/* 1. HOME SECTION (Critical Path - Loads Immediately) */}
           <section id="home" className="reveal">
             <Hero />
           </section>
 
-          {/* 2. ABOUT SECTION */}
-          <section id="about" className="reveal">
-            <About />
-          </section>
+          {/* 🚀 SUSPENSE WRAPPER FOR LAZY COMPONENTS */}
+          <Suspense fallback={
+            <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "30vh", width: "100%" }}>
+               {/* Uses your existing custom cyber spinner while loading */}
+               <div className="cyber-spinner-loader">
+                 <svg viewBox="0 0 24 24" width="30" height="30">
+                   <circle className="path" cx="12" cy="12" r="10" fill="none" strokeWidth="3"></circle>
+                 </svg>
+               </div>
+            </div>
+          }>
+            {/* 2. ABOUT SECTION */}
+            <section id="about" className="reveal">
+              <About />
+            </section>
 
-          {/* 3. SKILLS STACK SECTION */}
-          <section id="skills" className="reveal">
-            <Skills />
-          </section>
+            {/* 3. SKILLS STACK SECTION */}
+            <section id="skills" className="reveal">
+              <Skills />
+            </section>
 
-          {/* 4. WORK EXPERIENCE SECTION */}
-          <section id="experience" className="reveal">
-            <Experience />
-          </section>
+            {/* 4. WORK EXPERIENCE SECTION */}
+            <section id="experience" className="reveal">
+              <Experience />
+            </section>
 
-          {/* 5. PROJECTS SECTION */}
-          <section id="projects" className="reveal">
-            <Projects />
-          </section>
-          
-          {/* 6. EDUCATION TIMELINE SECTION */}
-          <section id="education" className="reveal">
-            <Education/>
-          </section>
+            {/* 5. PROJECTS SECTION */}
+            <section id="projects" className="reveal">
+              <Projects />
+            </section>
+            
+            {/* 6. EDUCATION TIMELINE SECTION */}
+            <section id="education" className="reveal">
+              <Education/>
+            </section>
 
-          {/* 7. CERTIFICATE SECTION */}
-          <section id="certificate" className="reveal">
-            <Certificates />
-          </section>
+            {/* 7. CERTIFICATE SECTION */}
+            <section id="certificate" className="reveal">
+              <Certificates />
+            </section>
 
-          {/* 8. CONTACT SECTION */}
-          <section id="contact" className="reveal">
-            <Contact />
-          </section>
+            {/* 8. CONTACT SECTION */}
+            <section id="contact" className="reveal">
+              <Contact />
+            </section>
+          </Suspense>
         </main>
 
         <Footer />
