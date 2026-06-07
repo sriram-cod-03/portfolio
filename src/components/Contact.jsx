@@ -1,8 +1,14 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { FaEnvelope, FaPaperPlane, FaTerminal, FaPhoneAlt, FaMapMarkerAlt } from "react-icons/fa"; 
-import toast, { Toaster } from "react-hot-toast"; 
-import emailjs from "@emailjs/browser"; 
+import {
+  FaEnvelope,
+  FaPaperPlane,
+  FaTerminal,
+  FaPhoneAlt,
+  FaMapMarkerAlt,
+} from "react-icons/fa";
+import toast, { Toaster } from "react-hot-toast";
+import emailjs from "@emailjs/browser";
 import ScrollReveal from "./ScrollReveal";
 import SlideReveal from "./SlideReveal";
 
@@ -12,9 +18,9 @@ const Contact = () => {
     name: "",
     email: "",
     company: "",
-    message: ""
+    message: "",
   });
-  
+
   const [isTransmitting, setIsTransmitting] = useState(false);
 
   const handleInputChange = (e, field) => {
@@ -23,10 +29,10 @@ const Contact = () => {
 
   const handleSignalTransmission = (e) => {
     if (e) {
-      e.preventDefault(); 
+      e.preventDefault();
       e.stopPropagation();
     }
-    
+
     if (!formData.name || !formData.email || !formData.message) {
       toast.error("Initialization failed: Required data metrics missing.");
       return;
@@ -34,45 +40,49 @@ const Contact = () => {
 
     setIsTransmitting(true);
 
-    const transmissionToast = toast.loading("Encrypting data packets & routing signal...", {
-      style: {
-        background: "#0f061a",
-        color: "#ffffff",
-        border: "1px solid rgba(168, 85, 247, 0.4)",
-        fontFamily: "monospace",
-        fontSize: "0.85rem",
-        boxShadow: "0 0 15px rgba(168, 85, 247, 0.25)"
-      }
-    });
+    const transmissionToast = toast.loading(
+      "Encrypting data packets & routing signal...",
+      {
+        style: {
+          background: "#0f061a",
+          color: "#ffffff",
+          border: "1px solid rgba(168, 85, 247, 0.4)",
+          fontFamily: "monospace",
+          fontSize: "0.85rem",
+          boxShadow: "0 0 15px rgba(168, 85, 247, 0.25)",
+        },
+      },
+    );
 
     const templateParams = {
-      name: formData.name, 
+      name: formData.name,
       email: formData.email,
       company: formData.company || "Not Provided",
       message: formData.message,
-      from_name: formData.name, 
+      from_name: formData.name,
       from_email: formData.email,
       company_name: formData.company || "Not Provided",
-      message_content: formData.message
+      message_content: formData.message,
     };
 
-    const SERVICE_ID = "service_sk1n2ja"; 
+    const SERVICE_ID = "service_sk1n2ja";
     const TEMPLATE_ID = "template_yd4mie7";
     const PUBLIC_KEY = "qS_4h2Ew5-EOY3kr4";
 
-    emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY)
+    emailjs
+      .send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY)
       .then((response) => {
         toast.success("Signal transmitted successfully! Channel secured.", {
           id: transmissionToast,
           icon: "🚀",
           style: {
             background: "#0a0f14",
-            color: "#10b981", 
+            color: "#10b981",
             border: "1px solid rgba(16, 185, 129, 0.4)",
             fontFamily: "monospace",
             fontSize: "0.85rem",
-            boxShadow: "0 0 15px rgba(16, 185, 129, 0.25)"
-          }
+            boxShadow: "0 0 15px rgba(16, 185, 129, 0.25)",
+          },
         });
 
         setFormData({ name: "", email: "", company: "", message: "" });
@@ -87,8 +97,8 @@ const Contact = () => {
             color: "#ef4444",
             border: "1px solid rgba(239, 68, 68, 0.4)",
             fontFamily: "monospace",
-            fontSize: "0.85rem"
-          }
+            fontSize: "0.85rem",
+          },
         });
       })
       .finally(() => {
@@ -98,76 +108,100 @@ const Contact = () => {
 
   return (
     <ScrollReveal>
-      <section id="contact" className="contact-section py-5 d-flex align-items-center justify-content-center">
-        
+      <section
+        id="contact"
+        className="contact-section py-5 d-flex align-items-center justify-content-center"
+      >
         <Toaster position="bottom-right" reverseOrder={false} />
 
         <div className="container custom-contact-container position-relative d-flex flex-column align-items-center justify-content-center text-center">
-          
           {/* HEADER SECTIONS MARKERS */}
           <div className="text-center w-100 mb-5 global-contact-header-block d-flex flex-column align-items-center justify-content-center">
             <SlideReveal direction="left">
               <span className="section-index-tag">07 // SECURE GATEWAY</span>
-              <h2 className="contact-main-title text-white mb-3 mt-1 text-center w-100">Establish Comms Link</h2>
+              <h2 className="contact-main-title text-white mb-3 mt-1 text-center w-100">
+                Establish Comms Link
+              </h2>
               <div className="heading-violet-underline mx-auto"></div>
             </SlideReveal>
           </div>
 
           <div className="contact-content-split-wrapper w-100 d-flex justify-content-center align-items-stretch flex-wrap">
-            
             {/* LEFT SIDE DETAILS */}
             <div className="contact-details-side d-flex flex-column align-items-center">
-              <SlideReveal direction="left" className="h-100 w-100 d-flex flex-column align-items-center">
+              <SlideReveal
+                direction="left"
+                className="h-100 w-100 d-flex flex-column align-items-center"
+              >
                 {/* 🚀 ADDED HARDWARE ACCELERATION CLASS */}
                 <div className="glass-contact-card hardware-accelerated-card matching-height h-100 d-flex flex-column align-items-center w-100">
-                  
                   <div className="cyber-terminal-header-pod mb-4 mx-auto">
                     <div className="terminal-badge-icon-wrap">
                       <FaTerminal className="violet-glow-icon-mini" />
                     </div>
                     <div className="terminal-status-details">
-                      <span className="terminal-pod-title">COMMS TERMINAL V1.0</span>
-                      <span className="terminal-pod-status">UPLINK STATUS: READY</span>
+                      <span className="terminal-pod-title">
+                        COMMS TERMINAL V1.0
+                      </span>
+                      <span className="terminal-pod-status">
+                        UPLINK STATUS: READY
+                      </span>
                     </div>
                     <div className="terminal-pulse-ping-holder">
                       <span className="terminal-ping-radar"></span>
                       <span className="terminal-ping-dot"></span>
                     </div>
                   </div>
-                  
+
                   <p className="contact-subtitle-desc mb-4 text-center mx-auto">
-                    Initiate a connection or project evaluation request. Secure a latency-free 
-                    transmission channel and let's construct something legendary together.
+                    Initiate a connection or project evaluation request. Secure
+                    a latency-free transmission channel and let's construct
+                    something legendary together.
                   </p>
 
                   <div className="contact-vertical-meta-stack mb-4 mx-auto d-flex flex-column align-items-center">
-                    <div className="meta-stack-row-item d-flex justify-content-center">
+                    {/* EMAIL CLICK LINK */}
+                    <a
+                      href="mailto:sriramr.webdev@gmail.com"
+                      className="meta-stack-row-item d-flex justify-content-center text-decoration-none"
+                    >
                       <div className="stack-icon-shield active-violet-shield-box">
                         <FaEnvelope className="stack-dynamic-vector-icon color-pure-violet" />
                       </div>
                       <div className="stack-item-details-block text-center">
                         <span className="stack-label-caption">EMAIL</span>
-                        <span className="stack-value-content">sriramr.webdev@gmail.com</span>
+                        <span className="stack-value-content">
+                          sriramr.webdev@gmail.com
+                        </span>
                       </div>
-                    </div>
+                    </a>
 
-                    <div className="meta-stack-row-item d-flex justify-content-center">
+                    {/* PHONE CLICK LINK */}
+                    <a
+                      href="tel:+918778517976"
+                      className="meta-stack-row-item d-flex justify-content-center text-decoration-none"
+                    >
                       <div className="stack-icon-shield active-violet-shield-box">
                         <FaPhoneAlt className="stack-dynamic-vector-icon color-pure-violet" />
                       </div>
                       <div className="stack-item-details-block text-center">
                         <span className="stack-label-caption">PHONE</span>
-                        <span className="stack-value-content">+91 8778517976</span>
+                        <span className="stack-value-content">
+                          +91 8778517976
+                        </span>
                       </div>
-                    </div>
+                    </a>
 
+                    {/* LOCATION (Keep as is, or remove link) */}
                     <div className="meta-stack-row-item d-flex justify-content-center">
                       <div className="stack-icon-shield active-violet-shield-box">
                         <FaMapMarkerAlt className="stack-dynamic-vector-icon color-pure-violet" />
                       </div>
                       <div className="stack-item-details-block text-center">
                         <span className="stack-label-caption">LOCATION</span>
-                        <span className="stack-value-content">Salem, Tamil Nadu, India</span>
+                        <span className="stack-value-content">
+                          Salem, Tamil Nadu, India
+                        </span>
                       </div>
                     </div>
                   </div>
@@ -193,7 +227,6 @@ const Contact = () => {
                       </div>
                     </div>
                   </div>
-
                 </div>
               </SlideReveal>
             </div>
@@ -217,17 +250,20 @@ const Contact = () => {
                 /* 🚀 ADDED HARDWARE ACCELERATION CLASS */
                 className="glass-contact-card hardware-accelerated-card h-100 w-100"
               >
-                <form className="aceternity-form-engine w-100" onSubmit={handleSignalTransmission}>
+                <form
+                  className="aceternity-form-engine w-100"
+                  onSubmit={handleSignalTransmission}
+                >
                   <div className="form-group-block text-center">
                     <label className="w-100 text-center">Full name</label>
-                    <input 
-                      type="text" 
-                      placeholder="Sriram R" 
+                    <input
+                      type="text"
+                      placeholder="Sriram R"
                       value={formData.name}
                       onChange={(e) => handleInputChange(e, "name")}
                       disabled={isTransmitting}
                       className="text-center"
-                      required 
+                      required
                     />
                   </div>
 
@@ -246,9 +282,9 @@ const Contact = () => {
 
                   <div className="form-group-block text-center">
                     <label className="w-100 text-center">Company</label>
-                    <input 
-                      type="text" 
-                      placeholder="Optional" 
+                    <input
+                      type="text"
+                      placeholder="Optional"
                       value={formData.company}
                       onChange={(e) => handleInputChange(e, "company")}
                       disabled={isTransmitting}
@@ -273,23 +309,38 @@ const Contact = () => {
                     <button
                       type="submit"
                       className="btn btn-premium-gradient w-100 py-3 position-relative overflow-hidden d-flex align-items-center justify-content-center"
-                      disabled={isTransmitting} 
-                      style={{ 
+                      disabled={isTransmitting}
+                      style={{
                         opacity: isTransmitting ? 0.75 : 1,
-                        cursor: isTransmitting ? "not-allowed" : "pointer" 
+                        cursor: isTransmitting ? "not-allowed" : "pointer",
                       }}
                     >
                       {isTransmitting ? (
                         <span className="d-flex align-items-center justify-content-center gap-2">
-                          <svg className="cyber-spinner-loader" viewBox="0 0 24 24">
-                            <circle className="path" cx="12" cy="12" r="10" fill="none" strokeWidth="3"></circle>
+                          <svg
+                            className="cyber-spinner-loader"
+                            viewBox="0 0 24 24"
+                          >
+                            <circle
+                              className="path"
+                              cx="12"
+                              cy="12"
+                              r="10"
+                              fill="none"
+                              strokeWidth="3"
+                            ></circle>
                           </svg>
                           Routing Signal...
                         </span>
                       ) : (
                         <span className="d-flex align-items-center justify-content-center gap-2">
                           Transmit Signal
-                          <FaPaperPlane style={{ fontSize: "0.85rem", transform: "rotate(15deg)" }} />
+                          <FaPaperPlane
+                            style={{
+                              fontSize: "0.85rem",
+                              transform: "rotate(15deg)",
+                            }}
+                          />
                         </span>
                       )}
                     </button>
@@ -297,9 +348,7 @@ const Contact = () => {
                 </form>
               </motion.div>
             </div>
-
-          </div> 
-          
+          </div>
         </div>
       </section>
     </ScrollReveal>

@@ -247,19 +247,18 @@
   display: flex !important;
   flex-direction: column !important;
   gap: 20px !important;
-  width: fit-content !important; 
-  max-width: 100% !important; 
+width: fit-content !important; 
   margin: 0 auto 24px auto !important; 
-  align-items: flex-start !important; 
+  align-items: flex-start !important;
 }
 
 .meta-stack-row-item {
   display: flex !important;
-  flex-direction: row !important; /* Forces icon and text side-by-side */
+  flex-direction: row !important;
   align-items: center !important;
   justify-content: flex-start !important; 
   gap: 16px !important;
-  width: 100% !important;
+  width: 320px !important; 
   margin: 0 !important;
 }
 
@@ -272,9 +271,7 @@
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  box-shadow: 0 4px 15px rgba(168, 85, 247, 0.25) !important;
   flex-shrink: 0 !important;
-  transition: all 0.3s ease !important;
 }
 
 .meta-stack-row-item:hover .stack-icon-shield.active-violet-shield-box {
@@ -293,7 +290,8 @@
   display: flex !important;
   flex-direction: column !important;
   align-items: flex-start !important; 
-  text-align: left !important; 
+  text-align: left !important;
+  width: 100% !important;
 }
 
 .stack-label-caption {
@@ -484,4 +482,5 @@
 @media (max-width: 480px) {
   .stack-value-content { font-size: 0.92rem !important; }
   .cyber-terminal-header-pod { width: 100% !important; }
+  .meta-stack-row-item { width: 280px !important; }
 }
