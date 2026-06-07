@@ -175,7 +175,7 @@ const Contact = () => {
                   <div className="world-map-wrapper grow mx-auto w-100">
                     <div className="map-base-graphic hardware-accelerated-card h-100 w-100">
                       <img
-                        src="/world-base.jpg"
+                        src="/world-base.webp"
                         alt="Portfolio Interactive World Map"
                         style={{
                           width: "100%",

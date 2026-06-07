@@ -3,9 +3,9 @@ import { FaGithub } from "react-icons/fa";
 import ScrollReveal from "./ScrollReveal";
 import SlideReveal from "./SlideReveal";
 /* SOLVED: Standardized local asset module definitions compiled explicitly */
-import gameStoreImg from "../assets/projects/gamestore.jpg";
-import fitnessImg from "../assets/projects/fitness.jpg";
-import weatherImg from "../assets/projects/weather.jpg";
+import gameStoreImg from "../assets/projects/gamestore.webp";
+import fitnessImg from "../assets/projects/fitness.webp";
+import weatherImg from "../assets/projects/weather.webp";
 
 const Projects = () => {
   const dynamicProjects = [
@@ -62,7 +62,7 @@ const Projects = () => {
                   
                   {/* PROJECT BOUND IMAGE CONTAINER */}
                   <div className="project-image w-100">
-                    <img src={project.image} alt={project.title} className="hardware-accelerated-img" />
+                    <img src={project.image} alt={project.title} className="hardware-accelerated-img" loading="lazy"/>
                     
                     {/* FLOATING PREMIUM GITHUB LINK OVERLAY */}
                     <a 

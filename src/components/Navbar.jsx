@@ -3,7 +3,7 @@ import { motion, AnimatePresence, useScroll, useSpring } from "framer-motion"; /
 import { FaPaperPlane, FaTimes, FaBars } from "react-icons/fa"; 
 
 // Importing local asset cleanly
-import profileAvatar from "../assets/profile.jpeg"; 
+import profileAvatar from "../assets/profile/profile.webp"; 
 
 const Navbar = () => {
   const [active, setActive] = useState("home");
@@ -75,6 +75,7 @@ const Navbar = () => {
                 src={profileAvatar} 
                 alt="Sriram R Profile Avatar" 
                 className="navbar-avatar-img"
+                loading="lazy"
                 onError={(e) => {
                   e.target.src = "https://api.dicebear.com/7.x/bottts/svg?seed=Sriram";
                 }}
