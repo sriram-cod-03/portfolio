@@ -1,10 +1,30 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 export const SpaceBackground = () => {
   const canvasRef = useRef(null);
+  
+  // 🚀 Added state to detect if the user is on a mobile device
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    
+    // Check initially
+    checkMobile();
+    
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  useEffect(() => {
+    // 🚀 If it's a mobile device, stop the heavy canvas animation completely!
+    if (isMobile) return;
+
     const canvas = canvasRef.current;
+    if (!canvas) return;
+    
     const ctx = canvas.getContext("2d");
     let animationFrameId;
 
@@ -65,8 +85,27 @@ export const SpaceBackground = () => {
       window.removeEventListener("resize", resizeCanvas);
       cancelAnimationFrame(animationFrameId);
     };
-  }, []);
+  }, [isMobile]); // Re-run effect if mobile state changes
 
+  // 🚀 For Mobile: Return a simple, ultra-fast solid background div instead of canvas
+  if (isMobile) {
+    return (
+      <div 
+        style={{
+          position: "fixed",
+          top: 0,
+          left: 0,
+          width: "100vw",
+          height: "100vh",
+          zIndex: -2,
+          pointerEvents: "none",
+          background: "#0a0416", // Solid dark color that won't lag old GPUs
+        }}
+      />
+    );
+  }
+
+  // 🚀 For Laptop/PC: Return the heavy canvas animation
   return (
     <canvas
       ref={canvasRef}
