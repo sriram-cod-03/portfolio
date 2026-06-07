@@ -71,6 +71,7 @@ const Projects = () => {
                       rel="noreferrer" 
                       className="project-github-link hardware-accelerated-card"
                       title="View Source Code"
+                      aria-label={`View ${project.title} source code on GitHub`}
                     >
                       <FaGithub />
                     </a>
@@ -78,7 +79,7 @@ const Projects = () => {
 
                   {/* DETAILS MATRIX PANEL */}
                   <div className="project-body d-flex flex-column align-items-center justify-content-center text-center w-100">
-                    <h5 className="text-center w-100">{project.title}</h5>
+                    <h3 className="text-center w-100" style={{ fontSize: "1.25rem", fontWeight: "700", marginBottom: "12px", color: "#ffffff" }}>{project.title}</h3>
                     <p className="text-center mx-auto">{project.description}</p>
                     
                     <div className="project-action-btn-wrapper w-100 d-flex justify-content-center">
