@@ -107,17 +107,19 @@ export const SpaceBackground = () => {
 
   // 🚀 For Laptop/PC: Return the heavy canvas animation
   return (
-    <canvas
-      ref={canvasRef}
-      style={{
-        position: "fixed",
-        top: 0,
-        left: 0,
-        width: "100vw",
-        height: "100vh",
-        zIndex: -2,
-        pointerEvents: "none",
-      }}
-    />
+<canvas
+  ref={canvasRef}
+  style={{
+    position: "fixed",
+    top: 0,
+    left: 0,
+    width: "100vw",
+    height: "100vh",
+    zIndex: -2,
+    pointerEvents: "none",
+    willChange: "transform", // 🚀 GPU-ku signal kudukkum
+    backfaceVisibility: "hidden"
+  }}
+/>
   );
 };

@@ -55,6 +55,7 @@
   align-items: stretch !important; 
   width: 100% !important;
   gap: 40px !important;
+  flex-wrap: wrap !important;
 }
 
 .contact-details-side,

@@ -7,6 +7,7 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Footer from "./components/Footer";
 import { SpaceBackground } from "./components/SpaceBackground"; 
+import ScrollToTop from "./components/ScrollToTop";
 
 /* 🚀 Lazy Loaded Components (Optimizes Initial Load Time) */
 const About = lazy(() => import("./components/About"));
@@ -105,7 +106,7 @@ function App() {
             </section>
           </Suspense>
         </main>
-
+        <ScrollToTop/>
         <Footer />
       </div>
     </>
