@@ -1,9 +1,9 @@
-* {
-  max-width: 100%;
-  overflow-x: hidden; /* Ithu scroll bar-ah thadukkum */
+html, body {
+  overflow-x: hidden;
+  overflow-y: auto;
+  height: auto;
 }
 
-html, body {
-  width: 100%;
-  overflow-x: hidden;
+section {
+  overflow: visible !important;
 }

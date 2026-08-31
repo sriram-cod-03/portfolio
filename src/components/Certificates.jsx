@@ -20,13 +20,6 @@ const Certificate = () => {
     },
     {
       id: 3,
-      title: "Full Stack Development Certification",
-      issuer: "GUVI",
-      date: "May 2025",
-      description: "Mastered end-to-end web engineering architectures utilizing the MERN stack (MongoDB, Express, React, Node.js). Engineered scalable REST APIs, state-management workflows, and structural database query models for production-ready applications."
-    },
-    {
-      id: 4,
       title: "Blockchain Technology Certification",
       issuer: "GUVI",
       date: "February 2026",
